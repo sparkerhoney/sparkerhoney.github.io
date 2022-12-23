@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Example Content
+title: First Content
 description: >
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
+  안녕하세요? 첫 글을 포스팅 해봅니다?
 sitemap: false
 hide_last_modified: true
 ---
@@ -73,7 +73,7 @@ Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a p
 
 Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
 
-HyperText Markup Language (HTML)
+HyperText Markup Language (HTML)님
 : The language used to describe and define the content of a Web page
 
 Cascading Style Sheets (CSS)
