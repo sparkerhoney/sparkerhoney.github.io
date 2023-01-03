@@ -1,7 +1,7 @@
 ---
 title: "Statistics Science"
-layout: categories
-permalink: categories/ss
+layout: archive
+permalink: /categories/ss/
 author_profile: true
 sidebar_main: true
 ---

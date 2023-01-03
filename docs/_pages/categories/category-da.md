@@ -1,7 +1,7 @@
 ---
 title: "Data Analytics"
-layout: categories
-permalink: categories/da
+layout: archive
+permalink: /categories/da/
 author_profile: true
 sidebar_main: true
 ---

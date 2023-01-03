@@ -1,7 +1,7 @@
 ---
 title: "Data Mining"
-layout: categories
-permalink: categories/dm
+layout: archive
+permalink: /categories/dm/
 author_profile: true
 sidebar_main: true
 ---

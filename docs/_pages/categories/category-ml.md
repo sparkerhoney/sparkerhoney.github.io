@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning"
-layout: categories
-permalink: categories/ml
+layout: archive
+permalink: /categories/ml/
 author_profile: true
 sidebar_main: true
 ---
