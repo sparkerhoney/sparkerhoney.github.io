@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning"
-layout: archive
+layout: categories
 permalink: categories/ml
 author_profile: true
 sidebar_main: true

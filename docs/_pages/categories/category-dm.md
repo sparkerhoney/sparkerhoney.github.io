@@ -1,6 +1,6 @@
 ---
 title: "Data Mining"
-layout: archive
+layout: categories
 permalink: categories/dm
 author_profile: true
 sidebar_main: true

@@ -1,6 +1,6 @@
 ---
 title: "Data Analytics"
-layout: archive
+layout: categories
 permalink: categories/da
 author_profile: true
 sidebar_main: true
