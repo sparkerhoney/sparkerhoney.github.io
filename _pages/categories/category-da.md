@@ -1,5 +1,5 @@
 ---
-title: "Data Mining"
+title: "Data Analytics"
 layout: archive
 permalink: categories/da
 author_profile: true

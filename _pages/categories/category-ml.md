@@ -1,5 +1,5 @@
 ---
-title: "Data Mining"
+title: "Machine Learning"
 layout: archive
 permalink: categories/ml
 author_profile: true

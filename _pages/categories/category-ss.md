@@ -1,5 +1,5 @@
 ---
-title: "Data Mining"
+title: "Science of Statistic"
 layout: archive
 permalink: categories/ss
 author_profile: true

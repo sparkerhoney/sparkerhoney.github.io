@@ -1,5 +1,5 @@
 ---
-title: "Data Mining"
+title: "Deep Learning"
 layout: archive
 permalink: categories/dl
 author_profile: true
