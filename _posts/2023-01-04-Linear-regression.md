@@ -48,4 +48,12 @@ last_modified_at: 2023-01-04
 으로 관측된다. <br>
 즉, ε 은 y 와 추정된 모형 ŷ 간의 차이를 나타내는 오차로서 평균은 0, 분산은 $\sigma^2$ 인 확률 변수로 가정한다.<br>
 ![스크린샷_2022-06-22_오후_9 36 18](https://user-images.githubusercontent.com/108461006/210494006-9fbce97c-1c1b-45e7-88df-1f66db2e2ab3.png){: width="400" height="400"}
-![스크린샷_2022-06-22_오후_10 24 30](https://user-images.githubusercontent.com/108461006/210510939-5cdad514-b890-4b6c-9ad1-628179629872.png){: width="400" height="400"}
+![스크린샷_2022-06-22_오후_10 24 30](https://user-images.githubusercontent.com/108461006/210510939-5cdad514-b890-4b6c-9ad1-628179629872.png){: width="400" height="400"}<br>
+반응변수 y 가 하나의 회귀 변수 x 에 대하여 다음과 같은 관계를 가질 때, 이를 **일차 단순 회귀 모형** 이라고 부른다.
+- $y=\beta_0+\beta_1x+\epsilon$
+___
+
+위의 모형을 추정하기 위해서 최소제곱법 ( Least Squares Method ) 을 이용해 β 를 추정해보자.<br>
+>$L=\displaystyle\sum_{j=1}^{n}\epsilon_j^2=\displaystyle\sum_{j=1}^{n}(y_j-\beta_0-\beta_1x_j)^2$<br>
+>$\frac{\partial{L}}{\partial{\beta_1}}=-2\displaystyle\sum_{j=1}^{n}x_j(y_j-\beta_0-\beta_1x_j)=0$<br>
+>$\frac{\partial{L}}{\partial{\beta_0}}=-2\displaystyle\sum_{j=1}^{n}(y_j-\beta_0-\beta_1x_j)=0$
