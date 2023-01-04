@@ -90,5 +90,9 @@ last_modified_at: 2023-01-04
 위 처럼, 등분산성이 일정해야만 가정이 타당하다고 말할 수 있다. 
 - 두번째로, 분산분석에 의해서 모델의 유의성을 검토해본다.<br>
 총제곱합(Total Sum of Squares, **SSTO**)을 회귀식에 의해 설명되는 변동(Regression Sum of Squares, **SSR**)과 회귀식에 의해 설명되지 않는 잔차변동(Residual Sum of Squares, **SSE**)로 분해할 수 있다.
-> ($y-\bar{y})=(\hat{y}-\bar{y})+(y-\hat{y})$<br>
-> ($y-\bar{y})^2=(\hat{y}-\bar{y})+(y-\hat{y})$
+> $(y-\bar{y})=(\hat{y}-\bar{y})+(y-\hat{y})$<br>
+> $(y-\bar{y})^2=(\hat{y}-\bar{y})^2+(y-\hat{y})^2$<br>
+> $\sum(y-\bar{y})^2=\sum(\hat{y}-\bar{y})^2+\sum(y-\hat{y})^2$<br>
+
+따라서, **$SSTO = SSR + SSE$** 로 설명되어진다.<br>
+이때 분산분석표는 아래와 같이 나타낼 수 있다.
