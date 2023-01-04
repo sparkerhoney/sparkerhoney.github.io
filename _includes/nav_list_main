@@ -19,14 +19,14 @@
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
                 {% for category in site.categories %}
                     {% if category[0] == "dm" %}
-                        <li><a href="/categories/dm" class="">dm ({{category[1].size}})</a></li>
+                        <li><a href="/categories/dm" class="">Data Mining ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "da" %}
-                        <li><a href="/categories/da" class="">da ({{category[1].size}})</a></li>
+                        <li><a href="/categories/da" class="">Data Analytics ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -34,14 +34,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "ml" %}
-                        <li><a href="/categories/ml" class="">ml ({{category[1].size}})</a></li>
+                        <li><a href="/categories/ml" class="">Machine learning ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "dl" %}
-                        <li><a href="/categories/dl" class="">dl ({{category[1].size}})</a></li>
+                        <li><a href="/categories/dl" class="">Deep Learning ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -49,7 +49,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "ss" %}
-                        <li><a href="/categories/ss" class="">ss ({{category[1].size}})</a></li>
+                        <li><a href="/categories/ss" class="">Statistics ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
