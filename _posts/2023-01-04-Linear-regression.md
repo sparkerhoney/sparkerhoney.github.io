@@ -17,9 +17,9 @@ last_modified_at: 2023-01-04
 **회귀분석**이란 연구대상이 되는 시스템에 존재하는 **변수들 사이에 함수적인 관계를 규명하기위해 수학적인 모형을 상정**하고, 이 모형을 수집된 자료로부터 추정하는 통계적인 기법이다.
 
 예를들어, 아파트 평수와 전기소모량의 관계, 아파트 평수에 따라서 전기 소모량을 예측하는 것 등이 있다.
-<!-- <center> -->
+<center>
   <img src="https://blogfiles.pstatic.net/MjAyMjA2MjJfMjcz/MDAxNjU1OTAxMzgzMDEx.wQAZ1cqZK1cIoTogsEkesR-2MBesGVhIpAGFXxlkuDog.Ik5Iqju6EABvk8QFeCxynf8HhG8dNlXUEuqJTmNdliEg.PNG.lhe339/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2022-06-22_%EC%98%A4%ED%9B%84_9.36.18.png" width="400">
-<!-- </center> -->
+</center>
 
 위 회귀선(추세선)의 함수는 아래와 같다.
 

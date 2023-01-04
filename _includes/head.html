@@ -1,5 +1,9 @@
 <meta charset="utf-8">
 
+{% if page.use_math %}
+  {% include mathjax_support.html %}
+{% endif %}
+
 {% include seo.html %}
 
 {% unless site.atom_feed.hide %}
@@ -24,7 +28,5 @@
   {% endfor %}
 {% endif %}
 
-{% if page.use_math %}
-  {% include mathjax_support.html %}
-{% endif %}
+
 
