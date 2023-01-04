@@ -14,11 +14,6 @@ toc_sticky: true
 date: 2023-01-04
 last_modified_at: 2023-01-04
 
-/* 새 css class */
-.center {
-  display: block;
-  margin: auto;
-}
 ---
 
 # 회귀분석
@@ -51,4 +46,6 @@ last_modified_at: 2023-01-04
 
 위와 같은 식으로 반응변수 y 를 실제로 관측해보면 제어할 수 없는 요인에 의해 $y=\hat{y}+\epsilon$ 
 으로 관측된다. <br>
-즉, ε 은 y 와 추정된 모형 ŷ 간의 차이를 나타내는 오차로서 평균은 0, 분산은 σ 2 인 확률 변수로 가정한다.
+즉, ε 은 y 와 추정된 모형 ŷ 간의 차이를 나타내는 오차로서 평균은 0, 분산은 $\sigma^2$ 인 확률 변수로 가정한다.<br>
+![스크린샷_2022-06-22_오후_9 36 18](https://user-images.githubusercontent.com/108461006/210494006-9fbce97c-1c1b-45e7-88df-1f66db2e2ab3.png){: width="400" height="400"}
+![스크린샷_2022-06-22_오후_10 24 30](https://user-images.githubusercontent.com/108461006/210510939-5cdad514-b890-4b6c-9ad1-628179629872.png){: width="400" height="400"}
