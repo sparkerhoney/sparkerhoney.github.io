@@ -18,7 +18,7 @@ last_modified_at: 2023-01-04
 
 예를들어, 아파트 평수와 전기소모량의 관계, 아파트 평수에 따라서 전기 소모량을 예측하는 것 등이 있다.
 
-![title](https://postfiles.pstatic.net/MjAyMjA2MjJfMjcz/MDAxNjU1OTAxMzgzMDEx.wQAZ1cqZK1cIoTogsEkesR-2MBesGVhIpAGFXxlkuDog.Ik5Iqju6EABvk8QFeCxynf8HhG8dNlXUEuqJTmNdliEg.PNG.lhe339/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2022-06-22_%EC%98%A4%ED%9B%84_9.36.18.png?type=w966){: width="100" height="100"}
+![](https://postfiles.pstatic.net/MjAyMjA2MjJfMjcz/MDAxNjU1OTAxMzgzMDEx.wQAZ1cqZK1cIoTogsEkesR-2MBesGVhIpAGFXxlkuDog.Ik5Iqju6EABvk8QFeCxynf8HhG8dNlXUEuqJTmNdliEg.PNG.lhe339/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2022-06-22_%EC%98%A4%ED%9B%84_9.36.18.png?type=w966){: width="100" height="100"}
 
 위 회귀선(추세선)의 함수는 아래와 같다.
 
@@ -39,3 +39,7 @@ last_modified_at: 2023-01-04
 - $y=\beta_0+\beta_1x+\beta_2x^2$
 - $y=\beta_0e^{\beta_1x}$
 - $y=\beta_0+\beta_1x$
+
+위와 같은 식으로 반응변수 y 를 실제로 관측해보면 제어할 수 없는 요인에 의해 
+
+- $y=\hat{y}+\epsilon$
