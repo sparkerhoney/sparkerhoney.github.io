@@ -7,6 +7,7 @@ categories:
 tags:
   - [dm, data science]
 
+use_math: true
 toc: true
 toc_sticky: true
  
@@ -22,7 +23,7 @@ last_modified_at: 2023-01-04
 
 위 회귀선(추세선)의 함수는 아래와 같다.
 
-$\hat{y}=ax+b$
+$$\hat{y}=ax+b$$
 
 이 때 회귀분석은 *ε(오차)의 제곱합*이 최소가 되도록 a와 b값을 추정하는 방법이다.
 
@@ -37,5 +38,5 @@ $\hat{y}=ax+b$
 ​
 $$y=\beta_0+\beta_1x$$
 $$y=\beta_0+\beta_1x+\beta_2x^2$$
-$$y=\beta_0e^\beta_1x$$
+$$y=\beta_0e^{\beta_1x}$$
 $$y=\beta_0+\beta_1x$$
