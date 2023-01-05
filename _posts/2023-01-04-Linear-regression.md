@@ -95,4 +95,21 @@ last_modified_at: 2023-01-04
 > $\sum(y-\bar{y})^2=\sum(\hat{y}-\bar{y})^2+\sum(y-\hat{y})^2$<br>
 
 따라서, **$SSTO = SSR + SSE$** 로 설명되어진다.<br>
-이때 분산분석표는 아래와 같이 나타낼 수 있다.
+이때 분산분석표는 아래와 같이 나타낼 수 있다.<br>
+|Source of Variation|Degree of Freedom(DF)|Sum of Squares(SS)|Mean Square(MS=Ss/DF)|
+|------|---|---|---|
+|Regression Error|$1$<br>$n-2$|$SSR$<br>$SSE$|$MSR=\frac{SSR}{1}$<br>$MSE=\frac{SSE}{n-2}$|
+|Total|$n-1$|$SSTO$||
+
+Degree of Freedom (DF) 는 자유도고 칭하는데 이는 변수 또는 데이터 한 개당 제곱합이 얼마나 해당되는지에 대한 관여하는 정도를 나타내는 지표이다. 
+
+$MSE=$오차분산 $σ_2$ 의 추정치 $=s^2$ 이라고 한다.
+
+결정계수 $R^2$ (coefficient of determination) 는 전체 변동 중 회귀식에 의해 설명되는 변동의 비율이다. 
+<br>이는 모델이 데이터를 잘 설명했는지 설명을 못했는지 판단이 가능하게 한다. ( 1에 가까울 수록 잘 설명하고 있다고 할 수 있다. )
+
+$R^2=\frac{SSR}{SSTO}=1-\frac{SSE}{SSTO}=\frac{SSR}{SSE}=\frac{MSR}{MSE}$
+
+>>> *출처 : 명지대 산업경영공학과 김도현 교수님의 강의*
+
+
