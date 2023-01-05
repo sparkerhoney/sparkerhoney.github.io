@@ -20,15 +20,13 @@ last_modified_at: 2023-01-05
 다중회귀분석은 앞서 설명했던 [선형회귀분석](https://sparkerhoney.github.io/dm/Linear-regression/)의 포괄적인 내용이다.<br>
 
 ## Vector/Matrix 접근방법
-   $
-  \begin{pmatrix}
-  y_{1} \\  y_{2} \\  \vdots  \\  y_{n}  \end{pmatrix} =  \begin{bmatrix}  1 & x_{11} & \cdots & x_{pn} \\  1 & x_{12} & \cdots & x_{p2} \\  \vdots  & \vdots  & \ddots & \vdots  \\  1 & x_{1n} & \cdots & x_{pn} \end{bmatrix} \begin{pmatrix}  \beta_{1} \\  \beta_{2} \\  \vdots  \\  \beta_{p}  \end{pmatrix}+\begin{pmatrix}  \epsilon_{1} \\
-  \epsilon_{2} \\  \vdots  \\  \epsilon_{n}  \end{pmatrix}$<br>
+   
+  $\begin{pmatrix}  y_{1} \\  y_{2} \\  \vdots  \\  y_{n}  \end{pmatrix} =  \begin{bmatrix}  1 & x_{11} & \cdots & x_{pn} \\  1 & x_{12} & \cdots & x_{p2} \\  \vdots  & \vdots  & \ddots & \vdots  \\  1 & x_{1n} & \cdots & x_{pn} \end{bmatrix} \begin{pmatrix}  \beta_{1} \\  \beta_{2} \\  \vdots  \\  \beta_{p}  \end{pmatrix}+\begin{pmatrix}  \epsilon_{1} \\  \epsilon_{2} \\  \vdots  \\  \epsilon_{n}  \end{pmatrix}$<br>
 다루고자 하는 회귀 모형은 소위 선형 회귀모형이라고 불리며, 그 일반적인 형태는 다음과 같다.<br>
 $y_j=\beta_0+\beta_1x_{1j}+\beta_2x_{2j}+\cdots+\beta_px_{pj}+\epsilon_j,\quad (j=1,2,\cdots,n)$<br>
 $\epsilon_j \sim NID(0,\sigma^2)$<br>
-$ex)$ $y_j=\beta_0+\beta_1u_{1j}+\beta_2u_{2j}+\beta_3u^2_{1j}+\beta_4u^2_{2j}+\beta_5u_{1j}u_{2j}+\epsilon_j$<br>
-$\epsilon_j \sim NID(0,\sigma^2)$<br>
+[ex) $y_j=\beta_0+\beta_1u_{1j}+\beta_2u_{2j}+\beta_3u^2_{1j}+\beta_4u^2_{2j}+\beta_5u_{1j}u_{2j}+\epsilon_j$<br>
+$\epsilon_j \sim NID(0,\sigma^2)$]<br>
 즉, 일반 식에서 $x_{pj}$는 반드시 원래의 변수만을 의미 하는 것이 아니다.<br>
 
 이를 vector/matrix형태로 나타내면, 위에서 보인매트릭스 형태이고 그에 관련된 식은 <br>
