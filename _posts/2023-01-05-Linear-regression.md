@@ -22,26 +22,8 @@ last_modified_at: 2023-01-05
 ## Vector/Matrix 접근방법
    $
   \begin{pmatrix}
-  y_{1} \\
-  y_{2} \\
-  \vdots  \\
-  y_{n} 
- \end{pmatrix} =  \begin{bmatrix}
-  1 & x_{11} & \cdots & x_{pn} \\
-  1 & x_{12} & \cdots & x_{p2} \\
-  \vdots  & \vdots  & \ddots & \vdots  \\
-  1 & x_{1n} & \cdots & x_{pn}
- \end{bmatrix} \begin{pmatrix}
-  \beta_{1} \\
-  \beta_{2} \\
-  \vdots  \\
-  \beta_{p} 
- \end{pmatrix}+\begin{pmatrix}
-  \epsilon_{1} \\
-  \epsilon_{2} \\
-  \vdots  \\
-  \epsilon_{n} 
- \end{pmatrix}$<br>
+  y_{1} \\  y_{2} \\  \vdots  \\  y_{n}  \end{pmatrix} =  \begin{bmatrix}  1 & x_{11} & \cdots & x_{pn} \\  1 & x_{12} & \cdots & x_{p2} \\  \vdots  & \vdots  & \ddots & \vdots  \\  1 & x_{1n} & \cdots & x_{pn} \end{bmatrix} \begin{pmatrix}  \beta_{1} \\  \beta_{2} \\  \vdots  \\  \beta_{p}  \end{pmatrix}+\begin{pmatrix}  \epsilon_{1} \\
+  \epsilon_{2} \\  \vdots  \\  \epsilon_{n}  \end{pmatrix}$<br>
 다루고자 하는 회귀 모형은 소위 선형 회귀모형이라고 불리며, 그 일반적인 형태는 다음과 같다.<br>
 $y_j=\beta_0+\beta_1x_{1j}+\beta_2x_{2j}+\cdots+\beta_px_{pj}+\epsilon_j,\quad (j=1,2,\cdots,n)$<br>
 $\epsilon_j \sim NID(0,\sigma^2)$<br>
@@ -78,6 +60,21 @@ $y=X\beta+\epsilon$으로 나타낼 수 있다.
 2. 분산분석
    - 총제곱합의 분해
      - 단순회귀모형에서와 마찬가지로 총제곱합은 아래와 같이 분해된다.
+     - $\displaystyle\sum_{j=1}^{n}(y_j-\bar{y})^2=\displaystyle\sum_{j=1}^{n}(\hat{y}-\bar{y})^2+\displaystyle\sum_{j=1}^{n}(y-\hat{y})^2$<br>
+     - $SSTO=SSR+SSE$
+     - 단, $\hat{y_j}=b_0+b_1x_{1j}+\cdots+b_px_{pj}$
+   - 분산분석표
+   - |Source of Variation|Degree of Freedom(DF)|Sum of Squares(SS)|Mean Square(MS=Ss/DF)|$F_0$|
+      |------|---|---|---|---|
+      |Regression Error|$p$<br>$n-p-1$|$SSR$<br>$SSE$|$MSR=\frac{SSR}{1}$<br>$MSE=\frac{SSE}{n-2}$|$\frac{MSR}{MSE}$|
+      |Total|$n-1$|$SSTO$|||
+    - $R^2$(결정계수)$=\frac{SSR}{SSTP}=1-\frac{SSE}{SSTO}$ $\rightarrow$ 변수가 많을수록 $R^2$값이 증가하게된다.
+    - $Adjusted\ R^2=1-\frac{n-1}{n-p-1}(1-R^2)=1-\frac{SSE/(n-p-1)}{SSTO/(n-1)}$ 
+    - $Adjusted\ R^2$는 $R^2$이 커진다고 해도 $R^2$가 억지로 커지는 것을 방지하는 것이다.  
+    - $s^2=$오차분산$\sigma$의 추정치 $=MSE=\frac{SSE}{(n-p-1)}$
+
+3. 가설검정
+
 
 
 
