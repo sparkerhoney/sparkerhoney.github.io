@@ -21,7 +21,22 @@ last_modified_at: 2023-01-05
 
 ## Vector/Matrix 접근방법
    
-  $\begin{pmatrix}  y_{1} \\  y_{2} \\  \vdots  \\  y_{n}  \end{pmatrix} =  \begin{bmatrix}  1 & x_{11} & \cdots & x_{pn} \\  1 & x_{12} & \cdots & x_{p2} \\  \vdots  & \vdots  & \ddots & \vdots  \\  1 & x_{1n} & \cdots & x_{pn} \end{bmatrix} \begin{pmatrix}  \beta_{1} \\  \beta_{2} \\  \vdots  \\  \beta_{p}  \end{pmatrix}+\begin{pmatrix}  \epsilon_{1} \\  \epsilon_{2} \\  \vdots  \\  \epsilon_{n}  \end{pmatrix}$<br>
+  $\begin{pmatrix}  y_{1} \\
+    y_{2} \\
+    \vdots\\  
+    y_{n}\\  
+    \end{pmatrix} =  \begin{bmatrix}  1 & x_{11} & \cdots & x_{pn} \\
+      1 & x_{12} & \cdots & x_{p2} \\ 
+       \vdots  & \vdots  & \ddots & \vdots  \\
+         1 & x_{1n} & \cdots & x_{pn} \end{bmatrix}\\
+          \begin{pmatrix}  \beta_{1} \\
+            \beta_{2} \\
+              \vdots  \\
+                \beta_{p}\\
+                  \end{pmatrix}+\begin{pmatrix}  \epsilon_{1} \\
+                    \epsilon_{2} \\ 
+                     \vdots  \\
+                       \epsilon_{n}\\  \end{pmatrix}$<br>
 다루고자 하는 회귀 모형은 소위 선형 회귀모형이라고 불리며, 그 일반적인 형태는 다음과 같다.<br>
 $y_j=\beta_0+\beta_1x_{1j}+\beta_2x_{2j}+\cdots+\beta_px_{pj}+\epsilon_j,\quad (j=1,2,\cdots,n)$<br>
 $\epsilon_j \sim NID(0,\sigma^2)$<br>
@@ -38,11 +53,11 @@ $y=X\beta+\epsilon$으로 나타낼 수 있다.
   - 미지의 회귀계수 $vector\beta$는 다음 오차제곱합<br>
   $L=\displaystyle\sum_{j=1}^{n}\epsilon^2=\displaystyle\sum_{j=1}^{n}\{y_j-(\beta_0+\beta_1x_1+\cdots+\beta_px_{pj})\}^2$이 **최소가 되도록 결정**한다.
   - 최소제곱법에 의한 $\beta$의 추정량<br>
-  $b=(X^\prime X)^{-1}X^\prime y=\begin{pmatrix}
-    b_0\\
-    b_1\\
-    \vdots\\
-    b_p
+  $b=(X^\prime X)^{-1}X^\prime y=$
+  $\begin{pmatrix} b_0 \\
+    b_1 \\
+    \vdots \\
+    b_p \\
   \end{pmatrix}$
 
 ## 모형의 검토
