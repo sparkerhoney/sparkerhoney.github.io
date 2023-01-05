@@ -72,7 +72,12 @@ $y=X\beta+\epsilon$으로 나타낼 수 있다.
     - $s^2=$오차분산$\sigma$의 추정치 $=MSE=\frac{SSE}{(n-p-1)}$
 
 3. 가설검정
-
+   - 전체 회귀식에 대한 검정
+     - 회귀계수에 대해 먼저 아래와 같은 가설을 세운다.
+     - $\begin{cases}
+        H_0: \beta& \mbox{if }n\mbox{ is even} \\
+        H_1: & \mbox{if }n\mbox{ is odd}
+        \end{cases}$
 
 
 
