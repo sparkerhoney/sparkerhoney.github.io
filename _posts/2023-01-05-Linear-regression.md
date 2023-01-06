@@ -1,5 +1,5 @@
 ---
-title:  "[Data Mining] 다중 회귀 분석(multiple regression)"
+title:  "[Data Mining] 02 다중 회귀 분석(multiple regression)"
 excerpt: "data mining 02 다중회귀분석(multiple regression). "
 
 categories:
@@ -28,8 +28,7 @@ last_modified_at: 2023-01-05
     \end{pmatrix} =  \begin{bmatrix}  1 & x_{11} & \cdots & x_{pn} \\
       1 & x_{12} & \cdots & x_{p2} \\ 
        \vdots  & \vdots  & \ddots & \vdots  \\
-         1 & x_{1n} & \cdots & x_{pn} \end{bmatrix}\\
-          \begin{pmatrix}  \beta_{1} \\
+         1 & x_{1n} & \cdots & x_{pn} \end{bmatrix} \begin{pmatrix}  \beta_{1} \\
             \beta_{2} \\
               \vdots  \\
                 \beta_{p}\\

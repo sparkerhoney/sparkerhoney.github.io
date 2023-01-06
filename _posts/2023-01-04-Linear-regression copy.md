@@ -1,5 +1,5 @@
 ---
-title:  "[Data Mining] 선형 회귀 분석(linear regression)"
+title:  "[Data Mining] 01 선형 회귀 분석(linear regression)"
 excerpt: "data mining 01 선형회귀분석(linear regression). "
 
 categories:
