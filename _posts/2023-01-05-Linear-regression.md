@@ -21,7 +21,7 @@ last_modified_at: 2023-01-05
 
 ## Vector/Matrix 접근방법
    
-  $\begin{pmatrix}  y_{1} \\
+  <!-- $\begin{pmatrix}  y_{1} \\
     y_{2} \\
     \vdots\\  
     y_{n}\\  
@@ -35,12 +35,20 @@ last_modified_at: 2023-01-05
                   \end{pmatrix}+\begin{pmatrix}  \epsilon_{1} \\
                     \epsilon_{2} \\ 
                      \vdots  \\
-                       \epsilon_{n}\\  \end{pmatrix}$<br>
+                       \epsilon_{n}\\  \end{pmatrix}$<br> -->
+
+$$A_{m,n} =
+ \begin{pmatrix}
+  a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+  a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+ \end{pmatrix}$$
+
 다루고자 하는 회귀 모형은 소위 선형 회귀모형이라고 불리며, 그 일반적인 형태는 다음과 같다.<br>
 $y_j=\beta_0+\beta_1x_{1j}+\beta_2x_{2j}+\cdots+\beta_px_{pj}+\epsilon_j,\quad (j=1,2,\cdots,n)$<br>
 $\epsilon_j \sim NID(0,\sigma^2)$<br>
-[ex) $y_j=\beta_0+\beta_1u_{1j}+\beta_2u_{2j}+\beta_3u^2_{1j}+\beta_4u^2_{2j}+\beta_5u_{1j}u_{2j}+\epsilon_j$<br>
-$\epsilon_j \sim NID(0,\sigma^2)$]<br>
+
 즉, 일반 식에서 $x_{pj}$는 반드시 원래의 변수만을 의미 하는 것이 아니다.<br>
 
 이를 vector/matrix형태로 나타내면, 위에서 보인매트릭스 형태이고 그에 관련된 식은 <br>
@@ -89,9 +97,13 @@ $y=X\beta+\epsilon$으로 나타낼 수 있다.
    - 전체 회귀식에 대한 검정
      - 회귀계수에 대해 먼저 아래와 같은 가설을 세운다.
      - $\begin{cases}
-        H_0: \beta& \mbox{if }n\mbox{ is even} \\
-        H_1: & \mbox{if }n\mbox{ is odd}
+        H_0: \beta=(\beta_1,\beta_2,\cdots,\beta_p)=0\\
+        H_1: not\ H_0
         \end{cases}$
+     - 검정통계량 $F_0=MSR/MSE$는 $H_0$가 사실이 아니라는 가정하에서 자유도 $(p, n-p-1)$인 $F$분포를 따르며, 위 가설검정의 기각역은 다음과 같다.
+     - $F_0=\frac{MSR}{MSE}>F(p,n-p-1;1-\alpha)$
+     - 단 $\alpha$는 유의수준이다.
+   
 
 
 
