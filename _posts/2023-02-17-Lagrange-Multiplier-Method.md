@@ -1,6 +1,6 @@
 ---
-title:  "[Optimization] 01 Lagrange Dual Problem"
-excerpt: "Optimization 01 Lagrange Dual Problem. "
+title:  "[Optimization] 01 Lagrange Multiplier Method"
+excerpt: "Lagrange Multiplier Method "
 
 categories:
   - op
