@@ -3,9 +3,9 @@ title:  "[Competition] [FiFa_competition] 1화 데이터 불러오기 및 모델
 excerpt: "[FiFa_competition] 01"
 
 categories:
-  - pt
+  - ct
 tags:
-  - [pt, data science, competition]
+  - [ct, data science, competition]
 
 use_math: true
 toc: true
