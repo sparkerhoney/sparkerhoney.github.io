@@ -1,6 +1,6 @@
 ---
-title:  "[FiFa_competition] 1화 데이터 불러오기 및 모델 만들기"
-excerpt: "[FiFa_competition] 01"
+title:  "[FiFa_competition] 2화 데이터 불러오기 및 모델 만들기"
+excerpt: "[FiFa_competition] 02"
 
 categories:
   - ct
