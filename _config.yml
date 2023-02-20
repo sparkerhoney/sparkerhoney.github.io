@@ -278,25 +278,25 @@ compress_html:
 
 
 # Defaults
-# defaults:
-#   # _posts
-#   - scope:
-#       path: ""
-#       type: posts
-#     values:
-#       layout: single
-#       author_profile: true
-#       read_time: true
-#       comments: true
-#       share: true
-#       related: true
-#       mathjax: true
-#       sidebar_main: true
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      mathjax: true
+      sidebar_main: true
 
 defaults:
   - scope:
       path: ""
-      type: "pages"
+      type: "portfolio"
     values:
       layout: "single"
 
