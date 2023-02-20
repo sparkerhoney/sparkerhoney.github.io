@@ -293,18 +293,3 @@ defaults:
       mathjax: true
       sidebar_main: true
 
-
-  # portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-
-collections:
-  portfolio:
-    output: true
-    permalink: /portfolio/:title/
