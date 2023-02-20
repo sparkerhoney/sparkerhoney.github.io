@@ -26,7 +26,7 @@ import pandas as pd
 import numpy as np
 ```
 우선 위 코드는 데이터 분석 및 조작을 위한 라이브러리인 pandas와 수치 계산을 위한 라이브러리인 numpy를 불러오는 코드입니다.<br>
-따라서, 데이터 분석 및 조작을 위해 pandas와 수치 계산을 위해 numpy를 불러온 것입니다.<br> 이후에는 pandas와 numpy에서 제공하는 함수를 사용하여 데이터를 다루게 됩니다.
+따라서, 데이터 분석 및 조작을 위해 pandas와 수치 계산을 위해 numpy를 불러온 것입니다.<br> 이후에는 pandas와 numpy에서 제공하는 함수를 사용하여 데이터를 다루게 됩니다.<br>
 ```python
 train = pd.read_csv('FIFA_train.csv',encoding = 'utf-8') # train data
 test = pd.read_csv("FIFA_test.csv",encoding = 'utf-8') # test data
