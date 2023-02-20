@@ -1,8 +1,19 @@
 <div class="home">
-    <h2>{{ site.data.ui-text[site.locale].portfolio | default: "Portfolio" }}</h2>
-  
-    {% for post in site.portfolio %}
-      {% include archive-single.html type="grid" %}
-    {% endfor %}
+    <h2>My Portfolio</h2>
+    
+    <div class="portfolio-items">
+      {% for post in site.portfolio %}
+        <div class="portfolio-item">
+          <h3>{{ post.title }}</h3>
+          <img src="{{ post.image }}" alt="{{ post.title }}">
+          <p>{{ post.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <h2>About Me</h2>
+    
+    <p>안녕하세요. 저는 ~~~입니다.</p>
+    
   </div>
   
