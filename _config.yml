@@ -293,14 +293,14 @@ defaults:
       mathjax: true
       sidebar_main: true
 
-defaults:
-  - scope:
-      path: ""
-      type: "portfolio"
-    values:
-      layout: "single"
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "portfolio"
+#     values:
+#       layout: "single"
 
-collections:
-  portfolio:
-    output: true
-    permalink: /portfolio/:title/
+# collections:
+#   portfolio:
+#     output: true
+#     permalink: /portfolio/:title/
