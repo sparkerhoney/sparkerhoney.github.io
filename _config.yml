@@ -292,15 +292,3 @@ defaults:
       related: true
       mathjax: true
       sidebar_main: true
-
-# defaults:
-#   - scope:
-#       path: ""
-#       type: "portfolio"
-#     values:
-#       layout: "single"
-
-# collections:
-#   portfolio:
-#     output: true
-#     permalink: /portfolio/:title/
