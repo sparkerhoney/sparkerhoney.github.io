@@ -24,8 +24,8 @@ description              : "굉장한 사람이랍니당."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+teaser                   : "/assets/images/500x300.jpeg"
+logo                     : "/assets/images/logo.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "정재헌"
-  avatar           : "/assets/profile.jpg"
+  avatar           : "/assets/images/profile.jpg"
   bio              : "안녕하세요옹. **재헌이**에요옹."
   location         : "MJU Data Science Lab"
   email            :
