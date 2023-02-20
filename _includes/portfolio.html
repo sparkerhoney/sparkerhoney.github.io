@@ -1,0 +1,8 @@
+<div class="home">
+    <h2>{{ site.data.ui-text[site.locale].portfolio | default: "Portfolio" }}</h2>
+  
+    {% for post in site.portfolio %}
+      {% include archive-single.html type="grid" %}
+    {% endfor %}
+  </div>
+  
