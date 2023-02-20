@@ -57,7 +57,7 @@ train.head()
 1. id : 선수 고유의 아이디<br>
 2. name : 이름<br>
 
-train data의 column 이름을 확인했다면 test data의 column을 확인해보자 우리는 우리의 $y_{data}$인 선수가치('value')가 없는 data이길 기대합니다.<br>
+train data의 column 이름을 확인했다면 test data의 column을 확인해보자 우리는 우리의 $y_{data}$인 선수가치('value')가 없는 data이길 기대합니다.
 
 ![스크린샷 2023-02-19 오후 11 40 22](https://user-images.githubusercontent.com/108461006/219955207-7569373e-adfb-4bf1-92d9-9a15a1e41b52.jpg)
 ```python
