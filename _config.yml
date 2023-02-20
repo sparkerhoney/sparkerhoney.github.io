@@ -292,3 +292,18 @@ defaults:
       related: true
       mathjax: true
       sidebar_main: true
+
+
+  # portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: portfolio
+      author_profile: true
+      share: true
+      comments: true
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
