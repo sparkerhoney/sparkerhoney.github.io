@@ -111,3 +111,4 @@ train = train.drop(['id', 'name'], axis=1)
 test = test.drop(['id', 'name'], axis=1)
 ```
 위의 코드를 통해서 우리는 'id', 'name'을 제거했습니다.<br>
+그 다음 내용은 위에서 불러온 데이터들을 전처리 하는 내용입니다.<br>
