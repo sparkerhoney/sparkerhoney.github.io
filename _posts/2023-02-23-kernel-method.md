@@ -57,8 +57,23 @@ $\begin{pmatrix} M+d-1 \\ M \end{pmatrix}$
 예를 들어, $d = 40$이고 $M = 8$이면, 총 314457495개의 특징이 생성됩니다. 이는 굉장히 큰 행렬을 만들어내게 됩니다.<br>
 
 ### Big Feature Spaces
+매우 큰 특징 공간은 두 가지 문제가 있습니다.<br>
 
+1. 과적합
+2. 메모리 및 계산 비용
 
+과적합 문제는 규제(regularization)를 사용하여 해결할 수 있습니다.<br> 
+규제는 모델의 복잡성을 제한함으로써 일반화 성능을 향상시키는 방법입니다.<br>
+
+그러나 메모리 및 계산 비용 문제는 규제만으로 해결하기 어렵습니다.<br> 
+대부분의 컴퓨터는 큰 데이터셋과 매우 큰 특징 공간을 처리하기에는 제한이 있습니다.<br> 
+이 문제를 해결하기 위해 "kernel methods"이라는 방법이 사용될 수 있습니다.<br> 
+kernel methods은 featur vector를 고차원의 feature space으로 변환하는 대신 kernel function를 사용하여 내적을 수행합니다.<br>
+이를 통해 메모리 및 계산 비용을 줄일 수 있습니다.<br> 
+그러나 모든 문제에 대해 kernel methods가 효과적인 것은 아니며, kernel function을 선택하는 것이 중요합니다.<br>
+
+## Kernel Methods : Motivation
+### Review: Linear SVM and Dual
 
 
 
