@@ -7,6 +7,7 @@ categories:
 tags:
   - [ml, data science]
 
+use_math: true
 toc: true
 toc_sticky: true
  
@@ -15,7 +16,7 @@ last_modified_at: 2023-02-22
 ---
 # Features
 ## Feature Extraction
-### The Input Space $X$
+### The Input Space $X$ 
 일반 적으로 input space $X$에 대해서는 가정이 없습니다.<br>
 그러나 우리가 개발한 구체적인 방법들에 대해서는 input space $X=R^d$ 차원의 실수 공간입니다.<br>
 - ex) Ridge regression, Lasso regression, Linear SVM<br>
@@ -24,11 +25,11 @@ last_modified_at: 2023-02-22
 - ex)Text documents, Image files, Sound recordings, DNA sequences<br>
 
 컴퓨터 안 모든 것은 숫자의 연속입니다.<br>
-따라서 각 시퀀스의 i번째 항목은 동일한 의미를 가져야합니다.(colum별로 동일한 의미)<br>
+따라서 각 시퀀스의 $i$번째 항목은 동일한 의미를 가져야합니다.(colum별로 동일한 의미)<br>
 그리고 모든 시퀀스의 길이가 같아합니다.<br>
 
 ### Feature Extraction
-$X에서 $R^d$차원의 벡터로 매핑시키는 것을 feature extraction or featurization 라고 부릅니다.<br>
+$X$에서 $R^d$차원의 벡터로 매핑시키는 것을 feature extraction or featurization 라고 부릅니다.<br>
 Raw data에서 feature를 뽑아내서 컴퓨터가 해당 data에서의 feature를 읽을 수 있게끔 하기 위해 vector화 시켜줍니다.<br>
 - ex) 이미지에서 특징을 추출해 특징들을 정의할 수 있습니다.<br>
 
@@ -117,15 +118,100 @@ String(문자열)이 email 주소인지 여부 예측<br>
 
 이러한 비선형성(nonlinearities)이 있을 경우, 모델이 예측을 위해 사용하는 특징(feature)들의 중요도나 가중치를 잘못 판단할 수 있습니다.<br>
 이는 모델의 정확성과 일반화 능력을 떨어뜨릴 수 있습니다.<br>
-예를 들어, **단조성이 아닌(non-monotonic)** 특징은 특정 값의 범위에서는 결과에 부정적인 영향을 끼칠 수 있지만 다른 값의 범위에서는 결과에 긍정적인 영향을 끼칠 수 있습니다.<br>
+1. **단조성이 아닌(non-monotonic)** 특징은 특정 값의 범위에서는 결과에 부정적인 영향을 끼칠 수 있지만 다른 값의 범위에서는 결과에 긍정적인 영향을 끼칠 수 있습니다.<br>
+단조적(monotonic)이라는 용어는 기울기가 항상 증가하거나 항상 감소하는 선형 관계를 의미하는 것은 아닙니다.<br>
+단조적이라는 말은 단지 변수 간의 관계가 항상 같은 방향으로 움직인다는 것을 의미합니다.<br> 예를 들어, x가 증가할 때 y도 항상 증가하면 x와 y 사이의 관계는 단조적입니다.<br> 하지만 x가 증가할 때 y가 먼저 감소하다가 다시 증가한다면 이는 비단조적인 관계입니다.
+따라서, Non-monotonicity 문제는 변수 간의 관계가 비선형이거나 불규칙한 경우에도 발생할 수 있습니다.<br>
+예를 들어, 당신이 주식 투자를 한다고 가정해 봅시다.<br>
+당신은 어떤 회사의 주식 가격이 상승할 것이라는 예측을 하고 그 주식을 매수합니다.<br> 그러나 나중에 그 회사에서 부정한 일이 드러나면, 그 주식 가격은 급격히 하락할 것입니다.<br> 이 때, 당신의 예측이 잘못되어서 이 주식을 매수한 것이므로, 이 문제는 Non-monotonicity 문제입니다.<br> 
+이는 변수인 "예측"과 "실제 주식 가격" 간의 비선형적이고 불규칙한 관계 때문에 발생한 것입니다.<br>
 이 경우 모델은 이러한 특징의 중요도를 적절하게 평가하기 어려울 수 있습니다.<br>
-또한, **포화(saturation)**가 발생하는 특징은 값이 일정 범위를 넘어설 경우, 결과에 더 이상 긍정적인 영향을 끼치지 않는 경향이 있습니다.<br>
+Non-monotonicity가 발생하는 경우에는 변수 간에 선형 관계가 아닌, 비선형 관계가 존재하거나, 우리가 알지 못하는 다른 변수가 영향을 미치는 경우가 있을 수 있습니다.<br> 이런 경우에는 적절한 feature engineering이나 다른 기술적인 방법을 사용하여 모델을 개선해야 합니다.
+
+### Non-monotonicity: The Issue
+- Feature Map: $φ(x) = [1,temperature(x)]$
+- Action: Predict health score $y ∈ R$ (positive is good)
+- Hypothesis Space $F = {affine\ functions\ of\ temperature}$
+
+이 예시에서는 온도(temperature) 값을 이용하여 건강 점수$(y)$를 예측하는 모델을 고려합니다.<br>
+모델은 온도 값의 선형 함수로 구성되며, 이를 수식으로 나타내면 $φ(x) = [1,temperature(x)]$로 표현됩니다.<br>
+
+여기서 $φ(x)$는 입력 $x$의 특징 벡터(feature vector)를 나타내며, $[1,temperature(x)]$는 상수 1과 입력 x의 온도 값으로 이루어져 있습니다.<br>
+그러나 건강 점수는 온도의 선형 함수가 아닙니다.<br>
+따라서 온도와 건강 점수 사이에는 선형 관계가 존재하지 않습니다.<br>
+이 모델에서 선형 함수를 사용하면, 높은 온도와 낮은 온도 모두 건강에 좋지 않은 영향을 미친다는 문제가 발생합니다.<br>
+선형 함수는 높은 온도가 나쁘다고 하면, 낮은 온도는 좋다고 말할 수밖에 없기 때문입니다.<br>
+
+하지만 이 경우에는 낮은 온도와 높은 온도 모두 건강에 나쁜 영향을 미치는 것입니다.<br>
+따라서 이러한 문제를 해결하려면 선형 함수 대신에 비선형 함수를 사용해야 합니다.<br>
+이 예시에서는 온도와 건강 점수 사이에 비선형 관계가 존재하므로, 선형 함수로는 이를 모델링할 수 없습니다.<br>
+
+### Non-monotonicity: Solution 1
+- Transform the input: $φ(x) = [1,{temperature(x)-37}^2]$ <br>
+
+위의 예시에서는 체온(temperature)이라는 feature로부터 건강 점수(health score)를 예측하는 문제를 다루고 있습니다.<br>
+그러나 건강 점수는 체온의 선형 함수로는 정확하게 예측할 수 없는 경우였습니다.<br> 따라서 이 문제를 해결하기 위해 체온의 변형을 feature로 사용하는 것이 제안되었습니다.<br>
+
+이를 위해 입력 $x$를 변형하여 $φ(x) = [1, (temperature(x) - 37)^2]$ 로 만들었습니다.<br> 이제 건강 점수 $y$는 $φ(x)$를 사용하여 예측됩니다.<br>
+그러나 이러한 입력 변형은 전문 지식이 필요한 경우가 있습니다.<br>
+
+예를 들어, 위의 예시에서는 정상 체온이 37℃인 것을 알아야 합니다.<br>
+따라서 이러한 변형은 도메인 전문가의 도움이 필요합니다.<br>
+이러한 변형을 사용하지 않고도 모델을 학습할 수 있으나, 때로는 입력에 대한 도메인 지식이 모델의 예측 능력을 향상시키는 데 도움이 될 수 있습니다.<br>
+
+### Non-monotonicity: Solution 2
+
+- $φ(x) = [1,temperature(x) ,(temperature(x))^2]$
+
+기존에 가지고 있는 feature들을 최대한 활용해서 solution1보다 표현력이 뛰어나게끔 만들어준 mapping 함수입니다.<br>
+이 경우, 예시로 들어진 feature인 온도(temperature)를 그대로 사용하지 않고 온도의 제곱도 함께 feature로 추가하는 것입니다.<br>
+이렇게 하면 모델이 더 복잡한 패턴도 학습할 수 있게 됩니다.<br>
+
+일반적으로 좋은 feature는 간단하면서도 중요한 정보를 포함하는 것입니다.<br>
+이러한 feature들을 조합하여 모델을 만들면 더 복잡한 패턴을 학습할 수 있습니다.<br>
+따라서 feature는 단순하고 각 feature가 독립적으로 중요한 정보를 제공하는 것이 좋습니다.<br>
+
+> 비선형성이 있는 경우에도 feature extraction이 적용이 되는지?<br>
+  비선형성이 있는 경우에도 feature extraction은 적용됩니다. 사실, 비선형성이 있는 경우에 feature extraction이 더욱 중요해집니다.<br>
+  비선형성이 있으면, 입력과 출력 간의 관계가 복잡하게 되어서, 이를 표현하기 위해 더 많은 feature가 필요합니다.<br>
+  이를 위해, 보다 복잡한 feature extraction 기법이 필요할 수 있습니다.<br>
+  예를 들어, 비선형 관계가 있는 경우, 다항식 특성(polynomial features)을 추가할 수 있습니다.<br>
+  이를 통해 비선형성을 나타내는 새로운 feature를 만들어 내어 모델의 표현력을 높일 수 있습니다.<br>
+  또한, 신경망 같은 비선형 모델에서는 더 복잡한 feature extraction 기법이 사용될 수 있습니다.<br
+  
+2. **포화(saturation)** 가 발생하는 특징은 값이 일정 범위를 넘어설 경우, 결과에 더 이상 긍정적인 영향을 끼치지 않는 경향이 있습니다.<br>
+Saturation은 입력값이 일정 수준 이상이 되면 출력값이 더 이상 증가하지 않는 현상을 말합니다.<br>
+ 예를 들어, 어떤 자전거 브레이크의 제동력이 브레이크 패드와 바닥 사이의 마찰 계수에 비례한다고 가정해보겠습니다.<br>
+ 그렇다면, 마찰 계수가 일정 수준 이상이 되면 브레이크 제동력이 더 이상 증가하지 않을 것입니다.<br>
+ 이러한 경우에는 선형 모델이나 로지스틱 회귀 모델 같은 단순한 모델을 사용하면 제대로된 결과를 얻을 수 없습니다.<br>
+ 이런 경우에는 적절한 모델링 기법이나 feature engineering 기술을 사용하여 모델을 개선해야 합니다.<br>
 이 경우 모델은 특정 값 이상의 특징을 무시하거나, 잘못된 가중치를 부여할 수 있습니다.<br>
-마지막으로, **특징 간 상호작용(interactions between features)**이 있을 경우, 두 개 이상의 특징이 함께 사용될 때 결과가 예상과 다를 수 있습니다.<br> 
+
+### Saturation: The Issue
+Setting: 사용자의 검색어와 관련된 제품을 찾습니다.<br>
+Input: Product $X$<br>
+Action: 
+
+
+3. **특징 간 상호작용(interactions between features)** 이 있을 경우, 두 개 이상의 특징이 함께 사용될 때 결과가 예상과 다를 수 있습니다.<br> 
+Interactions between features는 두 개 이상의 feature가 함께 사용될 때 예측값에 영향을 미치는 경우를 의미합니다.<br>
+예를 들어, 성별과 키 두 가지 feature가 있다고 가정해보겠습니다.<br>
+만약 성별에 따라 키에 대한 평균값이 다르다면, 성별과 키 두 가지 feature가 함께 사용될 때 예측값에 영향을 미치게 됩니다.<br>
+이러한 경우, 두 feature를 모두 고려해야 더 정확한 예측값을 얻을 수 있습니다.<br>
+하지만 때로는 두 feature가 함께 사용될 때 예측값에 영향을 미치지 않는 경우도 있습니다.<br>
+예를 들어, 온도와 강수량이라는 두 feature가 있다고 가정해보겠습니다.<br> 온도가 높아지면서 강수량이 많아진다고 해도, 강수량이 높은 경우 온도가 높아질 수도 있고 낮아질 수도 있기 때문에 두 feature가 함께 사용될 때 예측값에 큰 영향을 미치지 않을 수 있습니다.<br>
+Interactions between features는 feature engineering 과정에서 매우 중요합니다.<br> 모델이 두 feature 간의 interaction을 고려하지 않는다면, 모델이 예측할 수 있는 범위가 한정될 수 있습니다.<br>
+따라서 feature engineering 과정에서는 모든 가능한 interaction을 고려하여 예측값에 미치는 영향을 파악하고, 이를 모델에 반영하여 보다 정확한 예측을 할 수 있도록 해야 합니다.<br>
+교호작용은 하나의 feature가 반영하는 정보가 다른 feature들에 따라서 영향을 받는 경우를 의미합니다.<br>
+예를 들어, 날씨와 교통량이라는 두 feature가 있을 때, 날씨가 좋을 때는 교통량이 많아지는 경향이 있고, 날씨가 나쁠 때는 교통량이 감소하는 경향이 있다면, 날씨와 교통량은 교호작용을 가지고 있다고 할 수 있습니다.<br>
+교호작용은 모델의 성능을 높이기 위해서 중요한 정보이며, feature engineering 단계에서 교호작용을 고려하여 새로운 feature를 만들어내는 것이 일반적입니다.<br>
 이 경우 모델은 이러한 상호작용을 적절하게 고려하지 않을 경우 예측 결과가 부정확해질 수 있습니다.<br>
 
 
 
 
 
-*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*
+
+
+
+[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
