@@ -73,6 +73,8 @@ kernel methods은 featur vector를 고차원의 feature space으로 변환하는
 그러나 모든 문제에 대해 kernel methods가 효과적인 것은 아니며, kernel function을 선택하는 것이 중요합니다.<br>
 
 ## Kernel Methods : Motivation
+
+
 ### Review: Linear SVM and Dual
 
 
