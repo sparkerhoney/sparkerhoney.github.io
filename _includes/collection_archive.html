@@ -6,16 +6,20 @@ title: Portfolio Archive
 {% assign items = site.portfolio | sort: 'date' | reverse %}
 {% assign length = items | size %}
 
-{% for item in items %}
-  <article class="portfolio-item">
-    <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
-    <p class="meta">{{ item.date | date: "%b %-d, %Y" }}</p>
-    {% if item.image %}
-      <a href="{{ item.url }}"><img src="{{ item.image }}" alt="{{ item.title }}"></a>
-    {% endif %}
-    <p>{{ item.description }}</p>
-  </article>
-  {% unless forloop.last %}
-    <hr>
-  {% endunless %}
-{% endfor %} -->
+{% if length > 0 %}
+  {% for item in items %}
+    <article class="portfolio-item">
+      <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+      <p class="meta">{{ item.date | date: "%b %-d, %Y" }}</p>
+      {% if item.image %}
+        <a href="{{ item.url }}"><img src="{{ item.image }}" alt="{{ item.title }}"></a>
+      {% endif %}
+      <p>{{ item.description }}</p>
+    </article>
+    {% unless forloop.last %}
+      <hr>
+    {% endunless %}
+  {% endfor %}
+{% else %}
+  <p>No portfolio items found.</p>
+{% endif %} -->
