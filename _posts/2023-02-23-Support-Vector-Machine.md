@@ -206,4 +206,21 @@ Complementary Slackness: $\alpha_i(y_i(w^Tx_i+b)-1+\xi_i) = 0,\ \forall i$
 Stationarity: $\nabla_w L(w,b,\xi,\alpha) = 0$ and $\frac{\partial L(w,b,\xi,\alpha)}{\partial \xi_i} = 0,\ \forall i$
 
 
+Hinge Loss는 SVM에서 사용하는 손실 함수 중 하나로, 다음과 같이 정의됩니다.
+
+$$\ell(y, f(x)) = \max{0, 1 - yf(x)}$$
+
+여기서 $y$는 실제 클래스(1 또는 -1)를 나타내며, $f(x)$는 입력 데이터 $x$에 대한 모델의 예측값을 나타냅니다.
+
+Hinge Loss의 subgradient는 다음과 같이 정의됩니다.
+
+- yx & \text{if } yf(x) < 1 \\
+0 & \text{otherwise}
+\end{cases}$$
+여기서 $\partial\ell(y, f(x))$는 함수 $\ell(y, f(x))$의 subgradient를 나타내며, $x$는 입력 데이터를 나타냅니다.
+위의 식에서 $yf(x) < 1$인 경우, 즉 모델이 실제 클래스와 다른 예측을 하게 되어 오류가 발생하는 경우 subgradient는 $-yx$가 됩니다. 이는 가중치 벡터를 업데이트 할 때 오류를 줄이는 방향으로 가중치 벡터를 이동시키기 위한 방향 도함수입니다.
+반면에 $yf(x) \geq 1$인 경우, 즉 모델이 올바른 예측을 하고 있는 경우 subgradient는 0이 됩니다. 이는 가중치 벡터를 업데이트하지 않아도 되는 경우를 의미합니다.
+따라서 Hinge Loss의 subgradient는 입력 데이터 $x$와 실제 클래스 $y$에 의존하며, 모델이 실제 클래스와 다른 예측을 하게 되는 경우 오류를 줄이는 방향으로 가중치 벡터를 업데이트할 수 있도록 합니다.
+
+
 [*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
