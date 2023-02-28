@@ -131,6 +131,7 @@ $k(x, x') = ψ(x)^T ψ(x') = x^T x'$
 
 선형 커널은 입력 공간이 선형 분리 가능(linearly separable)한 경우에는 잘 작동합니다.<br> 그러나 입력 데이터가 비선형(nonlinear)인 경우에는 다른 커널 함수를 사용해야 합니다.
 
+
 ### The Kernel Matrix (or the Gram Matrix)
 
 [*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
