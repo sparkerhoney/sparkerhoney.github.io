@@ -19,7 +19,7 @@ last_modified_at: 2023-02-27
 자, 그럼 지금까지의 내용을 정리해 봅시다.<br>
 
 우선 **선형(linear) svm** 은 초평면(hyperlane)으로 결정경계(decision boundary)를 나누어서 $yf(x)$인 **마진(margin)** 을 **최대화 시키는 방향으로 최적화** 를 진행해 나갑니다.<br>
-그에 따른 dual에서의 $\alpha^*, w^*, b^*$등을 구해 초평면을 구해 $y_{new}$의 class를 최종적으로 도출해내는 알고리즘이라 할 수 있습니다.<br>
+그에 따른 dual에서의 $\alpha, w, b$등을 구해 초평면을 구해 $y_{new}$의 class를 최종적으로 도출해내는 알고리즘이라 할 수 있습니다.<br>
 
 그렇다면 **비선형(non-linear)의 svm**에서는 어떤 방식으로 우리 $y_{new}$의 class를 얻을 수 있을까요?<br>
 
@@ -54,12 +54,12 @@ feature extraction을 통해 더 많은 feature를 추가하게되면 우리는 
  
 계속해서 지난시간 부터 이야기 해 온 feature extraction에 대한 내용입니다.<br>
 
-$\underset{w∈R^d,b∈R}{\min}\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^n(1-y_i[w^Tψ(x_i)+b])_+$
+$\underset{w∈R^d,b∈R}{\min}\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2 + \frac{c}{n}∑_{i=1}^n(1-y_i[w^Tψ(x_i)+b])$
 
 위의 식은 비선형 svm을 풀어나갈 때 $x$를 **고차원의 feature space** 에 mapping해준 **primal** 식입니다.<br>
 이 식은 **dual** 로 표현한다면 다음과 같이 표현할 수 있습니다.<br>
 
-$\underset{\alpha}{\sup}⁡∑_{i=0}^nα_i-\frac{1}{2}∑_{i,j=1}^nα_i α_j y_i y_j \psi(x_i)^T \psi(x_j)$
+$\underset{\alpha}{\sup}⁡∑_{i=0}^nα_i-\frac{1}{2} ∑_{i,j=1}^nα_i α_j y_i y_j \psi(x_i)^T \psi(x_j)$
 
 $s.t. ∑_{i=1}^nα_i y_i =0$
 
@@ -130,8 +130,15 @@ $k(x, x') = ψ(x)^T ψ(x') = x^T x'$
 여기서 $ψ(x)$는 입력 데이터 $x$를 특징 공간으로 변환하는 함수이며, $x^T x'$은 입력 데이터 $x$와 $x'$의 내적입니다.<br> 따라서 **선형 커널** 은 입력 데이터 $x$와 $x'$의 **내적** 으로 두 데이터 간의 **유사도를 측정** 합니다.
 
 선형 커널은 입력 공간이 선형 분리 가능(linearly separable)한 경우에는 잘 작동합니다.<br> 그러나 입력 데이터가 비선형(nonlinear)인 경우에는 다른 커널 함수를 사용해야 합니다.
-
-
 ### The Kernel Matrix (or the Gram Matrix)
+
+$K = (<x_i,x_j>)_{i,j}=\begin{bmatrix}<x_1, x_1> & <x_1, x_2> & \dots & <x_1, x_n> \\
+<x_2, x_1> & <x_2, x_2> & \dots & <x_2, x_n> \\
+\vdots & \vdots & \ddots & \vdots \\
+<x_n, x_1> & <x_n, x_2> & \dots & <x_n, x_n> \\
+\end{bmatrix}$
+
+Kernel Matrix 또는 Gram Matrix는 데이터 포인트 간 유사도(similarity)를 측정하는 방법 중 하나입니다. <br>이 행렬은 데이터 포인트의 내적(dot product)으로 구성되며, 모든 데이터 포인트 쌍에 대한 내적 값을 담고 있습니다.<br>
+
 
 [*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
