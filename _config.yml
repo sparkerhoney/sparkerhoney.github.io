@@ -1,8 +1,8 @@
-site: Gesko
-title: Gesko
-greetings: Hello there! 👋
+site: sparkerhoney
+title: sparkerhoney
+greetings: Honey's Bolg
 description: >-
-  just a minimalist, personal blog
+  Data Science, AI
 lang: en-US
 timezone:  Europe/Rome
 repo: https://github.com/DavideBri/Gesko # site repo [optional]
@@ -11,22 +11,22 @@ discus-identifier: powex # replace with your disqus shortname
 comments-enabled: false # true to enable disqus comments, false to hide them
 
 author:
-  name: gesko
-  bio: just a minimalist, personal blog
+  name: Honey Jeong
+  bio: Data Scientist, AI Developer
   userpicture: 
   username: # general username
-  github: DavideBri # github username
+  github: sparkerhoney # github username
   twitter: # twitter username
   mastodon: # mastodon profile (ex. mastodon.social/@my_username)
   linkedin: # linkedin profile
-  email: your-email@email.com # email adress
+  email: lhe339@gmail.com # email adress
 
 # Font Settings
 googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
 # URL settings
-url: "https://DavideBri.github.io" # Domain Name of host. [username].github.io for github pages
-baseurl: "/Gesko" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+url: "https://sparkerhoney.github.io" # Domain Name of host. [username].github.io for github pages
+baseurl: "/sparkerhoney" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
 permalink: pretty
 
 # local
