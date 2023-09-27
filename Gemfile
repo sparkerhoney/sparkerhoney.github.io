@@ -1,3 +1,4 @@
+ruby '>= 3.0.0'
 source "https://rubygems.org"
 gem 'jekyll'
 gem 'jekyll-paginate'
@@ -10,6 +11,3 @@ gem 'wdm', '>= 0.1.0'
 
 # update ruby version
 gem 'webrick'
-
-# table of content
-gem 'jekyll-toc'

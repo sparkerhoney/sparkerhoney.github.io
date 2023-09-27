@@ -2,6 +2,7 @@
 layout: default
 ---
 
+
 <section class="post">
   <div class="flex-row-between">
 	  <a href="{{ site.url }}{{ site.baseurl }}/">« back</a>
@@ -16,9 +17,6 @@ layout: default
   <span class="meta">
     {% for tag in page.tags %}
     <a href="{{ site.url }}{{ site.baseurl }}/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
-  <h4>Table of Contents</h4>
-  <!-- https://github.com/allejo/jekyll-toc -->
-  {% include toc.html html=content h_max=3 %}
   {{ content }}
 </section>
 
@@ -39,7 +37,7 @@ layout: default
 
   </nav>
 </section>
-{% include disqus.html %}
 
-<!--script src="/assets/js/copyButton.js"></script>
-<script src="/assets/js/copyCode.js"></script-->
+{% if site.comments-enabled %}
+  {% include disqus.html %}
+{% endif %}

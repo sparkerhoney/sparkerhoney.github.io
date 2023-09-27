@@ -1,5 +1,0 @@
-## Bonus: The Copilot hall of fame
-Having our infrastructure as code (IaC) is a good thing, but it's not enough. We need to ensure that the deployed infrastructure is in sync with the code. This is where the GitOps' holy spirit comes in.
-
-
-Today, we have see how to protect from the first three shurikens. But there are still some more to come. For example, we could imagine a fourth shuriken that would be used to destroy the GHES instance. In this case, we could use the [GitHub API](https://docs.github.com/en/rest/reference/repos#delete-a-repository) to delete the repo and all its content.
