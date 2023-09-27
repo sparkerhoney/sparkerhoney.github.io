@@ -1,32 +1,31 @@
-site: sparkerhoney
-title: sparkerhoney
-greetings: Honey's Bolg
+#############
+
+site: ghsioux's blog
+title: Enter the Cloud Dojo
+greetings: Enter the Cloud Dojo ♾️
 description: >-
-  Data Science & AI
+  some zen stories for dev(sec)?ops pilgrims
 lang: en-US
 timezone:  Europe/Rome
-repo: https://github.com/sparkerhoney/sparkerhoney.github.io # site repo [optional]
+repo: https://github.com/ghsioux/ghsioux.github.io # site repo [optional]
 data-theme: dark # default theme "dark" | "light"
-discus-identifier: powex # replace with your disqus shortname
-comments-enabled: false # true to enable disqus comments, false to hide them
+discus-identifier: # replace with your disqus shortname
 
 author:
-  name: sparkerhoney
-  bio: Data Science & AI
+  name: ghsioux
+  bio: 
   userpicture: 
   username: # general username
-  github: sparkerhoney # github username
+  github: # github username
   twitter: # twitter username
-  mastodon: # mastodon profile (ex. mastodon.social/@my_username)
-  linkedin: # linkedin profile
-  email: lhe339@gmail.com # email adress
+  email:  # email adress
 
 # Font Settings
 googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
 # URL settings
-url: "https://sparkerhoney.github.io" # Domain Name of host. [username].github.io for github pages
-baseurl: "" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+url: "https://ghsioux.github.io" # Domain Name of host. [username].github.io for github pages
+baseurl: # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
 permalink: pretty
 
 # local
@@ -39,7 +38,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-
+include: ['_pages']
 exclude:
   - .jekyll-cache
   - .obsidian
@@ -61,6 +60,12 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-relative-links
+  - jekyll-toc
+
+toc:
+  min_level: 1
+  max_level: 3
+
 
 collections:
   pages:
@@ -92,4 +97,5 @@ defaults:
 relative_links:
   enabled:     true
   collections: false
+
 
