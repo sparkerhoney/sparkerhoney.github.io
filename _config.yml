@@ -2,7 +2,7 @@ site: sparkerhoney
 title: sparkerhoney
 greetings: Honey's Bolg
 description: >-
-  Data Science, AI
+  just a minimalist, personal blog
 lang: en-US
 timezone:  Europe/Rome
 repo: https://github.com/DavideBri/Gesko # site repo [optional]
@@ -11,8 +11,8 @@ discus-identifier: powex # replace with your disqus shortname
 comments-enabled: false # true to enable disqus comments, false to hide them
 
 author:
-  name: Honey Jeong
-  bio: Data Scientist, AI Developer
+  name: sparkerhoney
+  bio: just a minimalist, personal blog
   userpicture: 
   username: # general username
   github: sparkerhoney # github username
@@ -25,8 +25,8 @@ author:
 googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
 # URL settings
-url: "https://sparkerhoney.github.io" # Domain Name of host. [username].github.io for github pages
-baseurl: "/sparkerhoney" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+url: "https://DavideBri.github.io" # Domain Name of host. [username].github.io for github pages
+baseurl: "/Gesko" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
 permalink: pretty
 
 # local
