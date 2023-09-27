@@ -93,6 +93,3 @@ relative_links:
   enabled:     true
   collections: false
 
-
-category_dir: category/
-tag_dir: tag/
