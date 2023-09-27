@@ -94,3 +94,5 @@ relative_links:
   collections: false
 
 
+category_dir: category/
+tag_dir: tag/
