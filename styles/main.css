@@ -11,13 +11,23 @@
 }
 
 .profile-image {
-    width: 100px; 
-    height: 100px;
+    width: 512px; 
+    height: 640px;
     /* border-radius: 50%;  원형 */
     margin-bottom: 10px; 
 }
 
-.profile-description {
+/* .profile-description {
     font-size: 14px; 
     color: #333; 
+} */
+
+/* 일반 모드에서의 스타일 */
+html[data-theme="light"] .profile-description {
+    color: rgb(1, 1, 95);
+}
+
+/* 다크 모드에서의 스타일 */
+html[data-theme="dark"] .profile-description {
+    color: rgb(255, 210, 210);
 }
