@@ -41,6 +41,18 @@
     {{ include_to_scssify | scssify }}
 
     /* 여기부터는 추가된 CSS 코드입니다. */
+
+    .profile-description hr {
+        width: 75%; /* 화면의 3/4에 해당하는 너비 */
+        margin: 0 auto; /* 가운데 정렬 */
+    }
+    
+    .profile-bio-wrapper {
+        width: 60%; /* 화면의 3/5에 해당하는 너비 */
+       margin: 0 auto; /* 가운데 정렬 */
+    }
+
+    
     .flex-row-between {
         display: flex;
         justify-content: space-between;
