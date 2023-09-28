@@ -1,6 +1,16 @@
 ---
 layout: default
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="/styles/main.css"> <!-- 여기에 CSS 파일을 연결했습니다. -->
+</head>
+<body>
+
 <section id="intro">
     <div class="flex-row-between">
         <h1>{{ site.greetings }}</h1>
@@ -8,20 +18,24 @@ layout: default
             <div></div>
         </button>
     </div>
+
+    <div class="profile-section">
+        <img src="path_to_your_image.jpg" alt="Your Name" class="profile-image">
+        <p class="profile-description">여기에 간단한 소개글을 작성하세요.</p>
+    </div>
+
     <div class="bio">
 	    {{ site.description }}
         <p>
-	    <a href="{{ site.url }}{{ site.baseurl }}/about/">> About Me</a>
+	    <a href="{{ site.url }}{{ site.baseurl }}/about/">> About Me 🧑🏻‍💻</a>
         <br>
-        <a href="{{ site.url }}{{ site.baseurl }}/tag/list/">> Tags</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/tag/list/">> #Tags </a>
         </p>
     </div>
 
     <hr>
 
 </section>
-
-
 
 <div class="search-article">
     <label for="search-input" aria-hidden="true">
@@ -38,8 +52,6 @@ layout: default
     <ul id="search-results"></ul>
 </div>
 
-
-
 <section class="posts" id="Blog">
 
     <hr>
@@ -54,3 +66,6 @@ layout: default
         {% endfor %}
     </ul>
 </section>
+
+</body>
+</html>
