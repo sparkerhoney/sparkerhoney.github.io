@@ -165,6 +165,14 @@ body {
 	color: var(--main-text-color);
 }
 
+@media screen and (min-width: 768px) {
+  .container, .wrapper {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+  }
+}
+
 a {
 	color: var(--link-color);
 	text-decoration: none;
