@@ -24,9 +24,6 @@
       {% endunless %}
     </title>
   
-  
-
-  
     <link rel="shortcut icon" href="{{ site.url }}{{ site.baseurl }}/favicon.png">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/atom.xml">
     <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/feed.json" />
@@ -42,6 +39,51 @@
       {% include inline.scss %}
     {% endcapture %}
     {{ include_to_scssify | scssify }}
-  </style>
 
+    /* 여기부터는 추가된 CSS 코드입니다. */
+    .flex-row-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .profile-bio-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bio {
+        text-align: right;
+    }
+
+    .profile-section {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .profile-image {
+        margin-right: 10px;
+    }
+
+    .profile-section {
+        text-align: left;
+    }
+
+    .profile-image {
+        width: 170.7px; 
+        height: 213.3px;
+        margin-bottom: 10px; 
+    }
+
+    html[data-theme="light"] .profile-description {
+        color: rgb(1, 1, 95);
+    }
+
+    html[data-theme="dark"] .profile-description {
+        color: rgb(247, 139, 139);
+    }
+  </style>
 </head>
