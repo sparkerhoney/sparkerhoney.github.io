@@ -41,10 +41,6 @@
     {{ include_to_scssify | scssify }}
 
     /* 여기부터는 추가된 CSS 코드입니다. */
-
-     .profile-description hr {
-        width: 95%; /* 화면의 3/4에 해당하는 너비 */
-     }
     
     .flex-row-between {
         display: flex;
@@ -59,6 +55,8 @@
     }
 
     .bio {
+        display: flex;
+        flex-direction: row;
         text-align: right;
         align-items: flex-start;
         justify-content: flex-start;
@@ -67,6 +65,7 @@
     .profile-section {
         display: flex;
         flex-direction: row;
+        text-align: left;
         align-items: flex-start;
         justify-content: flex-start;
         width: 80%;
@@ -77,10 +76,6 @@
         width: 190.7px; 
         height: 243.3px;
         margin-bottom: 10px; 
-    }
-
-    .profile-section {
-        text-align: left;
     }
 
     html[data-theme="light"] .profile-description {
