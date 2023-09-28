@@ -14,11 +14,11 @@ toc_sticky: true
 date: 2023-09-26
 last_modified_at: 2023-09-26
 ---
-# **[[OpenAI]]의 [[Function Calling]] 기능 소개**
+# **[[OpenAI]의 [[Function Calling]] 기능 소개**
 
 2023년 6월, OpenAI는 "Function Calling"이라는 새로운 기능을 발표했습니다.
 
-이 기능은 OpenAI API 사용 시, 사용자가 "functions"이라는 [[파라미터]]로 사용 가능한 기능들의 목록을 제공하면, [[GPT]]의 자의적인 판단 하에 해당 기능을 사용하는 것입니다.
+이 기능은 OpenAI API 사용 시, 사용자가 "functions"이라는 [[파라미터]로 사용 가능한 기능들의 목록을 제공하면, [[GPT]]의 자의적인 판단 하에 해당 기능을 사용하는 것입니다.
 
 ---
 
