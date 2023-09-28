@@ -3,7 +3,7 @@ layout: post
 title: Feature Extraction 1st
 description: Feature Extraction 1st
 summary: 
-tags: machine learning
+tags: machinelearning
 minute: 1
 ---
 
