@@ -1,12 +1,19 @@
 ---
-layout: post
-title: OPEN AI Function Calling
-description: OPEN AI Function Calling
-summary: 
-tags: Prompt Engineering
-minute: 1
----
+title:  "OPEN AI Function Calling"
+excerpt: ""
 
+categories:
+  - NLP
+tags:
+  - [NLP, ChatGPT, Prompt Engineering]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-09-26
+last_modified_at: 2023-09-26
+---
 # **[[OpenAI]]의 [[Function Calling]] 기능 소개**
 
 2023년 6월, OpenAI는 "Function Calling"이라는 새로운 기능을 발표했습니다.

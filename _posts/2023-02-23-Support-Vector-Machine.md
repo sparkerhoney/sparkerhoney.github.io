@@ -1,12 +1,19 @@
 ---
-layout: post
-title: Support Vector Machine 1st
-description: Support Vector Machine 1st
-summary: 
-tags: machine learning
-minute: 1
----
+title:  "Support Vector Machine 1st"
+excerpt: "SVM"
 
+categories:
+  - Machine Learning
+tags:
+  - [Machine Learning, Data Science]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-02-23
+last_modified_at: 2023-02-23
+---
 # Support Vector Machines
 ## The SVM as a Quadratic Program
 ### The Margin

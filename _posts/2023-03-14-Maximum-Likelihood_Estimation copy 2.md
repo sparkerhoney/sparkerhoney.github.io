@@ -1,12 +1,19 @@
 ---
-layout: post
-title: Maximum Likelihood Estimation
-description: Maximum Likelihood Estimation
-summary: 
-tags: statistics
-minute: 1
----
+title:  "Maximum Likelihood Estimation 1st"
+excerpt: "Maximum Likelihood Estimation"
 
+categories:
+  - Statistics
+tags:
+  - [Statistics]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-03-14
+last_modified_at: 2023-03-14
+---
 # Maximum Likelihood Estimation
 ## Likelyhood of an Estimated Probability Distribution
 최대우도추정(Maximum Likelihood Estimation, MLE)은 확률적 모델링에서 매개변수를 추정하는 방법 중 하나입니다. MLE는 어떤 데이터가 주어졌을 때, 이 데이터가 생성될 확률을 최대화하는 모수값을 찾는 것을 목표로 합니다.

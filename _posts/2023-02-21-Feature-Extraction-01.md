@@ -1,12 +1,19 @@
 ---
-layout: post
-title: Feature Extraction 1st
-description: Feature Extraction 1st
-summary: 
-tags: machinelearning
-minute: 1
----
+title:  "Feature Extraction 1st"
+excerpt: "Feature Extraction"
 
+categories:
+  - Machine Learning
+tags:
+  - [Machine Learning, Data Science]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-02-21
+last_modified_at: 2023-02-22
+---
 # Features
 ## Feature Extraction
 ### The Input Space $X$ 

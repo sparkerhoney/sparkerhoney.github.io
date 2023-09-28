@@ -3,9 +3,9 @@ title:  "Transfer Learning"
 excerpt: "Transfer Learning"
 
 categories:
-  - nlp
+  - Machine Learning
 tags:
-  - [nlp, data science]
+  - [Machine Learning, Data Science]
 
 use_math: true
 toc: true

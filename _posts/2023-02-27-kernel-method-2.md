@@ -1,12 +1,19 @@
 ---
-layout: post
-title: Kernel Methods 2nd
-description: Kernel Methods 2nd
-summary: 
-tags: machine learning
-minute: 1
----
+title:  "Kernel Methods 2nd"
+excerpt: "Kernel Methods"
 
+categories:
+  - Machine Learning
+tags:
+  - [Machine Learning, Data Science, Linear Algebra]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-02-27
+last_modified_at: 2023-02-27
+---
 # Kernel Methods
 ## Review
 자,  그럼 지금까지의 내용을 정리해 봅시다.<br>

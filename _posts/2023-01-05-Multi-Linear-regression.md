@@ -1,11 +1,20 @@
 ---
-layout: post
-title: 다중회귀분석(multiple regression)
-description: 선형회귀분석 2nd
-summary: 
-tags: statistics
-minute: 1
----
+title:  "다중 회귀 분석(multiple regression)"
+excerpt: "다중회귀분석(multiple regression). "
+
+categories:
+  - Statistics
+tags:
+  - [Statistics]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-01-05
+last_modified_at: 2023-01-05
+
+--- 
 
 # 다중회귀분석
 다중회귀분석은 앞서 설명했던 [선형회귀분석](https://sparkerhoney.github.io/dm/Linear-regression/)의 포괄적인 내용이다.<br>

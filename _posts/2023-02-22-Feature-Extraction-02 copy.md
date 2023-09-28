@@ -1,12 +1,19 @@
 ---
-layout: post
-title: Feature Extraction 2nd
-description: Feature Extraction 2nd
-summary: 
-tags: machine learning
-minute: 1
----
+title:  "Feature Extraction 2nd"
+excerpt: "Feature Extraction"
 
+categories:
+  - Machine Learning
+tags:
+  - [Machine Learning, Data Science]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-02-22
+last_modified_at: 2023-02-22
+---
 # Features
 ## Handling Nonlinearity with Linear Methods
 ### Example Task: Predicting Health

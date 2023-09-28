@@ -1,12 +1,19 @@
 ---
-layout: post
-title: Kernel Methods 3rd
-description: Kernel Methods 3rd
-summary: 
-tags: machine learning
-minute: 1
----
+title:  "Kernel Methods 3rd"
+excerpt: "Kernel Methods"
 
+categories:
+  - Machine Learning
+tags:
+  - [Machine Learning, Data Science, Linear Algebra]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-03-01
+last_modified_at: 2023-03-01
+---
 # Kernel Methods
 ## Representer Theorem
 Representer Theorem은 함수 공간에서 최적화 문제의 해가 필연적으로 명시적인 형태로 표현될 수 있음을 보여주는 이론입니다.<br> 이 이론은 기계학습 분야에서 자주 사용되는 커널 기법과 관련이 있습니다.<br>

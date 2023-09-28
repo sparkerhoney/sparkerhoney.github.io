@@ -1,12 +1,19 @@
 ---
-layout: post
-title: multiclass
-description: multiclass
-summary: 
-tags: machine learning
-minute: 1
----
+title:  "Multiclass"
+excerpt: "Multiclass"
 
+categories:
+  - Machine Learning
+tags:
+  - [Machine Learning]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-05-15
+last_modified_at: 2023-05-15
+---
 # Multiclass
 ## Introduction
 ### One-vs-All / One-vs-Rest

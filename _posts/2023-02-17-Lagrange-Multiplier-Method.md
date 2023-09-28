@@ -1,11 +1,20 @@
 ---
-layout: post
-title: Lagrange Multiplier Method 1st
-description: Lagrange Multiplier Method 1st
-summary: 
-tags: statistics
-minute: 1
----
+title:  "Lagrange Multiplier Method"
+excerpt: "Lagrange Multiplier Method"
+
+categories:
+  - Optimization
+tags:
+  - [Optimization]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-02-17
+last_modified_at: 2023-02-17
+
+--- 
 
 # Lagrange Multiplier Method
 ## Optimization Problem

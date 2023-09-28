@@ -1,11 +1,20 @@
 ---
-layout: post
-title: 선형회귀분석(linear regression)
-description: 선형회귀분석 1st
-summary: 
-tags: statistics
-minute: 1
----
+title:  "선형 회귀 분석(linear regression)"
+excerpt: "선형 회귀 분석(linear regression)"
+
+categories:
+  - Statistics
+tags:
+  - [Statistics]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-01-04
+last_modified_at: 2023-01-04
+
+--- 
 
 # 회귀분석
 

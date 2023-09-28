@@ -1,12 +1,20 @@
 ---
-layout: post
-title: Lagrange dual Problem
-description: Lagrange dual Problem
-summary: 
-tags: statistics
-minute: 1
----
+title:  "Lagrange dual Problem"
+excerpt: "Lagrange dual Problem. "
 
+categories:
+  - Optimization
+tags:
+  - [Optimization]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-02-23
+last_modified_at: 2023-02-23
+
+--- 
 # Lagrange dual Problem
 ## primal과 dual과의 관계
 

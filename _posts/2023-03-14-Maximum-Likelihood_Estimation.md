@@ -1,11 +1,11 @@
 ---
-title:  "Maximum Likelihood Estimation"
+title:  "Maximum Likelihood Estimation 2nd"
 excerpt: "Maximum Likelihood Estimation"
 
 categories:
-  - op
+  - Statistics
 tags:
-  - [op, data science]
+  - [Statistics]
 
 use_math: true
 toc: true

@@ -1,12 +1,19 @@
 ---
-layout: post
-title: Kernel Methods 1st
-description: Kernel Methods 1st
-summary: 
-tags: machine learning
-minute: 1
----
+title:  "Kernel Methods 1st"
+excerpt: "Kernel Methods"
 
+categories:
+  - Machine Learning
+tags:
+  - [Machine Learning, Data Science, Linear Algebra]
+
+use_math: true
+toc: true
+toc_sticky: true
+ 
+date: 2023-02-23
+last_modified_at: 2023-02-22
+---
 # Linear Models Need Big Feature Spaces
 ## Review
 우리는 앞서 살펴봤듯이 **모델의 표현능력(expressivity)** 이 커지기 위해서는 가설공간을 얼마나 키울 수 있느냐에 따라 달라지게 된다고 했습니다.<br>
