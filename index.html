@@ -19,19 +19,23 @@ layout: default
         </button>
     </div>
 
-    <div class="profile-section">
-        <img src="/IMG_6155.JPG" alt="Honey" class="profile-image">
-        <p class="profile-description">안녕하세요. 재헌이에요오옹.</p>
+    <div class="profile-bio-wrapper">
+        <div class="profile-section">
+            <img src="/IMG_6155.JPG" alt="Honey" class="profile-image">
+            <p class="profile-description">안녕하세요. 재헌이에요오옹.</p>
+        </div>
+    
+        <div class="bio">
+            {{ site.description }}
+            <p>
+                <a href="{{ site.url }}{{ site.baseurl }}/about/"> 🧑🏻‍💻 About Me </a>
+                <br>
+                <a href="{{ site.url }}{{ site.baseurl }}/tag/list/"> 📌 Tags </a>
+            </p>
+        </div>
     </div>
-
-    <div class="bio">
-	    {{ site.description }}
-        <p>
-	    <a href="{{ site.url }}{{ site.baseurl }}/about/"> About Me 🧑🏻‍💻</a>
-        <br>
-        <a href="{{ site.url }}{{ site.baseurl }}/tag/list/"> #Tags </a>
-        </p>
-    </div>
+    <hr>
+    
 
     <hr>
 
