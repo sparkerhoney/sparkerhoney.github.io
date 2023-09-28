@@ -47,7 +47,13 @@ html[data-theme="light"] {
 
 	background-color: rgb(255, 255, 255);
 
-	
+	html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 
 	#theme-toggle div {
 		position: relative;
@@ -163,14 +169,6 @@ body {
 	text-rendering: optimizeLegibility;
 	line-height: 1.75;
 	color: var(--main-text-color);
-}
-
-@media screen and (min-width: 768px) {
-  .container, .wrapper {
-      width: 100%;
-      max-width: 100%;
-      padding: 0;
-  }
 }
 
 a {
