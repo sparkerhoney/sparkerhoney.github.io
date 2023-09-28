@@ -77,7 +77,7 @@
     }
 
     .custom-text {
-        font-size: 10px; /* 원하는 폰트 크기로 조절 */
+        font-size: 13px; /* 원하는 폰트 크기로 조절 */
     }
 
     html[data-theme="light"] .custom-text {
@@ -102,10 +102,16 @@
     html[data-theme="dark"] .profile-description {
         color: rgb(255, 255, 255);
     }
-
-    .custom-text br {
-        margin: 0;
-        line-height: 0.3; /* 이 값을 조절하여 원하는 간격으로 설정 */
+    .custom-text {
+        line-height: 0.5; /* 이 값을 조절하여 원하는 줄 간격으로 설정 */
     }
+
+.custom-text br {
+        display: block;
+        margin: 0;
+        line-height: 0.1; /* 이 값을 조절하여 원하는 간격으로 설정 */
+        content: " ";
+    }
+
   </style>
 </head>
