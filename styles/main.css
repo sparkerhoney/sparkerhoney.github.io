@@ -16,12 +16,23 @@
 }
 
 .bio {
-    text-align: right;        /* bio 내용을 왼쪽으로 정렬 */
+    text-align: right;        /* bio 내용을 오른쪽으로 정렬 */
+}
+
+.profile-section {
+    display: flex;           /* flex 레이아웃 사용 */
+    flex-direction: row;     /* 자식 요소들을 가로 방향으로 배치 */
+    align-items: center;     /* 자식 요소들을 중앙에 정렬 */
+    justify-content: flex-start; /* 자식 요소들을 왼쪽으로 정렬 */
+}
+
+.profile-image {
+    margin-right: 20px;     /* 이미지와 설명 사이에 간격 추가 */
 }
 
 
 .profile-section {
-    text-align: left;        /* profile-section 내용을 오른쪽으로 정렬 */
+    text-align: left;        /* profile-section 내용을 왼쪽으로 정렬 */
     display: flex;           /* flex 레이아웃 사용 */
     flex-direction: row;     /* 자식 요소들을 가로 방향으로 배치 */
     align-items: center;     /* 자식 요소들을 중앙에 정렬 */
