@@ -39,6 +39,14 @@
       {% include inline.scss %}
     {% endcapture %}
     {{ include_to_scssify | scssify }}
+    
+    body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
 
     /* 여기부터는 추가된 CSS 코드입니다. */
     
