@@ -25,7 +25,8 @@ layout: default
   {% for tag in tags %}
   <ul>
     <li>
-	    <a class="posts" href="{{ site.url }}{{ site.baseurl }}/tag/{{ tag | first | slugify }}/"> ({{ tag | last | size
+	    <a class="posts" href="{{ site.url }}{{ site.baseurl }}/tag/{{ tag | first | slugify }}/">{{ tag[0] | replace:'-', ' '
+        }} ({{ tag | last | size
         }}){% unless forloop.last %}, {% endunless %}
       </a>
     </li>
