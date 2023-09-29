@@ -10,13 +10,13 @@ layout: compress
     <section class="hero is-fullheight" id="blog">
         <div class="hero-body">
             <div class="container">
-                {% include blogpage-heading-deeplearning.html %}
+                {% include blogpage-heading-nlp.html %}
             </div>
         </div>
         <div id="results-container"></div>
         <!--Blog Cards Section-->
         {% for post in site.posts %}
-            {% if post.category == "deep learning" %}
+            {% if post.category == "nlp" %}
                 {% include blog-card.html %}
             {% endif %}
         {% endfor %}
