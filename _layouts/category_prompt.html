@@ -10,13 +10,13 @@ layout: compress
     <section class="hero is-fullheight" id="blog">
         <div class="hero-body">
             <div class="container">
-                {% include blogpage-heading-prompt-engineering.html %}
+                {% include blogpage-heading-promptengineering.html %}
             </div>
         </div>
         <div id="results-container"></div>
         <!--Blog Cards Section-->
         {% for post in site.posts %}
-            {% if post.category == "Prompt Engineering" %}
+            {% if post.category == "prompt engineering" %}
                 {% include blog-card.html %}
             {% endif %}
         {% endfor %}

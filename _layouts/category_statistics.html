@@ -16,7 +16,7 @@ layout: compress
         <div id="results-container"></div>
         <!--Blog Cards Section-->
         {% for post in site.posts %}
-            {% if post.category == "Statistics" %}
+            {% if post.category == "statistics" %}
                 {% include blog-card.html %}
             {% endif %}
         {% endfor %}
