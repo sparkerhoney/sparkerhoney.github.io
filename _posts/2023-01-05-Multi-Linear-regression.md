@@ -114,4 +114,4 @@ $$
 
 $$
 \epsilon_j \sim NID(0,\sigma^2)
-
+$$
