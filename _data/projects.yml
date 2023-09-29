@@ -1,24 +1,24 @@
-- name: Deep hedging
-  image: https://www.fidelity.com/bin-public/060_www_fidelity_com/images/Viewpoints/AT/hedge_stocks_2021_banner.jpg
-  link: https://github.com/junia3/Faster-Deep-Hedging
-  description: Hedging stock with deep learning
-- name: Blur detection
-  link: https://github.com/minsu1206/BlurFaceDetection
-  image: https://raw.githubusercontent.com/WillBrennan/BlurDetection2/master/docs/demo.png
-  description: Detect facial blurry image in real time
-- name: Emotion recognition
-  link: https://github.com/junia3/Long-Tail-Emotion-Recognition
-  image: https://img-cdn.tnwcdn.com/image?fit=1280%2C720&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2021%2F08%2FUntitled-design-12.jpg&signature=317feb1b808e69de1479a697dd56bf18
-  description: Long tailed distribution emotion recognition
-- name: CT dose
-  link: https://github.com/junia3/CTLowDoseChallenge
-  image: https://www.ccjm.org/content/ccjom/83/6/423/F1.medium.gif
-  description: Enhancement of low dose CT images
-- name: Synthetic Voice Detection
-  link: https://github.com/junia3/Synthetic-Speech-Detection
-  image: https://user-images.githubusercontent.com/79881119/236765082-9a073601-d863-4900-b3ad-6c176ee39cc1.gif
-  description: Spoofing voice detection
-- name: Vision projects
-  link:
-  image: https://cdn.pixabay.com/photo/2016/12/02/02/10/idea-1876659_960_720.jpg
-  description: To be updated
+# - name: Deep hedging
+#   image: https://www.fidelity.com/bin-public/060_www_fidelity_com/images/Viewpoints/AT/hedge_stocks_2021_banner.jpg
+#   link: https://github.com/junia3/Faster-Deep-Hedging
+#   description: Hedging stock with deep learning
+# - name: Blur detection
+#   link: https://github.com/minsu1206/BlurFaceDetection
+#   image: https://raw.githubusercontent.com/WillBrennan/BlurDetection2/master/docs/demo.png
+#   description: Detect facial blurry image in real time
+# - name: Emotion recognition
+#   link: https://github.com/junia3/Long-Tail-Emotion-Recognition
+#   image: https://img-cdn.tnwcdn.com/image?fit=1280%2C720&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2021%2F08%2FUntitled-design-12.jpg&signature=317feb1b808e69de1479a697dd56bf18
+#   description: Long tailed distribution emotion recognition
+# - name: CT dose
+#   link: https://github.com/junia3/CTLowDoseChallenge
+#   image: https://www.ccjm.org/content/ccjom/83/6/423/F1.medium.gif
+#   description: Enhancement of low dose CT images
+# - name: Synthetic Voice Detection
+#   link: https://github.com/junia3/Synthetic-Speech-Detection
+#   image: https://user-images.githubusercontent.com/79881119/236765082-9a073601-d863-4900-b3ad-6c176ee39cc1.gif
+#   description: Spoofing voice detection
+# - name: Vision projects
+#   link:
+#   image: https://cdn.pixabay.com/photo/2016/12/02/02/10/idea-1876659_960_720.jpg
+#   description: To be updated

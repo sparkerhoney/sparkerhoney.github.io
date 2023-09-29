@@ -4,65 +4,57 @@ layout: cv
 ---
 
 **Address:** Seoul, Korea   
-**Email:** jun_yonsei@yonsei.ac.kr
+**Email:** lhe339@gmail.com
    
 ---
    
 ## OBJECTIVE
 
-Research on Deep learning
+Data Scientist & Ai Developer
    
 ---
    
 ## WORK EXPERIENCE
 
-|Math Academy, Seoul/South Korea|02/2016 ~ 07/2022|
+|DIMA, Anseong/South Korea|02/2018 ~ 08/2019|
 |:---|---:|
-||Assistant instructor|
-||Management|   
+||Actor|
+|||   
    
-|Yonsei University, Seoul/South Korea|08/2020 ~ 12/2020|
+|Military Service, Seoul/South Korea|04/2020 ~ 10/2021|
 |:---|---:|
-||TA on engineering information processing(2020 Fall)|
+||Served as a conscripted policeman at the Songpa 3rd Mobile Unit|
 
-|Yonsei University/Digital Signal Processing Lab|05/2021 ~ 08/2021|
+|Myung Ji University, Seoul/South Korea|02/2022 ~ Present|
+|:---|---:|
+||Industrial Management Engineering|
+
+|Myung Ji University, Seoul/Data Science Lab|09/2022 ~ 09/2023|
 |:---|---:|
 |||
 
-|Yonsei University, Seoul/South Korea|09/2021 ~ 12/2021|
+|Market Desiners, Seoul/South Korea|09/2023 ~ Present|
 |:---|---:|
-||TA on engineering information processing(2021 Fall)|
-
-|Yonsei University, Seoul/Digital Image Media Lab|09/2021 ~ Present|
-|:---|---:|
-|||
-
-|Yonsei artificial intelligence(YAI)|01/2022 ~ 08/2023|
-|:---|---:|
-|||
+||AI Researcher & Prompt Engineer|
 
 ---
 
 ## EDUCATION
 
-|Bachelor Degree of Electrical and Electronic engineering|03/2016 ~ 08/2022|
+|Bachelor Degree of Indutrial Management Engineering|03/2022 ~ Present|
 |:---|---:|
-||Yonsei University, Seoul|
-
-|Master Degree of Electrical and Elecronic engineering|09/2022 ~ Present|
-|:---|---:|
-||Yonsei University, Seoul|
+||Myung Ji University, Seoul|
 
 ---
 
 ## ADDITIONAL SKILLS
 
-Microsoft Office package: Microsoft Word, Excel, Powerpoint   
-Programming: C, C#, Python, JQeury, Javascript, Matlab   
+Programming: Python, Pytorch, Tensorflow, Keras   
+Microsoft Office package: Microsoft Word, Excel, Powerpoint
 Web: HTML, CSS   
 Additional: Latex   
 
 ---
 
-## PAPER
-J. Park et al., “Motion blur measurement of face image using cosine similarity and regression network”
+<!-- ## PAPER
+J. Park et al., “Motion blur measurement of face image using cosine similarity and regression network” -->
