@@ -70,7 +70,7 @@ Additional:
 <!-- 
 Microsoft Word, Excel, Powerpoint -->
 
----
+<!-- --- -->
 
 <!-- ## PAPER
 J. Park et al., “Motion blur measurement of face image using cosine similarity and regression network” -->
