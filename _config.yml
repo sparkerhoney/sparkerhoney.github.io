@@ -32,32 +32,32 @@ heroimage_dark: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/mast
 
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
-email: jun_yonsei@yonsei.ac.kr
-facebook_username: jyyonsei
-twitter_username: jun_yonsei
-instagram_username: 6unoyunr
+email: lhe339@gmail.com
+facebook_username: 
+twitter_username: 
+instagram_username: ho.en.y
 linkedin_username: 
-github_username:  junia3
-youtube_channel_id: UCuISXjdac3BR5w5ZSGHtDLg
+github_username:  sparkerhoney
+youtube_channel_id: 
 reddit_username:
 behance_username:
 dribbble_username:
 spotify_username:
 
 # Google Analytics
-google-analytics: G-KFNS88G1GM
+google-analytics:
 
 # Disqus
 disqus-shortname:
 
 # Name of the Author
-author-name: JunYoung
+author-name: Honey
 # URL for the Image of the Author
-author-image: https://avatars.githubusercontent.com/u/79881119?v=4
+author-image: https://raw.githubusercontent.com/sparkerhoney/sparkerhoney.github.io/master/966A52E9-A9D0-4DCE-83DB-582D81F0D849_1_201_a.jpeg
 # 60 Words About the Author
-author-about: Yonsei University, Electrical electronic engineering, YAI, Artificial intelligence, Deep learning, Machine learning, Seoul, South Korea
+author-about: Market Designers, Prompt Engineering, MJU, Industrial Management Engineering, Deep learning, Machine learning, Seoul, South Korea
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
-author-url: https://github.com/junia3
+author-url: https://github.com/sparkerhoney
 
 # SASS
 sass:
