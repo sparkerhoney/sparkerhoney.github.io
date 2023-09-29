@@ -1,101 +1,107 @@
-site: sparkerhoney
-title: sparkerhoney
-greetings: Dive in to Honey 🍯
-description: >-
-  Dive in to Honey 🍯
-lang: en-US
-timezone:  Asia/Seoul
-repo: https://github.com/sparkerhoney/sparkerhoney.github.io # site repo [optional]
-data-theme: dark # default theme "dark" | "light"
-discus-identifier: powex # replace with your disqus shortname
-comments-enabled: false # true to enable disqus comments, false to hide them
-
-author:
-  name: sparkerhoney
-  bio: Datascientist & AI Developer
-  userpicture: 
-  username: # general username
-  github: sparkerhoney # github username
-  twitter: # twitter username
-  mastodon: # mastodon profile (ex. mastodon.social/@my_username)
-  linkedin: # linkedin profile
-  email: lhe339@gmail.com # email adress
-
-# Font Settings
-googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
-
-# URL settings
-url: "https://sparkerhoney.github.io" # Domain Name of host. [username].github.io for github pages
-baseurl: "" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
-permalink: pretty
-
-# local
-# url: "http://localhost:4000" # 
-# baseurl: "" # 
-
-
+# WhatATheme
+# Math equation
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+# URL of the Site
+url: https://junia3.github.io
+# Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
+baseurl: 
 
-mathjax: true
+# Code highlighter
+highlighter: rouge
 
-exclude:
-  - .jekyll-cache
-  - .obsidian
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE.md
-  - README.md
-  - CONTRIBUTING.md
-  
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
+# Title of the Site
+title: Welcome to JunYoung's blog
+# Description of the Site
+description: Personal portfolio/Diary
+# URL of Image of the Site
+site-image: https://avatars.githubusercontent.com/u/79881119?v=4
+# Keywords of the Site
+site-keywords: AI, Developer, Research engineer
+# URL for the Image of custom Favicon
+favicon-url: 
 
+darkmode_switch: true
+
+# URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
+heroimage: https://github.com/junia3/junia3.github.io/assets/79881119/24fb24dc-55e9-4b99-b61a-3a1c8fb30b99
+heroimage_dark: https://github.com/junia3/junia3.github.io/assets/79881119/24fb24dc-55e9-4b99-b61a-3a1c8fb30b99
+
+# Social Media and Contact
+# If you don't want to use any icon, you can leave them blank.
+email: jun_yonsei@yonsei.ac.kr
+facebook_username: jyyonsei
+twitter_username: jun_yonsei
+instagram_username: 6unoyunr
+linkedin_username: 
+github_username:  junia3
+youtube_channel_id: UCuISXjdac3BR5w5ZSGHtDLg
+reddit_username:
+behance_username:
+dribbble_username:
+spotify_username:
+
+# Google Analytics
+google-analytics: G-KFNS88G1GM
+
+# Disqus
+disqus-shortname:
+
+# Name of the Author
+author-name: JunYoung
+# URL for the Image of the Author
+author-image: https://avatars.githubusercontent.com/u/79881119?v=4
+# 60 Words About the Author
+author-about: Yonsei University, Electrical electronic engineering, YAI, Artificial intelligence, Deep learning, Machine learning, Seoul, South Korea
+# URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
+author-url: https://github.com/junia3
+
+# SASS
 sass:
   sass_dir: _sass
   style: compressed
 
+# Build settings
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-relative-links
+  - jekyll-admin
+  - jekyll-feed
 
-collections:
-  pages:
-    output: true
-    permalink: /:name
-  posts:
-    output: true
-    permalink: /:year/:month/:day/:slug
-  
+# Permalink
+permalink: "blog/:title"
+
+# Compress
+compress_html:
+  clippings: all
+
+# Defaults
 defaults:
   -
     scope:
-      path: ""
+      type: 'posts'
     values:
-      layout: "default"
+      layout: post
+      post-image: ""
+      description: ""
+      tags:
+        - ""
   -
     scope:
-      path: ""
-      type: "pages"
+      type: 'pages'
     values:
-      layout: "page"
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+      layout: page
 
-relative_links:
-  enabled:     true
-  collections: false
-
-
+# Exclude
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
