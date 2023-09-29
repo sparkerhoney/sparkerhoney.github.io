@@ -3,30 +3,12 @@ title: 선형 회귀 분석(linear regression)
 layout: post
 description: Lecture summary
 use_math: true
-post-image: https://user-images.githubusercontent.com/79881119/210934049-762c2540-c097-4107-89ba-32bd2b8bc9f3.png
-category: deep learning
+post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/Bloomberg.png?raw=true
+category: statistics
 tags:
-- AI
-- Deep learning
-- cs231n
----
+- Data Science
+- Statistics
 
-
----
-title:  "선형 회귀 분석(linear regression)"
-excerpt: "선형 회귀 분석(linear regression)"
-
-categories:
-  - Statistics
-tags:
-  - [Statistics]
-
-use_math: true
-toc: true
-toc_sticky: true
- 
-date: 2023-01-04
-last_modified_at: 2023-01-04
 ---
 
 # 회귀분석
