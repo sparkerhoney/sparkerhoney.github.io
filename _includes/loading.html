@@ -1,4 +1,4 @@
-<div id="load">
+<!-- <div id="load">
   <img src="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/images/loading.gif" alt="loading">
 </div>
 
@@ -7,4 +7,43 @@
   window.onload = function(){
     loading_page.style.display = 'none';
   }
-</script>
+</script> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 페이지 제목</title>
+    <style>
+        #load {
+            position: fixed; /* 화면에 고정 */
+            top: 0;
+            left: 0;
+            width: 100%; /* 화면 전체 너비 */
+            height: 100%; /* 화면 전체 높이 */
+            background-color: rgba(255, 255, 255, 0.9); /* 배경색 설정 (옵션) */
+            display: flex; /* Flexbox 사용 */
+            justify-content: center; /* 수평 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+            z-index: 9999; /* 다른 요소 위에 표시 */
+        }
+
+        #load img {
+            max-width: 100%; /* 이미지 최대 너비 설정 (옵션) */
+        }
+    </style>
+</head>
+<body>
+    <!-- 웹 페이지의 내용 -->
+    <div id="load">
+      <img src="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/images/loading.gif" alt="loading">
+    </div>
+    <script>
+        const loading_page = document.getElementById("load");
+        window.onload = function(){
+            loading_page.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
