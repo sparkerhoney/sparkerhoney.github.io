@@ -1,0 +1,122 @@
+{% assign cat = page.categories[0] %}
+{% assign cat_list = site.categories[cat] %}
+{% for post in cat_list %}
+  {% if post.url == page.url %}
+  	{% assign prevIndex = forloop.index0 | minus: 1 %}
+  	{% assign nextIndex = forloop.index0 | plus: 1 %}
+  	{% if forloop.first == false %}
+  	  {% assign next_post = cat_list[prevIndex] %}
+  	{% endif %}
+  	{% if forloop.last == false %}
+  	  {% assign prev_post = cat_list[nextIndex] %}
+  	{% endif %}
+  	{% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="contain_cats" align="center">
+    <div class="contain_category" align="center">
+        <div class="anothercat" align="center">
+            <body>
+                <div class="waviy">
+                <span style="--i:1">A</span>
+                <span style="--i:1">n</span>
+                <span style="--i:1">o</span>
+                <span style="--i:1">t</span>
+                <span style="--i:1">h</span>
+                <span style="--i:1">e</span>
+                <span style="--i:1">r</span>
+                <span style="--i:2"> </span>
+                <span style="--i:2"> </span>
+                <span style="--i:2"> </span>
+                <span style="--i:3">p</span>
+                <span style="--i:3">o</span>
+                <span style="--i:3">s</span>
+                <span style="--i:3">t</span>
+                <span style="--i:4"> </span>
+                <span style="--i:4"> </span>
+                <span style="--i:4"> </span>
+                <span style="--i:5">i</span>
+                <span style="--i:5">n</span>
+                <span style="--i:6"> </span>
+                <span style="--i:6"> </span>
+                <span style="--i:6"> </span>
+                <span style="--i:7">c</span>
+                <span style="--i:7">a</span>
+                <span style="--i:7">t</span>
+                <span style="--i:7">e</span>
+                <span style="--i:7">g</span>
+                <span style="--i:7">o</span>
+                <span style="--i:7">r</span>
+                <span style="--i:7">y</span>
+                </div>
+            </body>
+        </div>
+        <div class="adjacent">
+            <div class="prev_btn">
+                {% if prev_post %}
+                    <a id="prev" class="button" href="{{ prev_post.url }}">
+                        <p id="prev_title">
+                            ❮❮ {{ prev_post.title }}
+                        </p>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="next_btn">
+                {% if next_post %}
+                    <a id="next" class="button" href="{{ next_post.url }}">
+                        <p id="next_title">
+                            ❯❯ {{ next_post.title }}
+                        </p>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    const title1 = $("#prev_title").text();
+    const title2 = $('#next_title').text();
+    var speed = 100;
+    var dots = '⋯⋯';
+
+    var titlelength = function () {
+        setInterval(function () {
+            var ww = $(window).width();
+            if(ww < 400){
+                offset = 10;
+                if(title1.length > offset){
+                    part = title1.substr(0, offset);
+                    $("#prev_title").text(part + dots);
+                }
+
+                if(title2.length > offset){
+                    part = title2.substr(0, offset);
+                    $("#next_title").text(part + dots)
+                }
+            }
+            else if(ww < 600){
+                offset = 20;
+                if(title1.length > offset){
+                    part = title1.substr(0, offset);
+                    $("#prev_title").text(part + dots);
+                }
+
+                if(title2.length > offset){
+                    part = title2.substr(0, offset);
+                    $("#next_title").text(part + dots)
+                }
+            }
+            else{
+                $("#prev_title").text(title1);
+                $("#next_title").text(title2);
+            }
+        }, speed);
+    };
+
+    $(document).ready(function () {
+        titlelength();
+    });
+</script>

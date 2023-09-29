@@ -1,0 +1,34 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+    {% include navbar.html %}
+    {% include loading.html %}
+</head>
+
+<body>
+    <section class="hero is-fullheight has-text-centered", id="cv">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1 is-uppercase has-text-weight-bold", id="cvtitle">
+                    Junyoung Park
+                </h1>
+                <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
+                    <p>{{ content }}</p>
+                </div>
+                <hr>
+                <div class="columns is-marginless is-inline-flex-desktop">
+                    <a href="{{site.url}}{{site.baseurl}}/"
+                        class="button is-rounded is-outlined is-uppercase has-text-weight-normal", id="btn">Home</a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

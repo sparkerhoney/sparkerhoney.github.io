@@ -3,105 +3,64 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 {% include head.html %}
- <!-- Global site tag (gtag.js) - Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EP7KLCYVP"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag() { dataLayer.push(arguments); }
-   gtag('js', new Date());
-
-   gtag('config', 'G-3EP7KLCYVP');
- </script>
-
-
-
 
 <body>
-  <main>
-    {% include anchor_headings.html html=content anchorBody="#" %}
-  </main>
-
-  
-
-  <script>
-    function setTheme(theme) {
-      if (theme === "dark") {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        window.localStorage.setItem('theme', 'dark');
-        document.getElementById("theme-toggle").classList.add('sun');
-        document.getElementById("theme-toggle").classList.remove('moon');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        window.localStorage.setItem('theme', 'light');
-        document.getElementById("theme-toggle").classList.add('moon');
-        document.getElementById("theme-toggle").classList.remove('sun');
-      }
-    }
-
-    let theme = localStorage.getItem('theme');
-
-    theme = theme || (window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : 'light');
-
-    setTheme(theme);
-
-    function modeSwitcher() {
-      let currentMode = document.documentElement.getAttribute('data-theme');
-
-      if (currentMode === "dark") {
-        setTheme('light');
-      } else {
-        setTheme('dark');
-      }
-    }
-  </script>
-
-
-
+  {% include navbar.html %}
+  {% include showcase.html %}
+  {% include about.html %}
+  {% include contact.html %}
+  <!--Footer begins here-->
+  {% include footer.html %}
+  {% include loading.html %}
 </body>
+<script>
+  var navItems = document.getElementsByClassName('navbar-item');
+  var heroes = document.getElementsByClassName('hero');
+  const viewOffset = 200; 
 
-<footer class="social-footer">
-  <div class="social-footer-icons">
-    {% if site.author.github %}
-    <a href="https://github.com/{{ site.author.github }}" title="Github profile" target="_blank"
-      rel="noopener noreferrer"><i class="fa fa-brands fa-github" aria-hidden="true"></i></a>
-    {% endif %}
-    {% if site.author.twitter %}
-    <a href="https://twitter.com/{{ site.author.twitter }}" title="Twitter" target="_blank" rel="noopener noreferrer"><i
-      class="fa fa-brands fa-twitter" aria-hidden="true"></i></a>
-    {% endif %}
-    {% if site.author.mastodon %}
-    <a href="https://{{ site.author.mastodon }}" title="Twitter" target="_blank" rel="noopener noreferrer"><i
-      class="fa fa-brands fa-mastodon" aria-hidden="true"></i></a>
-    {% endif %}
-    {% if site.author.linkedin %}
-    <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" title="Linkedin" target="_blank" rel="noopener noreferrer"><i
-      class="fa fa-brands fa-linkedin" aria-hidden="true"></i></a>
-    {% endif %}
-    <a href="{{site.url}}{{ site.baseurl }}/atom.xml" title="Feed RSS" target="_blank" rel="noopener noreferrer"><i
-        class="fa fa-solid fa-rss" aria-hidden="true"></i></a>
-    <a href="https://github.com/DavideBri/Gesko" title="Browse the code" target="_blank" rel="noopener noreferrer"><i
-        class="fa fa-solid fa-code" aria-hidden="true"></i></a>
-  </div>
-</footer>
+  window.addEventListener("scroll", function (event) {
+    var scroll = this.scrollY;
+    var position = window.pageYOffset;
 
+    for (var i = 0; i < navItems.length; i++) {
+      navItems[i].classList.remove('is-active');
+    }
 
-{% if page.url == '/' %}
-  <script src="{{ site.url }}{{ site.baseurl }}/assets/js/simple-jekyll-search.js"></script>
-  <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-		      json: '{{ site.url }}{{ site.baseurl }}/search.json',
-      searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
-      noResultsText: 'No results found..',
-      limit: 10,
-      fuzzy: true,
-    })
-  </script>
-  
-  {% endif %}
+    for (var i = 0; i < heroes.length; i++) {
+        var sectionTop = heroes[i].offsetTop-viewOffset;
+        var sectionBottom = heroes[i].offsetTop + heroes[i].offsetHeight-viewOffset;
 
+        if (scroll >= sectionTop && scroll < sectionBottom) {
+          navItems[i+1].classList.add('is-active');
+      }
+    }
+  });
+</script>
+<style>
+  .fade-in {
+    animation: fade-in 1.4s;
+  }
 
+  @keyframes fade-in {
+      from {opacity: 0; transform: translateY(70px);}
+      to {opacity: 1;}
+  }
+</style>
+<script>
+  let welcome = document.getElementById("welcome_block");
+  let height = welcome.offsetHeight;
+
+  window.addEventListener("scroll", (event)=> {
+    let wtop = welcome.getBoundingClientRect().top;
+
+    if(wtop <= window.innerHeight-height/10){
+      welcome.classList.add("fade-in");
+    }
+    else{
+      welcome.classList.remove("fade-in");
+    }
+  });
+</script>
 </html>

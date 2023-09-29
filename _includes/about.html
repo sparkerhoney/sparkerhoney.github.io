@@ -1,0 +1,106 @@
+<section class="hero is-fullheight has-text-centered has-background-white-ter" id="about">
+    <div class="welcome" id="welcome_block">
+        <div class="sayhello" id="hello">
+            <body>
+                <div class="waviy">
+                    <span style="--i:1">H</span>
+                    <span style="--i:2">E</span>
+                    <span style="--i:3">L</span>
+                    <span style="--i:4">L</span>
+                    <span style="--i:5">O</span>
+                    <span style="--i:6">!</span>
+                    <span style="--i:7">!</span>
+                </div>
+            </body>
+        </div>
+        <div class="introduce">
+            <div class="word"></div>
+        </div>
+    </div>
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet is-one-fifth-fullhd">
+                    <figure class="image">
+                        <img class="is-rounded" src="{{site.author-image}}" alt="{{site.author-name}}">
+                    </figure>
+                </div>
+                <div class="column has-text-left-desktop has-text-left-tablet has-text-left-fullhd has-text-left-widescreen">
+                    <p>{{site.author-about}}</p>
+                    <br>
+                    <div class="container columns is-centered">
+                        <div>
+                            <a href="{{site.url}}{{site.baseurl}}/#contact"
+                                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined">Contact
+                                Me</a>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="{{site.url}}{{site.baseurl}}/blog"
+                                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined">Post</a>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="{{site.url}}{{site.baseurl}}/cv"
+                                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined">CV</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    var words = ['My name is Junyoung Park', 'Seoul, Republic of Korea' , 'Yonsei University', 'Electrical & electronic engineering', 'Nice to meet you!'],
+        cursor = '┃',
+        part,
+        i = 0,
+        offset = 0,
+        len = words.length,
+        forwards = true,
+        skip_count = 0,
+        skip_delay = 15,
+        speed = 70;
+        
+    var wordflick = function () {
+        setInterval(function () {
+            if (forwards) {
+                if (offset >= words[i].length) {
+                    ++skip_count;
+                    if (skip_count == skip_delay) {
+                        forwards = false;
+                        skip_count = 0;
+                    }
+                }
+            }
+            else {
+                if (offset == 0) {
+                    forwards = true;
+                    i++;
+                    offset = 0;
+                    if (i >= len) {
+                        i = 0;
+                    }
+                }
+            }
+            part = words[i].substr(0, offset);
+            if (skip_count == 0) {
+                if (forwards) {
+                    offset++;
+                }
+                else {
+                    offset-=3;
+                    if(offset<0){
+                        offset = 0;
+                    }
+                }
+            }
+            $('.word').text(part + cursor);
+        }, speed);
+    };
+
+    $(document).ready(function () {
+        wordflick();
+    });
+</script>

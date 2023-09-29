@@ -35,7 +35,7 @@ permalink: pretty
 
 
 markdown: kramdown
-highlighter: rounge
+highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
@@ -44,7 +44,6 @@ kramdown:
   syntax_highlighter: rouge
 
 mathjax: true
-
 
 exclude:
   - .jekyll-cache

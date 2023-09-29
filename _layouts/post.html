@@ -1,43 +1,76 @@
 ---
-layout: default
+layout: compress
 ---
 
+<!DOCTYPE html>
+<html>
 
-<section class="post">
-  <div class="flex-row-between">
-	  <a href="{{ site.url }}{{ site.baseurl }}/">« back</a>
-    <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
-      <div></div>
-    </button>
-  </div>
-  {% assign minute=content | number_of_words | divided_by: 265 | plus: 1 %}
-  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }} -  
-    {% if page.minute %} {{ page.minute }} {% else %} {{ minute }} {% endif %}' read</time>
-  <h1 class="title">{{ page.title }}</h1>
-  <span class="meta">
-    {% for tag in page.tags %}
-    <a href="{{ site.url }}{{ site.baseurl }}/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
-  {{ content }}
-</section>
+<head>
+  {% include head.html %}
+  {% if page.use_math %}
+      {% include mathjax_support.html %}
+  {% endif %}
+  {% include loading.html %}
+</head>
 
-<section>
+<body>
+  {% include navbar.html %}
+  <span class="bar"></span>
+  <section class="hero is-fullheight has-text-centered" id="post">
+    <div class="hero-body">
+      <div class="container">
+        <a href="{{page.url | relative_url}}" class="has-text-black" id="title">
+          <h1 class="title has-text-centered is-2 has-text-weight-semibold ">{{page.title}}</h1>
+        </a>
+        <hr class="has-background-black">
+        <div class="columns is-variable is-5">
+          <div class="column is-6">
+            <figure class="image is-16by9 has-shadow">
+              <img src="{{page.post-image}}" alt="{{post.title}}" id="post-image">
+            </figure>
+          </div>
+          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
+            {% unless page.description.size == 0 %}
+            <p id="description" class="content is-small has-text-weight-medium is-uppercase">{{page.description | strip | strip_html | strip_newlines }}</p>
+            {% endunless %}
+            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Published on
+              <b>{{ page.date | date: "%-B %d, %Y" }}</b> by <a href="{% if site.author-url %}{{site.author-url}}{% else %}{{site.url}}{{site.baseurl}}/#about{% endif %}" target="_blank"><b class="has-text-link"><u>{{site.author-name}}</u></b>
+              </a>
+            </p>
+            {%- assign tags = page.tags -%}
+            {%- unless tags.size == 0 -%}
+            <p class="subtitle is-uppercase">
+              <i class="fas fa-tags"></i>
+              {% assign i = 0 %}
+              {% for tags in page.tags %}
+              <span class="tag is-link">{{page.tags[i]}}</span>
+              {% assign i = i | plus:1 %}
+              {% endfor %}
+            </p>
+            {%- endunless -%}
+            {% assign words = content | number_of_words %}
+            {%- unless content.size == 0 -%}
+            <p class="subtitle is-uppercase"><i class="fas fa-clock"></i> <b class="has-text-link">
+                {{ words | divided_by:180 }} min
+              </b>READ</p>
+            {%- endunless -%}
+          </div>
+        </div>
+        <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
+          <p>{{ content }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include post_categorize.html %}
+  {% include comment.html %}
+  {% include footer.html %}
+</body>
+</html>
 
-  <nav class="post-nav">
-    {% if page.previous %}
-    <a class="post-nav-item post-nav-prev" href="{{ page.previous | relative_url }}">
-      <div class="nav-arrow">Previous</div>
-      <span class="post-title">{{ page.previous.title }}</span>
-    </a>
-    {% endif %} {% if page.next %}
-    <a class="post-nav-item post-nav-next" href="{{ page.next | relative_url }}">
-      <div class="nav-arrow">Next</div>
-      <span class="post-title">{{ page.next.title }}</span>
-    </a>
-    {% endif %}
-
-  </nav>
-</section>
-
-{% if site.comments-enabled %}
-  {% include disqus.html %}
-{% endif %}
+<script>
+    $(window).scroll(function() {
+            var scrollY = ($(window).scrollTop() / ($(document).height() - $(window).height()) * 100).toFixed(3);
+            $(".bar").css({"width" : scrollY + "%"});
+    });
+</script>	

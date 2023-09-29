@@ -1,124 +1,17 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover a clean and straightforward Jekyll blogging theme with our simple and minimal template. Github Pages ready, user-friendly design, easy to set up and low maintenance, letting you focus on creating content.">
-  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/css/syntax.css">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <title>
-      {% if page.tag or page.title %}
-        {% if page.tag %}
-          {{ page.tag | escape }}
-        {% else %}
-          {{ page.title | escape }}
-        {% endif %}
-        -
-      {% endif %}
-      {% if paginator and paginator.page and paginator.total_pages > 1 and paginator.page > 1 %}
-        Page {{ paginator.page }} of {{ paginator.total_pages }} -
-      {% endif %}
-      {{ site.title | escape }}
-      {% unless page.tag or page.title %}
-        - {{ site.description | escape }}
-      {% endunless %}
-    </title>
-  
-    <link rel="shortcut icon" href="{{ site.url }}{{ site.baseurl }}/favicon.png">
-    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/atom.xml">
-    <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/feed.json" />
-    <link rel="sitemap" type="application/xml" title="sitemap" href="{{ site.url }}{{ site.baseurl }}/sitemap.xml" />
-      
-  {% if site.googlewebfonts %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?{{ site.googlewebfonts }}&display=swap" rel="stylesheet">
-  {% endif %}
-
-  <style>
-    {% capture include_to_scssify %}
-      {% include inline.scss %}
-    {% endcapture %}
-    {{ include_to_scssify | scssify }}
-
-
-    /* 여기부터는 추가된 CSS 코드입니다. */
-
-    .flex-row-between {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .profile-bio-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .bio {
-        display: flex;
-        flex-direction: row;
-        text-align: right;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-
-    .profile-section {
-        display: flex;
-        flex-direction: row;
-        text-align: left;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 80%;
-    }
-
-    .bio a {
-        font-size: 18px; /* 원하는 폰트 크기로 조절 가능 */
-    }
-
-    .custom-text {
-        font-size: 13px; /* 원하는 폰트 크기로 조절 */
-    }
-
-    html[data-theme="light"] .custom-text {
-        color: rgb(3, 3, 106);
-    }
-
-    html[data-theme="dark"] .custom-text {
-        color: rgb(255, 255, 255);
-    }
-
-    .profile-image {
-        margin-right: 10px;
-        width: 190.7px; 
-        height: 243.3px;
-        margin-bottom: 10px; 
-    }
-
-    html[data-theme="light"] .profile-description {
-        color: rgb(0, 0, 0);
-    }
-
-    html[data-theme="dark"] .profile-description {
-        color: rgb(255, 255, 255);
-    }
-    .custom-text {
-        line-height: 0.5; /* 이 값을 조절하여 원하는 줄 간격으로 설정 */
-    }
-
-    .profile-description b {
-        margin-bottom: 15px; /* 원하는 거리로 조절 가능 */
-    }
-
-.custom-text br {
-        display: block;
-        margin: 5;
-        line-height: 0.5; /* 이 값을 조절하여 원하는 간격으로 설정 */
-        content: " ";
-    }
-
-  </style>
+    {% include meta.html %}
+    <title>{{site.title}}</title>
+    <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/style.css">
+    {% if site.darkmode_switch == true %}
+        <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/style_dark.css">
+    {% endif %}
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5834956759419182" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{site.baseurl}}/assets/logo.ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/assets/logo.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/assets/logo.ico/favicon-16x16.png">
+    <link rel="mask-icon" href="{{site.baseurl}}/assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#FFFFFF">
 </head>
