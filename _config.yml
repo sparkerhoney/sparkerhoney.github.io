@@ -6,7 +6,7 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 # URL of the Site
-url: https://junia3.github.io
+url: https://sparkerhoney.github.io
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
 baseurl: 
 
@@ -14,15 +14,15 @@ baseurl:
 highlighter: rouge
 
 # Title of the Site
-title: Welcome to JunYoung's blog
+title: Dive in to Honey's Blog
 # Description of the Site
 description: Personal portfolio/Diary
 # URL of Image of the Site
-site-image: https://avatars.githubusercontent.com/u/79881119?v=4
+site-image: https://raw.githubusercontent.com/sparkerhoney/sparkerhoney.github.io/master/966A52E9-A9D0-4DCE-83DB-582D81F0D849_1_201_a.jpeg
 # Keywords of the Site
-site-keywords: AI, Developer, Research engineer
+site-keywords: Data Scientist, AI Developer, Prompt engineer
 # URL for the Image of custom Favicon
-favicon-url: 
+favicon-url: https://raw.githubusercontent.com/sparkerhoney/sparkerhoney.github.io/master/favicon.png
 
 darkmode_switch: true
 
