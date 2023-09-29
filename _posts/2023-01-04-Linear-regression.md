@@ -3,7 +3,7 @@ title: 선형 회귀 분석(linear regression)
 layout: post
 description: Lecture summary
 use_math: true
-post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/Bloomberg.png?raw=true
+post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/statistics.jpg?raw=true
 category: statistics
 tags:
 - Data Science
