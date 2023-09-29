@@ -27,8 +27,8 @@ favicon-url: https://raw.githubusercontent.com/sparkerhoney/sparkerhoney.github.
 darkmode_switch: true
 
 # URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
-heroimage: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/wallpaperflare.com_wallpaper-2.jpg?raw=true
-heroimage_dark: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/wallpaperflare.com_wallpaper-3.jpg?raw=true
+heroimage: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/wallpaper_light.gif?raw=true
+heroimage_dark: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/wallpaper_dark.gif?raw=true
 
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
