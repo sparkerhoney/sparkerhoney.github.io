@@ -15,7 +15,7 @@ date: 2023-01-05
 last_modified_at: 2023-01-05
 
 --- 
-
+<!-- 
 # 다중회귀분석
 다중회귀분석은 앞서 설명했던 [선형회귀분석](https://sparkerhoney.github.io/dm/Linear-regression/)의 포괄적인 내용이다.<br>
 
@@ -98,6 +98,20 @@ $y=X\beta+\epsilon$으로 나타낼 수 있다.
 
 
 
- *출처 : 명지대 산업경영공학과 김도현 교수님의 강의*
+ *출처 : 명지대 산업경영공학과 김도현 교수님의 강의* -->
 
+# 다중회귀분석
+
+다중회귀분석은 앞서 설명했던 [선형회귀분석](https://sparkerhoney.github.io/dm/Linear-regression/)의 포괄적인 내용이다.
+
+## Vector/Matrix 접근방법
+
+다루고자 하는 회귀 모형은 소위 선형 회귀모형이라고 불리며, 그 일반적인 형태는 다음과 같다.
+
+$$
+y_j = \beta_0 + \beta_1 x_{1j} + \beta_2 x_{2j} + \cdots + \beta_p x_{pj} + \epsilon_j, \quad (j=1,2,\cdots,n)
+$$
+
+$$
+\epsilon_j \sim NID(0,\sigma^2)
 
