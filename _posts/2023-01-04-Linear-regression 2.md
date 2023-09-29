@@ -1,18 +1,4 @@
 ---
-title: 선형 회귀 분석(linear regression)
-layout: post
-description: Lecture summary
-use_math: true
-post-image: https://user-images.githubusercontent.com/79881119/210934049-762c2540-c097-4107-89ba-32bd2b8bc9f3.png
-category: deep learning
-tags:
-- AI
-- Deep learning
-- cs231n
----
-
-
----
 title:  "선형 회귀 분석(linear regression)"
 excerpt: "선형 회귀 분석(linear regression)"
 
