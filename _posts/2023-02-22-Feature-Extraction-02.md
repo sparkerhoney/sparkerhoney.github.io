@@ -1,5 +1,5 @@
 ---
-title: Feature Extraction 2nd(non-monotonicity)
+title: Feature Extraction 2nd(Non-monotonicity)
 layout: post
 description: Lecture summary
 use_math: true

@@ -1,5 +1,5 @@
 ---
-title: Feature Extraction 3rd
+title: Feature Extraction 3rd(Saturation)
 layout: post
 description: Lecture summary
 use_math: true

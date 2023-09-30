@@ -1,5 +1,5 @@
 ---
-title: Feature Extraction 4th
+title: Feature Extraction 4th(Interactions)
 layout: post
 description: Lecture summary
 use_math: true
