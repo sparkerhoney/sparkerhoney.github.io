@@ -80,3 +80,14 @@ hr {
 	background: linear-gradient(to right, black, rgb(0, 76, 148), rgb(9, 158, 250), #009999);
 	z-index: 9999999;
 }
+
+ul, ol {
+    display: block;
+    list-style-type: disc; // or 'decimal' for ordered lists
+    padding-left: 1em;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
