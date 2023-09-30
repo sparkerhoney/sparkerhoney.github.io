@@ -1,7 +1,7 @@
 ---
 title: [FiFa_competition] 1화 데이터 불러오기 및 모델 만들기
 layout: post
-description: Lecture summary
+description: Competition
 use_math: true
 post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/FIFA_logo_without_slogan.png?raw=true
 category: Copetition

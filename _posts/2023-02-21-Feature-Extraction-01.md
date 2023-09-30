@@ -3,7 +3,7 @@ title: Feature Extraction 1st
 layout: post
 description: Lecture summary
 use_math: true
-post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/FIFA_logo_without_slogan.png?raw=true
+post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/machine%20learning.png?raw=true
 category: Copetition
 tags:
 - Data Science
