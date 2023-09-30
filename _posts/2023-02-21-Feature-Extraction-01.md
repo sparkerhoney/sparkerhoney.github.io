@@ -4,24 +4,10 @@ layout: post
 description: Lecture summary
 use_math: true
 post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/machine%20learning.png?raw=true
-category: Copetition
+category: machine learning
 tags:
 - Data Science
-- Copetition
----
-
----
-title:  "Feature Extraction 1st"
-excerpt: "Feature Extraction"
-categories:
-  - Machine Learning
-tags:
-  - [Machine Learning, Data Science]
-use_math: true
-toc: true
-toc_sticky: true
-date: 2023-02-21
-last_modified_at: 2023-02-22
+- machine learning
 ---
 
 # Features
