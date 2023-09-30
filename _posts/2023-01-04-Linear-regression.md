@@ -25,7 +25,7 @@ tags:
 
 위 회귀선(추세선)의 함수는 아래와 같다.<br>
 
-$$\hat{y}=ax+b$$ 
+$$\hat{y}=ax+b$$ <br>
 
 이 때 회귀분석은 *$$ε$$(오차)의 제곱합*이 최소가 되도록 a와 b값을 추정하는 방법이다.<br>
 
@@ -72,11 +72,11 @@ $$\hat{\beta_0}=b_0=\bar{y}-b_1\bar{x}$$
 
 - 추정된 $$b_0$$ ( $$β_0$$ 를 추정한 값 ) 와 $$b_1$$ ( $$β_1$$ 을 추정한 값 ) 을 이용하여 반응변수 $$y$$ 에 대한 추정식 ( 회귀식 ) 을 다음과 같이 나타낼 수 있다.
   
-$$\hat{y}=b_0+b_1x$$
+$$\hat{y}=b_0+b_1x$$ <br>
 
 - $$x = x_j$$ 일 때의 반응변수 $$y$$ 의 추정값은 다음과 같다.
   
-$$\hat{y}=b_0+b_1x_j$$
+$$\hat{y}=b_0+b_1x_j$$ <br>
 
 ---
 
@@ -99,9 +99,9 @@ $$\hat{y}=b_0+b_1x_j$$
 ---
 
 - 두번째로, 분산분석에 의해서 모델의 유의성을 검토해본다.<br>
-총제곱합(Total Sum of Squares, **SSTO**)을 회귀식에 의해 설명되는 변동(Regression Sum of Squares, **SSR**)과 회귀식에 의해 설명되지 않는 잔차변동(Residual Sum of Squares, **SSE**)로 분해할 수 있다.
+총제곱합(Total Sum of Squares, **SSTO**)을 회귀식에 의해 설명되는 변동(Regression Sum of Squares, **SSR**)과 회귀식에 의해 설명되지 않는 잔차변동(Residual Sum of Squares, **SSE**)로 분해할 수 있다. <br>
 
-- $$SSTO = SSR + SSE$$
+$$SSTO = SSR + SSE$$ <br>
 
 따라서, **$$SSTO = SSR + SSE$$** 로 설명되어진다.<br>
 
