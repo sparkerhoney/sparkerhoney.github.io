@@ -1,42 +1,52 @@
 ---
+title: Feature Extraction 1st
+layout: post
+description: Lecture summary
+use_math: true
+post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/FIFA_logo_without_slogan.png?raw=true
+category: Copetition
+tags:
+- Data Science
+- Copetition
+---
+
+---
 title:  "Feature Extraction 1st"
 excerpt: "Feature Extraction"
-
 categories:
   - Machine Learning
 tags:
   - [Machine Learning, Data Science]
-
 use_math: true
 toc: true
 toc_sticky: true
- 
 date: 2023-02-21
 last_modified_at: 2023-02-22
 ---
+
 # Features
 ## Feature Extraction
-### The Input Space $X$ 
-일반 적으로 input space $X$에 대해서는 가정이 없습니다.<br>
-그러나 우리가 개발한 구체적인 방법들에 대해서는 input space $X=R^d$ 차원의 실수 공간입니다.<br>
+### The Input Space $$X$$ 
+일반 적으로 input space $$X$$에 대해서는 가정이 없습니다.<br>
+그러나 우리가 개발한 구체적인 방법들에 대해서는 input space $$X=R^d$$ 차원의 실수 공간입니다.<br>
 - ex) Ridge regression, Lasso regression, Linear SVM<br>
 
 기본적으로 실수차원의 input을 사용하지 않는 경우가 많습니다.<br>
 - ex)Text documents, Image files, Sound recordings, DNA sequences<br>
 
 컴퓨터 안 모든 것은 숫자의 연속입니다.<br>
-따라서 각 시퀀스의 $i$번째 항목은 동일한 의미를 가져야합니다.(colum별로 동일한 의미)<br>
+따라서 각 시퀀스의 $$i$$번째 항목은 동일한 의미를 가져야합니다.(colum별로 동일한 의미)<br>
 그리고 모든 시퀀스의 길이가 같아합니다.<br>
 
 ### Feature Extraction
-$X$에서 $R^d$차원의 벡터로 매핑시키는 것을 feature extraction or featurization 라고 부릅니다.<br>
+$$X$$에서 $$R^d$$차원의 벡터로 매핑시키는 것을 feature extraction or featurization 라고 부릅니다.<br>
 Raw data에서 feature를 뽑아내서 컴퓨터가 해당 data에서의 feature를 읽을 수 있게끔 하기 위해 vector화 시켜줍니다.<br>
 - ex) 이미지에서 특징을 추출해 특징들을 정의할 수 있습니다.<br>
 
 ![image](https://user-images.githubusercontent.com/108461006/220524902-f9958b06-8644-41cf-ba0f-7d54a59ef67d.png)
 
-##	Feature Templates
-###	Example: Detecting Email Addresses
+## Feature Templates
+### Example: Detecting Email Addresses
 
 ![image](https://user-images.githubusercontent.com/108461006/220525484-f5a86efe-0afc-446b-acf2-bf9896b9bc80.png)
 
