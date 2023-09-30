@@ -40,7 +40,7 @@ $$y=X\beta+\epsilon$$으로 나타낼 수 있다.<br>
 - 미지의 회귀계수 $$vector\beta$$는 다음 오차제곱합<br>
 $$L=\displaystyle\sum_{j=1}^{n}\epsilon^2=\displaystyle\sum_{j=1}^{n}\{y_j-(\beta_0+\beta_1x_1+\cdots+\beta_px_{pj})\}^2$$이 **최소가 되도록 결정**한다.<br>
 - 최소제곱법에 의한 $$\beta$$의 추정량<br>
-$$b=(X^\prime X)^{-1}X^\prime y=$$<br>
+$$b=(X^\prime X)^{-1}X^\prime y=$$
 $$
 \begin{pmatrix}
    b_0 \\
