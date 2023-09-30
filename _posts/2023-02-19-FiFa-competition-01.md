@@ -1,24 +1,21 @@
 ---
-title:  "[FiFa_competition] 1화 데이터 불러오기 및 모델 만들기"
-excerpt: "[FiFa_competition] 01"
-
-categories:
-  - Copetition
-tags:
-  - [Copetition]
-
+title: [FiFa_competition] 1화 데이터 불러오기 및 모델 만들기
+layout: post
+description: Lecture summary
 use_math: true
-toc: true
-toc_sticky: true
- 
-date: 2023-02-19
-last_modified_at: 2023-02-19
+post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/FIFA_logo_without_slogan.png?raw=true
+category: Copetition
+tags:
+- Data Science
+- Copetition
+---
 
---- 
 # Introduction
 겨울방학이 거의 끝나갈 무렵인 지금, [dacon.io](https://dacon.io/)에서 상시로 열리고 있는 FIFA 선수 이적료 예측 경진대회에 참가하고자 합니다.<br>
 FIFA 선수 이적료 예측 경진대회는 데이터 분석과 머신 러닝 기술을 활용하여 선수 이적료를 예측하는 대회로, 데이터 분석 및 머신 러닝에 관심이 있는 분들에게 좋은 기회가 될 것입니다.<br>
 참가자들은 경진대회에서 제공되는 데이터를 기반으로, 이적료를 예측하는 머신 러닝 모델을 구현하고, 정확도를 높이는 것이 목표입니다. 경진대회에 참가하여 데이터 분석과 머신 러닝을 실전에서 적용해보는 좋은 기회가 될 것입니다.<br>
+
+---
 
 # Data Set
 ```python
@@ -68,7 +65,9 @@ train.describe()
 이 함수를 사용하면 데이터셋의 전반적인 분포와 범위를 파악할 수 있어 데이터를 탐색하는 데 도움이 됩니다.<br> 
 예를 들어, describe()를 통해 각 열의 최대값이나 최소값이 이상치(outlier)인지 확인할 수 있고, 평균과 중앙값의 차이가 큰 열이 있다면 데이터의 분포가 왜도가 있음을(skewed) 있을 수 있음을 알 수 있습니다.<br>
 
-![스크린샷 2023-02-19 오후 11 50 00](https://user-images.githubusercontent.com/108461006/219955688-a1b2134c-9302-4b02-9469-bd5804190dee.jpg)
+![스크린샷 2023-02-19 오후 11 50 00](
+
+https://user-images.githubusercontent.com/108461006/219955688-a1b2134c-9302-4b02-9469-bd5804190dee.jpg)
 
 위와 같은 통계적 수치로 우리는 추후에 예측이나 정확한 예측에 필요한 파생변수등을 도출해낼 수 있습니다.<br>
 
@@ -84,6 +83,8 @@ train.isnull().sum()
 우리의 데이터에는 NaN값이 없다는 사실이 밝혀졌으니 좀 더 진도를 나갈 수 있게 됐습니다.<br>
 
 그 다음으로는 데이터 시각화에 관련한 내용입니다.<br>
+
+---
 
 ## Data Visualization
 제가 데이터를 확인할 때 가장 먼저 해보는 작업인 상관관계 heatmap 분석입니다.<br>
@@ -112,3 +113,4 @@ test = test.drop(['id', 'name'], axis=1)
 ```
 위의 코드를 통해서 우리는 'id', 'name'을 제거했습니다.<br>
 그 다음 내용은 위에서 불러온 데이터들을 전처리 하는 내용입니다.<br>
+```
