@@ -1,5 +1,5 @@
 ---
-title: 선형 회귀 분석(linear regression)
+title: 다중 회귀 분석(multi linear regression)
 layout: post
 description: Lecture summary
 use_math: true
