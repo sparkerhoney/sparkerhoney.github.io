@@ -1,122 +1,149 @@
 ---
-title:  "Support Vector Machine 1st"
+title: "Support Vector Machine 1st"
 excerpt: "SVM"
-
 categories:
   - Machine Learning
 tags:
   - [Machine Learning, Data Science]
-
 use_math: true
 toc: true
 toc_sticky: true
- 
 date: 2023-02-23
 last_modified_at: 2023-02-23
 ---
-# Support Vector Machines
-## The SVM as a Quadratic Program
-### The Margin
-- 정의: 예측 score $\hat{y}$과 실제 class $y∈{-1,1}$에 대한 마진은 $y\hat{y}$ ̂입니다.<br>
 
-마진은 자주 $yf(x)$와 같이 나타냅니다.<br> 이때 $f(x)$는 우리의 score function입니다.<br>
+# Support Vector Machines
+---
+
+## The SVM as a Quadratic Program
+---
+
+### The Margin
+---
+
+정의: 예측 score $$\hat{y}$$과 실제 class $$y∈{-1,1}$$에 대한 마진은 $$y\hat{y}$$ ̂입니다.<br>
+마진은 자주 $$yf(x)$$와 같이 나타냅니다. 이때 $$f(x)$$는 우리의 score function입니다.<br>
 마진은 우리가 얼마나 정확한지를 보여주는 척도이고, 우리는 마진을 최대화하기를 원합니다.<br>
-대부분 classification loss는 마진에만 의존합니다.
-	
+대부분 classification loss는 마진에만 의존합니다.<br>
+
 ### Hinge Loss
-- SVM/Hinge loss: $l_{Hinge}=max⁡{1-m,0}=(1-m)_+$
-- 마진 $m=yf(x)$; “positive part”인 $x_+=x_1(x≥0)$
+---
+
+- SVM/Hinge loss: $$l_{Hinge}=max⁡{1-m,0}=(1-m)_+$$<br>
+- 마진 $$m=yf(x)$$; “positive part”인 $$x_+=x_1(x≥0)$$<br>
 	 
-Hinge는 convex이고, 0-1loss의 상계,	$m=1$일 때 미분이 불가합니다.<br>
-우리는 $m<1$일 때 “margin error”를 가집니다.<br>
+Hinge는 convex이고, 0-1loss의 상계,	$$m=1$$일 때 미분이 불가합니다.<br>
+우리는 $$m<1$$일 때 “margin error”를 가집니다.<br>
 
 ## Support Vector Machine
+---
 
-- Hypothesis space: $F={f(x)=w^T x+b|w∈R^d,b∈R}$
+- Hypothesis space: $$F={f(x)=w^T x+b|w∈R^d,b∈R}$$
 
 ###	SVM Optimization Problem
+---
+
 SVM 예측 함수는 다음의 식을 해결하는 것입니다.<br>
 
-$\underset{w∈R^d,b∈R}{\min}\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^n\max⁡(0,1-y_i [w^T x_i+b])$
+$$\underset{w∈R^d,b∈R}{\min}\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^n\max⁡(0,1-y_i [w^T x_i+b])$$<br>
 
 이 식은 maximize가 존재하기에 미분이 불가능합니다.<br>
 따라서 제약식이 포함된 상태로 변형을 시킬 건데 형태는 다음과 같습니다.<br>
 
-$minimize\ \ \frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i $<br>
-$subject\ to \   \ ξ_i≥\max⁡(0,1-y_i [w^T x_i+b])$
+$$minimize\ \ \frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i$$<br>
+$$subject\ to \   \ ξ_i≥(1-y_i [w^T x_i+b])\ for\ i=1,…,n$$<br>
+$$\qquad\qquad\ \ \  ξ_i≥0\ for\ i=1,…,n$$<br>
 
-또 $ξ$또한 max를 가지기에 두 가지 형태로 나눌 수 있습니다.
+또 $$ξ$$또한 max를 가지기에 두 가지 형태로 나눌 수 있습니다.
 
-$minimize\ \ \frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i$ <br>
-$subject\ to \   \ ξ_i≥(1-y_i [w^T x_i+b])\ for\ i=1,…,n$ <br>
-$\qquad\qquad\ \ \  ξ_i≥0\ for\ i=1,…,n$
- 
+$$minimize\ \ \frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i$$<br>
+$$subject\ to \   \ ξ_i≥(1-y_i [w^T x_i+b])\ for\ i=1,…,n$$<br>
+$$\qquad\qquad\ \ \  ξ_i≥0\ for\ i=1,…,n$$<br>
+
 위 식은 objective function이 이차식이고 제약식이 모두 affine이기에 quadratic program이라고 할 수 있고 미분이 가능해집니다.<br>
 
 ## The SVM Dual Problem
+---
+
 ### SNM Lagrange Multipliers
+---
+
 [*Lagrange Multipliers*](https://sparkerhoney.github.io/op/Lagrange-Multiplier-Method/)에 대한 내용은 해당 링크를 참고해 주시면 감사하겠습니다.<br>
 
-$minimize\ \ \frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i$ <br>
-$subject\ to \   \ ξ_i≥(1-y_i [w^T x_i+b])\ for\ i=1,…,n$ <br>
-$\qquad\qquad\ \ \  ξ_i≥0\ for\ i=1,…,n$
+$$minimize\ \ \frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i$$<br>
+$$subject\ to \   \ ξ_i≥(1-y_i [w^T x_i+b])\ for\ i=1,…,n$$<br>
+$$\qquad\qquad\ \ \  ξ_i≥0\ for\ i=1,…,n$$<br>
 
 위 식에서 제약식을 최종적으로 변환한 이유는 결국 라그랑주 승수를 곱하기 위함인데 이는 다음식과 같습니다.<br>
 
-$L(w,b,ξ,α,λ)=\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i +∑_{i=1}^nα_i (1-y_i [w^T x_i+b]-ξ_i)+∑_{i=1}^nλ_i (-ξ_i)$<br>   
-$=\frac{1}{2}w^T w+∑_{i=1}^nξ_i (\frac{c}{n}-α_i-λ_i)+∑_{i=1}^nα_i (1-y_i [w^T x_i+b])$ 
+$$L(w,b,ξ,α,λ)=\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2+\frac{c}{n}∑_{i=1}^nξ_i +∑_{i=1}^nα_i (1-y_i [w^T x_i+b]-ξ_i)+∑_{i=1}^nλ_i (-ξ_i)$$<br>   
+$$=\frac{1}{2}w^T w+∑_{i=1}^nξ_i (\frac{c}{n}-α_i-λ_i)+∑_{i=1}^nα_i (1-y_i [w^T x_i+b])$$<br>
 
 Primal과 dual의 관계는 다음과 같습니다.
 
-$p^*=\underset{w,ξ,b}{\inf}\underset{α,λ≽0}{\sup}⁡L(w,b,ξ,α,λ) ≥\underset{α,λ≽0}{\sup}\underset{w,ξ,b}{\inf}L(w,b,ξ,α,λ)=d^*$
+$$p^*=\underset{w,ξ,b}{\inf}\underset{α,λ≽0}{\sup}⁡L(w,b,ξ,α,λ) ≥\underset{α,λ≽0}{\sup}\underset{w,ξ,b}{\inf}L(w,b,ξ,α,λ)=d^*$$<br>
 
-이 때 objective function이 convex, constraint가 아핀이고 마지막으로 input point의 $x$가 strictly feasible 하기 때문에 SVM을 Quadratic program으로 해결할 수 있게 됩니다.<br>
+이 때 objective function이 convex, constraint가 아핀이고 마지막으로 input point의 $$x$$가 strictly feasible 하기 때문에 SVM을 Quadratic program으로 해결할 수 있게 됩니다.<br>
 이 때 이 것을 slater 조건이라 설명하고 있으며 이 때 strong duality를 가진다고 말할 수 있습니다.<br>
 *Feasible region : 해의 영역*<br>
 
 ### SVM Dual Function
+---
+
 라그랑주 dual은 라그랑주의 primal 변수에 대한 하한값입니다.<br>
 
-$g(α,λ)=\underset{w,ξ,b}{\inf}⁡L(w,b,ξ,α,λ)$<br>
-$=\underset{w,ξ,b}{\inf}[\frac{1}{2}w^T w+∑_{i=1}^nξ_i (\frac{c}{n}-α_i-λ_i)+∑_{i=1}^nα_i (1-y_i [w^T x_i+b])]$
+$$g(α,λ)=\underset{w,ξ,b}{\inf}⁡L(w,b,ξ,α,λ)$$<br>
+$$=\underset{w,ξ,b}{\inf}[\frac{1}{2}w^T w+∑_{i=1}^nξ_i (\frac{c}{n}-α_i-λ_i)+∑_{i=1}^nα_i (1-y_i [w^T x_i+b])]$$<br>
 
 Strong duality를 만족하게 된다면 KKT condition을 만족하기 때문에 KKT condition중 stationary condition인 최적화하려는 미지수로 편미분을 해 0이되는 조건을 계산해줍니다.<br>
 
 ### SVM Dual Function: First Order Conditions
+---
 
-$∂_w L=0⟺w-∑_{i=1}^nα_i y_i x_i=0⟺w=∑_{i=1}^nα_i y_i x_i $<br>
-$∂_b L=0⟺-∑_{i=1}^nα_i y_i=0⟺0=∑_{i=1}^nα_i y_i$<br>
-$∂_{ξ_i} L=0⟺\frac{c}{n}-α_i-λ_i=0⟺\frac{c}{n}=α_i+λ_i$<br>
+$$∂_w L=0⟺w-∑_{i=1}^nα_i y_i x_i=0⟺w=∑_{i=1}^nα_i y_i x_i$$<br>
+$$∂_b L=0⟺-∑_{i=1}^nα_i y_i=0⟺0=∑_{i=1}^nα_i y_i$$<br>
+$$∂_{ξ_i} L=0⟺\frac{c}{n}-α_i-λ_i=0⟺\frac{c}{n}=α_i+λ_i$$<br>
 
 ### The SVM Dual Problem
+---
+
 앞서 봤던 First order condition에 의해서 라그랑지안 primal 문제가 Dual 문제로 바뀌게 됩니다.<br>
 
-$α_i$에 관한 문제로 단순해졌습니다.(primal solution에서의 $w$를 구할 때, $w=∑_{i=1}^nα_i y_i x_i $이기에)<br>
+$$α_i$$에 관한 문제로 단순해졌습니다.(primal solution에서의 $$w$$를 구할 때, $$w=∑_{i=1}^nα_i y_i x_i$$이기에)<br>
 
-$\underset{α}{\sup}⁡∑_{i=0}^nα_i-\frac{1}{2}∑_{i,j=1}^nα_i α_j y_i y_j x_i^T x_i$<br>
-$s.t.\ ∑_{i=1}^nα_i y_i=0$<br>
-$\quad\quad α_i∈[0,\frac{c}{n}],\ i=1,…,n$
+$$\underset{α}{\sup}⁡∑_{i=0}^nα_i-\frac{1}{2}∑_{i,j=1}^nα_i α_j y_i y_j x_i^T x_i$$<br>
+$$s.t.\ ∑_{i=1}^nα_i y_i=0$$<br>
+$$\quad\quad α_i∈[0,\frac{c}{n}],\ i=1,…,n$$<br>
 
 ## Insight From Complementary Slackness: Margin and Support Vectors
-### The Margin and Some Terminology
-$f^* (x)=x^T w^*+b^*$이 존재한다고 가정할 때 마진 $yf^* (x)$는 다음과 같습니다.
+---
 
-![image](https://user-images.githubusercontent.com/108461006/220888241-e5ae1c57-3a55-44a9-8568-82f1e21c58c2.png)
+### The Margin and Some Terminology
+---
+
+$$f^* (x)=x^T w^*+b^*$$이 존재한다고 가정할 때 마진 $$yf^* (x)$$는 다음과 같습니다.
+
+![image](https://user-images.githubusercontent.com/108461006/220888241-e5ae1c57-3a55-44a9-8568-82f1e21c58c2.png)<br>
 
 ###	Support Vectors and The Margin
-“Slack Variable”이라고 부르는 $ξ_i^*=\max ⁡(0,1-y_i f^* (x_i))$는 $(x_i,y_i)$에서의 hinge loss입니다.<br>
-$ξ_i^*=0$이라고 가정하면 그 때의 $y_i f^* (x_i )≥1$일 것입니다.<br>
+---
 
-즉, 분류가 올바르게 된 $y_i f^* (x_i )≥1$의 hinge loss 0이 될 것입니다.<br>
+“Slack Variable”이라고 부르는 $$ξ_i^*=\max ⁡(0,1-y_i f^* (x_i))$$는 $$(x_i,y_i)$$에서의 hinge loss입니다.<br>
+$$ξ_i^*=0$$이라고 가정하면 그 때의 $$y_i f^* (x_i )≥1$$일 것입니다.<br>
+
+즉, 분류가 올바르게 된 $$y_i f^* (x_i )≥1$$의 hinge loss 0이 될 것입니다.<br>
 
 ###	Complementary Slackness Conditions
+---
+
 우리의 primal constraint와 라그랑주 승수를 상기해보자면 다음과 같습니다.<br>
-First order condition에서의 $∇_{ξ_i} L=0$은 $λ_i^*=\frac{c}{n}-α_i^*$를 도출 시킵니다.<br>
+First order condition에서의 $$∇_{ξ_i} L=0$$은 $$λ_i^*=\frac{c}{n}-α_i^*$$를 도출 시킵니다.<br>
 
 Strong duality(KKT condition)에 의해서, 우리는 complementary slackness를 가져야 합니다.
 
-$α_i^* (1-y_i f^* (x_i )-ξ_i^* )=0$<br>
-$λ_i^* ξ_i^*=(\frac{c}{n}-α_i^* ) ξ_i^*=0$<br>
+$$α_i^* (1-y_i f^* (x_i )-ξ_i^* )=0$$<br>
+$$λ_i^* ξ_i^*=(\frac{c}{n}-α_i^* ) ξ_i^*=0$$<br>
+
 
 ### Consequences of Complementary Slackness Conditions
 이렇게 된다면 마진 값에 의해서 결과 값을 도출해낼 수 있는데 과정은 다음과 같습니다.<br>
