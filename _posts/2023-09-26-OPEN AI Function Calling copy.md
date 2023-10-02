@@ -1,30 +1,29 @@
 ---
-title:  "OPEN AI Function Calling"
-excerpt: ""
-
-categories:
-  - NLP
-tags:
-  - [NLP, ChatGPT, Prompt Engineering]
-
+title: OPEN AI Function Calling
+layout: post
+description: Prompt Engineering
 use_math: true
-toc: true
-toc_sticky: true
- 
-date: 2023-09-26
-last_modified_at: 2023-09-26
+post-image: https://cdn.startupn.kr/news/photo/202302/32023_33904_230.jpg
+category: Prompt Engineering
+tags:
+- Data Science
+- machine learning
+- NLP
+- ChatGPT
+- Prompt Engineering
 ---
-# **[[OpenAI]의 [[Function Calling]] 기능 소개**
+
+# **OpenAI의 Function Calling 기능 소개**
 
 2023년 6월, OpenAI는 "Function Calling"이라는 새로운 기능을 발표했습니다.
 
-이 기능은 OpenAI API 사용 시, 사용자가 "functions"이라는 [[파라미터]로 사용 가능한 기능들의 목록을 제공하면, [[GPT]]의 자의적인 판단 하에 해당 기능을 사용하는 것입니다.
+이 기능은 OpenAI API 사용 시, 사용자가 "functions"이라는 파라미터로 사용 가능한 기능들의 목록을 제공하면, GPT의 자의적인 판단 하에 해당 기능을 사용하는 것입니다.
 
 ---
 
 ## **주요 업데이트 내용 요약**
 
-1. **모델 지원 연장**: [[gpt-3.5-turbo-0301]], [[gpt-4-0314]] 및 gpt-4-32k-0314 모델의 지원이 2024년 6월 13일까지 연장되었습니다.
+1. **모델 지원 연장**: gpt-3.5-turbo-0301, gpt-4-0314 및 gpt-4-32k-0314 모델의 지원이 2024년 6월 13일까지 연장되었습니다.
 2. **새로운 모델 발표**: gpt-4-0613 및 gpt-3.5-turbo-0613 모델이 발표되었으며, 이 모델들은 함수 호출 기능을 지원합니다.
 3. **Function Calling**: 개발자는 이제 GPT 모델에 함수를 설명하고, 모델은 해당 함수를 호출하기 위한 JSON 객체를 출력할 수 있습니다. 이 기능을 통해 외부 도구와 API와 GPT의 기능을 더 신뢰성 있게 연결할 수 있습니다.
 4. **가격 인하**: OpenAI는 가장 인기 있는 임베딩 모델인 text-embedding-ada-002의 가격을 75% 인하했으며, gpt-3.5-turbo의 입력 토큰 가격도 25% 인하되었습니다.
@@ -37,7 +36,7 @@ OpenAI의 최신 업데이트는 개발자들에게 더 많은 기능과 향상�
 ## **주요 특징 및 주의사항**
 
 - 이 기능은 위험성을 내포하고 있어, 이메일 전송, 웹에 글 게시, 구매 결정 등의 동작을 구성할 때 신중한 설계가 필요합니다.
-- [[JSON]] 형식을 사용하므로, [[Python]]에서 JSON 개념과 json 모듈의 사용법을 알고 있으면 도움이 됩니다.
+- JSON 형식을 사용하므로, Python에서 JSON 개념과 json 모듈의 사용법을 알고 있으면 도움이 됩니다.
 - 현재 gpt-3.5-turbo-0613 및 gpt-4-0613 두 모델에서만 지원됩니다.
 - 개발자는 function 파라미터에 JSON Schema를 통해 모델에 함수를 설명하면, 선택적으로 특정 함수를 호출하도록 할 수 있습니다.
 
@@ -55,8 +54,8 @@ OpenAI의 최신 업데이트는 개발자들에게 더 많은 기능과 향상�
 ## **Function Calling의 활용 예시**
 
 - **외부 API 호출**: ChatGPT 플러그인과 같은 외부 API를 호출하여 질문에 답변하는 챗봇을 구축할 수 있습니다.
-- **[[자연어]]를 API 호출로 변환**: "내 최고 고객은 누구입니까?"와 같은 자연어 질문을 [[API]] 호출로 변환할 수 있습니다.
-- **텍스트에서 구조화된 [[데이터 추출]]**: [[텍스트]]에서 필요한 정보를 [[추출]]하는 함수를 정의하여 사용할 수 있습니다.
+- **자연어를 API 호출로 변환**: "내 최고 고객은 누구입니까?"와 같은 자연어 질문을 API 호출로 변환할 수 있습니다.
+- **텍스트에서 구조화된 데이터 추출**: 텍스트에서 필요한 정보를 추출하는 함수를 정의하여 사용할 수 있습니다.
 
 ---
 
@@ -65,7 +64,7 @@ OpenAI의 최신 업데이트는 개발자들에게 더 많은 기능과 향상�
 **(해당 [깃허브](https://github.com/sparkerhoney/function_calling)에 상세하게 정리해놓았습니다.)**
 
 1. **Step 1**: 더미 함수를 정의합니다. 실제 환경에서는 이 부분에 backend API나 외부 API를 연결할 수 있습니다.
-2. **Step 2**: [[message]]와 function을 정의하고 API 호출 시 functions 파라미터를 추가합니다.
+2. **Step 2**: message와 function을 정의하고 API 호출 시 functions 파라미터를 추가합니다.
 3. **Step 3**: GPT의 응답에서 function_call 부분을 확인하고 해당 함수를 호출합니다.
 4. **Step 4**: function call의 응답을 참고하여 메시지를 추가합니다.
 5. **Step 5**: function call로 응답된 결과를 참고하여 최종적인 날씨 정보를 확인합니다.

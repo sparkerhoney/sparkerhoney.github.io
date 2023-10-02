@@ -14,7 +14,19 @@ toc_sticky: true
 date: 2023-09-26
 last_modified_at: 2023-09-26
 ---
-
+---
+title: Sentence Piece
+layout: post
+description: paper review
+use_math: true
+post-image: https://machinelearnit.files.wordpress.com/2019/10/sentencepiece.jpg
+category: paper review
+tags:
+- Data Science
+- machine learning
+- NLP
+- paper review
+---
 # SentencePiece
 
 안녕하세요!<br>
@@ -74,12 +86,6 @@ sp.load('m.model')
 tokens = sp.encode_as_pieces("안녕하세요. SentencePiece 테스트 중입니다.")
 print(tokens)
 ```
-
-이 외에도 센텐스피스는 다양한 기능을 제공하므로, 공식 문서나 깃허브를 참고하는 것이 좋습니다.<br>
-
-- [센텐스피스 논문](https://arxiv.org/pdf/1808.06226.pdf)<br>
-- [센텐스피스 깃허브](https://github.com/google/sentencepiece)<br>
-
 ---
 
 ## 4. SentencePiece의 깊은 이해
@@ -137,3 +143,8 @@ $$p(x|π) = \prod_{n=1}^N \prod_{k=1}^K π_k^{x_{nk}}$$<br>
 여기서 \( x_{nk} \)는 sequence에서 \( n \)번째 토큰이 \( k \)번째 unigram인 경우 1, 아니면 0입니다.<br>
 
 ---
+
+이 외에도 센텐스피스는 다양한 기능을 제공하므로, 공식 문서나 깃허브를 참고하는 것이 좋습니다.<br>
+
+- [센텐스피스 논문](https://arxiv.org/pdf/1808.06226.pdf)<br>
+- [센텐스피스 깃허브](https://github.com/google/sentencepiece)<br>
