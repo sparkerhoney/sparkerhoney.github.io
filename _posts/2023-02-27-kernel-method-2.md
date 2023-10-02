@@ -1,21 +1,18 @@
 ---
-title:  "Kernel Methods 2nd"
-excerpt: "Kernel Methods"
-
-categories:
-  - Machine Learning
-tags:
-  - [Machine Learning, Data Science, Linear Algebra]
-
+title: Kernel Methods 2nd
+layout: post
+description: Lecture summary
 use_math: true
-toc: true
-toc_sticky: true
- 
-date: 2023-02-27
-last_modified_at: 2023-02-27
+post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/machine%20learning.png?raw=true
+category: machine learning
+tags:
+- Data Science
+- machine learning
 ---
+
 # Kernel Methods
 ## Review
+- Linear Algebra
 자,  그럼 지금까지의 내용을 정리해 봅시다.<br>
 
 우선 **선형(linear) svm** 은 초평면(hyperlane)으로 결정경계(decision boundary)를 나누어서 $yf(x)$인 **마진(margin)** 을 **최대화 시키는 방향으로 최적화** 를 진행해 나갑니다.<br>
@@ -54,7 +51,7 @@ feature extraction을 통해 더 많은 feature를 추가하게되면 우리는 
  
 계속해서 지난시간 부터 이야기 해 온 feature extraction에 대한 내용입니다.<br>
 
-$\underset{w∈R^d,b∈R}{\min}\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2 + \frac{c}{n}∑_{i=1}^n(1-y_i[w^Tψ(x_i)+b])$
+$$\underset{w∈R^d,b∈R}{\min}\frac{1}{2}\begin{Vmatrix} w \end{Vmatrix}^2 + \frac{c}{n}∑_{i=1}^n(1-y_i[w^Tψ(x_i)+b])$$
 
 위의 식은 비선형 svm을 풀어나갈 때 $x$를 **고차원의 feature space** 에 mapping해준 **primal** 식입니다.<br>
 이 식은 **dual** 로 표현한다면 다음과 같이 표현할 수 있습니다.<br>
@@ -106,9 +103,9 @@ $k(x, x') = \langle \psi(x), \psi(x') \rangle$
 ### SVM Dual
 기존에 우리가 가지고 있던 training set $(x_1,y_1),...,(x_n,y_n)$에 대한 SVM dual 최적화 문제는 다음과 같습니다.<br>
 
-$\underset{α}{\sup}⁡∑_{i=0}^nα_i-\frac{1}{2}∑_{i,j=1}^nα_i α_j y_i y_j x_i^T x_i$<br>
-$s.t.\ ∑_{i=1}^nα_i y_i=0$<br>
-$\quad\quad α_i∈[0,\frac{c}{n}],\ i=1,…,n$
+$$\underset{α}{\sup}⁡∑_{i=0}^nα_i-\frac{1}{2}∑_{i,j=1}^nα_i α_j y_i y_j x_i^T x_i$$<br>
+$$s.t.\ ∑_{i=1}^nα_i y_i=0$$<br>
+$$\quad\quad α_i∈[0,\frac{c}{n}],\ i=1,…,n$$
 
 이때, 우리는 비선형의 데이터들에 대해서 kernel method를 사용해 **고차원의 유사도**를 계산할 것입니다.<br>
 
@@ -132,13 +129,13 @@ $k(x, x') = ψ(x)^T ψ(x') = x^T x'$
 선형 커널은 입력 공간이 선형 분리 가능(linearly separable)한 경우에는 잘 작동합니다.<br> 그러나 입력 데이터가 비선형(nonlinear)인 경우에는 다른 커널 함수를 사용해야 합니다.
 ### The Kernel Matrix (or the Gram Matrix)
 
-$K = (<x_i,x_j>)_{i,j}=\begin{bmatrix}<x_1, x_1> & <x_1, x_2> & \dots & <x_1, x_n> \\
+$$K = (<x_i,x_j>)_{i,j}=\begin{bmatrix}<x_1, x_1> & <x_1, x_2> & \dots & <x_1, x_n> \\
 <x_2, x_1> & <x_2, x_2> & \dots & <x_2, x_n> \\
 \vdots & \vdots & \ddots & \vdots \\
 <x_n, x_1> & <x_n, x_2> & \dots & <x_n, x_n> \\
-\end{bmatrix}$
+\end{bmatrix}$$<br>
 
 Kernel Matrix 또는 Gram Matrix는 데이터 포인트 간 유사도(similarity)를 측정하는 방법 중 하나입니다. <br>이 행렬은 데이터 포인트의 내적(dot product)으로 구성되며, 모든 데이터 포인트 쌍에 대한 내적 값을 담고 있습니다.<br>
 
 
-[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
+[*출처 : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
