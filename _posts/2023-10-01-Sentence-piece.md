@@ -1,20 +1,4 @@
 ---
-title:  "Sentence Piece"
-excerpt: ""
-
-categories:
-  - NLP
-tags:
-  - [NLP, ChatGPT, Prompt Engineering]
-
-use_math: true
-toc: true
-toc_sticky: true
- 
-date: 2023-09-26
-last_modified_at: 2023-09-26
----
----
 title: Sentence Piece
 layout: post
 description: paper review
@@ -109,12 +93,13 @@ SentencePiece tokenizer는 언어에 무관하게 동작하며, 띄어쓰기 유
 BPE는 말뭉치에서 자주 등장하는 연이은 토큰이 있다면, 그것을 하나의 토큰으로 합쳐버리는 과정입니다.<br>
 예를 들어, "house home hostile"로 BPE를 해본 결과, 초기에는 각 글자가 분해되어 있으나, merge 과정을 거치면서 'ho'나 'e_'와 같은 토큰이 합쳐지게 됩니다.<br>
 
-### Training SentencePiece
+# Training SentencePiece
 
-**SentencePiece**의 훈련 과정은 Variational inference의 일종입니다.<br>
+SentencePiece의 훈련 과정은 Variational inference의 일종입니다.<br>
+
 주어진 관측 데이터(Evidence)와 모델 파라미터(θ)를 바탕으로 가설(Hypothesis)에 대한 분포 \( P \)를 variational parameter를 도입하여 \( Q \)로 근사합니다.<br>
 
-$$P(H|E,θ) \approx Q(H|E,λ) = \prod_{i=1}^{|H|} q_i(H_i|λ_i)$$ <br>
+$$P(H|E,θ) \approx Q(H|E,λ) = \prod_{i=1}^{|H|} q_i(H_i|λ_i)$$<br>
 
 여기서 근사의 목적은 Evidence Lower Bound \( L(λ,θ) \)를 극대화하는 것입니다.<br>
 
@@ -133,7 +118,9 @@ $$\sum_{H_j} -KL(q_j(H_j|E,λ_j) || \tilde{P}(H,E|θ)) + C'$$<br>
 $$q_j^*(H_j|E,λ_j) = \tilde{P}(H,E|θ)$$<br>
 $$\ln q_j^*(H_j|E,λ_j) = E_{q_i \neq j} [\ln P(H,E|θ)] + Const.$$<br>
 
-### SentencePiece의 evidence log-likelihood
+---
+
+## SentencePiece의 evidence log-likelihood
 
 숨겨진 변수 \( π \)를 도입하고, Dirichlet Distribution을 이용합니다.<br>
 
@@ -144,7 +131,7 @@ $$p(x|π) = \prod_{n=1}^N \prod_{k=1}^K π_k^{x_{nk}}$$<br>
 
 ---
 
-이 외에도 센텐스피스는 다양한 기능을 제공하므로, 공식 문서나 깃허브를 참고하는 것이 좋습니다.<br>
+
 
 - [센텐스피스 논문](https://arxiv.org/pdf/1808.06226.pdf)<br>
 - [센텐스피스 깃허브](https://github.com/google/sentencepiece)<br>
