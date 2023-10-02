@@ -30,10 +30,14 @@ Interactions between features는 feature engineering 과정에서 매우 중요�
 교호작용은 모델의 성능을 높이기 위해서 중요한 정보이며, feature engineering 단계에서 교호작용을 고려하여 새로운 feature를 만들어내는 것이 일반적입니다.<br>
 이 경우 모델은 이러한 상호작용을 적절하게 고려하지 않을 경우 예측 결과가 부정확해질 수 있습니다.<br>
 
+```python
 Input: Patient information $x$<br>
 Action: Health score $y \in R$ (높을수록 좋습니다.)<br>
 Feature Map: $\phi(x) = [height(x),weight(x)]$<br>
 Issue: height에 관련된 weight가 중요합니다.<br>
+
+```
+
 
 이러한 관계는 linear한 분류로는 해결할 수 없습니다.<br>
 즉, 높은 height에 대한 높은 wright는 높은 건강 점수를 가져오지만, 낮은 hright에 대한 낮은 weight는 건강 점수를 낮추는 것이므로, 이러한 상호작용을 고려해야합니다.<br>
@@ -128,4 +132,4 @@ def predicate(x):
 이렇게 확장된 가설 공간에서는 더 복잡한 가설(모델)을 학습할 수 있습니다.<br>
 
 
-[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
+[*출처 : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).

@@ -73,14 +73,14 @@ String(문자열)이 email 주소인지 여부 예측<br>
 
 위에 제시된 두 가지 방법은 특징(feature)을 나타내는 방식에 있어서 차이가 있습니다.<br>
 
-1. 배열(array) 표현 방식:
+1. 배열(array) 표현 방식:<br>
 - 밀집된(dense) 특징에 대해서는 배열(array) 표현 방식이 유용합니다.<br>
 -	배열 표현 방식은 각 특징의 값을 배열의 인덱스에 대응하여 저장합니다.<br>
 -	위의 예시에서는 0.85, 1번째 특징의 값인 'fracOfAlpha'에 대응하는 인덱스에 저장하고, 나머지 특징의 값은 0으로 초기화되어 저장됩니다.<br>
 - 배열 방식은 특징들이 고정된 순서(order)를 가지고 있다고 가정합니다.<br>
 - 만약 특징들 중 대부분이 0이 아닌 값(nonzero elements)을 가진다면, 배열 방식은 매우 효율적인 방법입니다.<br>
 - 이러한 "밀집된(dense) 특징 벡터(dense feature vectors)"는 공간과 계산 시간 측면에서 매우 효율적입니다. 특히, GPU를 사용하여 연산을 가속화할 수 있습니다.
-2.	맵(map) 표현 방식:
+2.	맵(map) 표현 방식:<br>
 -	희소(sparse)한 특징에 대해서는 맵(map) 표현 방식이 유용합니다.<br>
 -	맵 표현 방식은 각 특징의 이름(name)과 값을 매핑하여 저장합니다.<br>
 -	위의 예시에서는 'fracOfAlpha'라는 이름과 0.85라는 값을 매핑하여 저장하고, 'contains_@'라는 이름과 1이라는 값을 매핑하여 저장합니다.<br>
@@ -98,4 +98,4 @@ String(문자열)이 email 주소인지 여부 예측<br>
 이와 같은 특징의 표현 방식은 머신러닝 알고리즘에서 매우 중요합니다.<br>
 특히, 데이터가 매우 희소한 경우(대부분의 값이 0인 경우)에는 맵 표현 방식을 사용하는 것이 좋습니다.<br>
 
-[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
+[*출처 : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).

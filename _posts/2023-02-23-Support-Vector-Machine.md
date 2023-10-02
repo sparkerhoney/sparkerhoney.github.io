@@ -1,15 +1,13 @@
 ---
-title: "Support Vector Machine 1st"
-excerpt: "SVM"
-categories:
-  - Machine Learning
-tags:
-  - [Machine Learning, Data Science]
+title: Support Vector Machine 1st
+layout: post
+description: Lecture summary
 use_math: true
-toc: true
-toc_sticky: true
-date: 2023-02-23
-last_modified_at: 2023-02-23
+post-image: https://github.com/sparkerhoney/sparkerhoney.github.io/blob/master/_images/machine%20learning.png?raw=true
+category: machine learning
+tags:
+- Data Science
+- machine learning
 ---
 
 # Support Vector Machines
@@ -21,7 +19,7 @@ last_modified_at: 2023-02-23
 ### The Margin
 ---
 
-정의: 예측 score $$\hat{y}$$과 실제 class $$y∈{-1,1}$$에 대한 마진은 $$y\hat{y}$$ ̂입니다.<br>
+정의: 예측 score $$\hat{y}$$과 실제 class $$y∈{-1,1}$$에 대한 마진은 $$y\hat{y}$$ 입니다.<br>
 마진은 자주 $$yf(x)$$와 같이 나타냅니다. 이때 $$f(x)$$는 우리의 score function입니다.<br>
 마진은 우리가 얼마나 정확한지를 보여주는 척도이고, 우리는 마진을 최대화하기를 원합니다.<br>
 대부분 classification loss는 마진에만 의존합니다.<br>
@@ -30,7 +28,7 @@ last_modified_at: 2023-02-23
 ---
 
 - SVM/Hinge loss: $$l_{Hinge}=max⁡{1-m,0}=(1-m)_+$$<br>
-- 마진 $$m=yf(x)$$; “positive part”인 $$x_+=x_1(x≥0)$$<br>
+- 마진 $$m=yf(x)$$: “positive part”인 $$x_+=x_1(x≥0)$$<br>
 	 
 Hinge는 convex이고, 0-1loss의 상계,	$$m=1$$일 때 미분이 불가합니다.<br>
 우리는 $$m<1$$일 때 “margin error”를 가집니다.<br>
@@ -38,7 +36,7 @@ Hinge는 convex이고, 0-1loss의 상계,	$$m=1$$일 때 미분이 불가합니�
 ## Support Vector Machine
 ---
 
-- Hypothesis space: $$F={f(x)=w^T x+b|w∈R^d,b∈R}$$
+- Hypothesis space: $$F={f(x)=w^T x+b|w∈R^d,b∈R}$$<br>
 
 ###	SVM Optimization Problem
 ---
@@ -147,10 +145,10 @@ $$λ_i^* ξ_i^*=(\frac{c}{n}-α_i^* ) ξ_i^*=0$$<br>
 
 ### Consequences of Complementary Slackness Conditions
 이렇게 된다면 마진 값에 의해서 결과 값을 도출해낼 수 있는데 과정은 다음과 같습니다.<br>
-- 만약 $y_i f^* (x_i)>1$이면 그 때의 margin loss는 $ξ_i^*=0$이되고 위의 식에 대입해본다면 $α_i^*=0$이 됩니다.<br>
-- 만약 $y_i f^* (x_i )<1$이면 그 때의 margin loss는 $ξ_i^*>0$이되고 위의 식에 대입해본다면 $α_i^*=\frac{c}{n}$이 됩니다.<br>
-- 만약 $α_i^*=0$이면 그 때의 margin loss는 $ξ_i^*=0$이되고 이 말인 즉슨 loss가 없다는 것을 의미해 최종적으로 $y_i f^* (x_i )≥1$이라고 할 수 있습니다.<br>
--	만약 $α_i^*∈(0,\frac{c}{n})$이면 그 때의 margin loss는 $ξ_i^*=0$이되고 이 말인 즉슨 $1-y_i f^* (x_i )=0$이라고 할 수 있습니다.<br>
+- 만약 $$y_i f^* (x_i)>1$$이면 그 때의 margin loss는 $$ξ_i^*=0$$이되고 위의 식에 대입해본다면 $$α_i^*=0$$이 됩니다.<br>
+- 만약 $$y_i f^* (x_i )<1$$이면 그 때의 margin loss는 $$ξ_i^*>0$$이되고 위의 식에 대입해본다면 $$α_i^*=\frac{c}{n}$$이 됩니다.<br>
+- 만약 $$α_i^*=0$$이면 그 때의 margin loss는 $$ξ_i^*=0$$이되고 이 말인 즉슨 loss가 없다는 것을 의미해 최종적으로 $$y_i f^* (x_i )≥1$$이라고 할 수 있습니다.<br>
+- 만약 $$α_i^*∈(0,\frac{c}{n})$$이면 그 때의 margin loss는 $$ξ_i^*=0$$이되고 이 말인 즉슨 $$1-y_i f^* (x_i )=0$$이라고 할 수 있습니다.<br>
 
 이 모든 것을 요약 정리해본다면 다음과 같습니다.<br>
 

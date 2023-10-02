@@ -107,6 +107,6 @@ Discretization은 연속적인 값을 구간별로 나누어 각 구간에 해�
 
 ---
 
-[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).<br>
+[*출처 : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).<br>
 
 ---

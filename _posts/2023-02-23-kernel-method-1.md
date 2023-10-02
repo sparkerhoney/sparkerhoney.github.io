@@ -164,4 +164,4 @@ SVM은 고차원으로 데이터를 매핑하는 것을 통해 비선형적인 �
 
 ---
 
-[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
+[*출처 : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).

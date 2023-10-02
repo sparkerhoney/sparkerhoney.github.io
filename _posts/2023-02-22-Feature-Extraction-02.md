@@ -110,4 +110,4 @@ Non-monotonicity가 발생하는 경우에는 변수 간에 선형 관계가 아
 
 ---
 
-[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
+[*출처 : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).

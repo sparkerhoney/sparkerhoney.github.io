@@ -24,11 +24,9 @@ Primal problem에서는 목적함수를 최소화 또는 최대화하는 것이 
 또한, primal problem과 dual problem은 서로 관련이 있습니다.<br>
 예를 들어, primal problem에서 최소화해야 하는 목적함수 값은 dual problem에서 최대화해야 하는 목적함수 값의 하한(lower bound)이 됩니다.<br>
 
-Primal problem에서 최소화해야 하는 목적함수 값을 $p^*$라 하고, dual problem에서 최대화해야 하는 목적함수 값을 $d^*$라 하면, 다음과 같은 부등식이 성립합니다.<br>
+Primal problem에서 최소화해야 하는 목적함수 값을 $p^`$라 하고, dual problem에서 최대화해야 하는 목적함수 값을 $d^`$라 하면, 다음과 같은 부등식이 성립합니다.<br>
 
-$$
-p^* \ge d^*
-$$<br>
+$$p^` \ge d^`$$<br>
 
 이 부등식은 "primal problem에서 최소화해야 하는 목적함수 값은 dual problem에서 최대화해야 하는 목적함수 값의 하한(lower bound)이 된다"는 의미를 가집니다.<br>
 이 부등식은 strong duality condition이 성립할 때에만 성립하며, 일반적으로는 성립하지 않을 수 있습니다.<br>
@@ -40,4 +38,4 @@ Dual problem에서 최대화해야 하는 목적함수 값은 primal problem에�
 
 ---
 
-[*[출처] : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
+[*출처 : FOUNDATIONS OF MACHINE LEARNING by Bloomberg ML EDU*](https://bloomberg.github.io/foml/#home).
