@@ -56,23 +56,23 @@ $$<br>
 
 ### 모형의 타당성을 검토
 
-1. 오차($$\epsilon_j$$)에 대한 가정의 검토
+1. 오차($$\epsilon_j$$)에 대한 가정의 검토<br>
    - 독립성($$\epsilon_j$$은 서로 독립) $\rightarrow$ 잔차와 관측순서의 Plot
    - 정규성($$\epsilon_j$$가 정규분포를 따름) $\rightarrow$ 히스토그램 또는 정규확률지 Plot
    - 등분산성($$\epsilon_j$$의 분산이 모두 동일) $\rightarrow$ 잔차와 $$\hat{y}$$의 Plot<br>
 
-2. 회귀식의 유의성 검토
+2. 회귀식의 유의성 검토<br>
    - 최소제곱법에 의해 구한 회귀식이 사용해도 좋을 만큼 유의한 것인가를 검토한다. $\rightarrow$ 전체 회귀식에 대한 유의성검정(분산분석)<br>
 
 ### 분산분석
 
-- 총제곱합의 분해
+- 총제곱합의 분해<br>
   - 단순회귀모형에서와 마찬가지로 총제곱합은 아래와 같이 분해된다.<br>
   - $$\displaystyle\sum_{j=1}^{n}(y_j-\bar{y})^2=\displaystyle\sum_{j=1}^{n}(\hat{y}-\bar{y})^2+\displaystyle\sum_{j=1}^{n}(y-\hat{y})^2$$<br>
   - $$SSTO=SSR+SSE$$<br>
   - 단, $$\hat{y_j}=b_0+b_1x_{1j}+\cdots+b_px_{pj}$$<br>
 
-- 분산분석표
+- 분산분석표<br>
   - |Source of Variation|Degree of Freedom(DF)|Sum of Squares(SS)|Mean Square(MS=Ss/DF)|$$F_0$$|
     |------|---|---|---|---|
     |Regression Error|$$p$$<br>$$n-p-1$$|$$SSR$$<br>$$SSE$$|$$MSR=\frac{SSR}{1}$$<br>$$MSE=\frac{SSE}{n-2}$$|$$\frac{MSR}{MSE}$$|
@@ -85,7 +85,7 @@ $$<br>
 
 ### 가설검정
 
-- 전체 회귀식에 대한 검정
+- 전체 회귀식에 대한 검정<br>
   - 회귀계수에 대해 먼저 아래와 같은 가설을 세운다.<br>
   - $$
     \begin{cases}
