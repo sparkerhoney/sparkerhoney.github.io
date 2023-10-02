@@ -45,7 +45,7 @@ feature extraction을 통해 더 많은 feature를 추가하게되면 우리는 
 메모리 및 계산 비용을 줄일 수 있는 방식은 배우지 못했습니다.<br>
 
 지금부터 비선형의 svm을 다룰 때 메모리나 계산비용을 줄일 수 있는 방법인 **kernel methods** 에 대한 이야기를 하겠습니다.
-
+---
 ## Kernel Methods: Motivation
 ### Review: Linear SVM and Dual
  
@@ -66,7 +66,7 @@ $α_i∈[0,\frac{c}{n}],\ i=1,…,n$
 이는 내적으로 구성되어있으며 각각 매핑함수를 따로 구한 뒤에 내적해야하는 계산비용이 기하급수적으로 올라간다고 생각할 수 있습니다.<br>
 
 따라서 우리는 kernel methods를 이용해서 이를 해결해보겠습니다.
-
+---
 ### Some Methods Can Be “Kernelized”
 input data가 내적으로 표현될 수 있다는 이야기는 "**kernelized**" 될 수 있다는 것을 나타냅니다.<br>
 즉, input data를 feature space로 매핑하는 것이 아니라 input data 쌍들 간의 내적으로만 계산할 수 있는 경우를 이야기합니다.<br>
@@ -74,7 +74,7 @@ input data가 내적으로 표현될 수 있다는 이야기는 "**kernelized**"
 $k(x, x') = \langle \psi(x), \psi(x') \rangle$
 
 이렇게 "**kernelized**"된 경우에 위와 같이 kernel 함수 $k(x, x')$로 대체 할 수 있습니다.<br>
-
+---
 ### Kernel Function Calculation
 1. **explicit 계산** : input data를 mapping function에 대입하여 각각의 feature map을 계산하고, 이를 내적해서 kernel의 값을 구합니다.
 2. **implicit 계산** : 바로 kernel function의 값을 내적으로 계산합니다.
@@ -82,7 +82,7 @@ $k(x, x') = \langle \psi(x), \psi(x') \rangle$
 이것은 feature space가 매우 큰 경우에 유용합니다.<br>
 **명시적으로 계산하는 것보다 훨씬 더 빠르게 계산을 할 수 있기 때문** 입니다.<br>
 이를 우리는 **Kernel Trick** 이라 부릅니다.<br>
-
+---
 ### Kernels as Similarity Scores
 커널 트릭을 사용한 svm은 고차원 공간에 있는 feature vector들의 내적을 계산해야합니다.<br>
 커널 함수를 **유사도 점수(similarity score)** 로 생각하는 것은 유용한 접근 방법입니다.<br> 하지만 이는 엄밀한 수학적인 정의는 아닙니다.<br> 유사도 점수를 정의하는 다양한 방법이 있기 때문입니다.<br> 따라서 우리는 일부 **특징 공간(feature space)** 에서 **내적(inner product)** 과 대응되는 **Mercer 커널** 을 사용할 것입니다.<br>
@@ -98,7 +98,7 @@ $k(x, x') = \langle \psi(x), \psi(x') \rangle$
 - **추천 시스템에서 커널 기법을 사용하여 유사도를 계산** 할 수 있습니다.<br> 예를 들어, 사용자간의 유사도를 계산하기 위해 사용자 간의 상호작용 기록을 사용할 수 있습니다.<br> 이렇게 하면 유사한 사용자 간에는 추천할 항목이 유사할 것이므로, 더 나은 추천을 제공할 수 있습니다.<br> 이러한 방식은 클러스터링 분석에서도 사용될 수 있으며, **데이터 샘플 간의 유사도** 를 기반으로 비슷한 특징을 가진 데이터 그룹을 찾을 수 있습니다.<br>
 
 이제 SVM에서의 예시를 보며 자세하게 설명드리겠습니다.
-
+---
 ## Example : SVM
 ### SVM Dual
 기존에 우리가 가지고 있던 training set $(x_1,y_1),...,(x_n,y_n)$에 대한 SVM dual 최적화 문제는 다음과 같습니다.<br>
@@ -110,7 +110,7 @@ $$\quad\quad α_i∈[0,\frac{c}{n}],\ i=1,…,n$$
 이때, 우리는 비선형의 데이터들에 대해서 kernel method를 사용해 **고차원의 유사도**를 계산할 것입니다.<br>
 
 그렇다면 어떤 **kernel function** 이 있는지 한 번 알아보겠습니다.<br>
-
+---
 ### Linear Kernel
 **선형 커널(linear kernel)** 은 SVM에서 가장 기본적으로 사용되는 커널 함수 중 하나입니다. <br>이 커널 함수는 **입력 공간(input space)** 과 **특징 공간(feature space)** 이 같습니다.<br>
 
@@ -127,6 +127,7 @@ $k(x, x') = ψ(x)^T ψ(x') = x^T x'$
 여기서 $ψ(x)$는 입력 데이터 $x$를 특징 공간으로 변환하는 함수이며, $x^T x'$은 입력 데이터 $x$와 $x'$의 내적입니다.<br> 따라서 **선형 커널** 은 입력 데이터 $x$와 $x'$의 **내적** 으로 두 데이터 간의 **유사도를 측정** 합니다.
 
 선형 커널은 입력 공간이 선형 분리 가능(linearly separable)한 경우에는 잘 작동합니다.<br> 그러나 입력 데이터가 비선형(nonlinear)인 경우에는 다른 커널 함수를 사용해야 합니다.
+---
 ### The Kernel Matrix (or the Gram Matrix)
 
 $$K = (<x_i,x_j>)_{i,j}=\begin{bmatrix}<x_1, x_1> & <x_1, x_2> & \dots & <x_1, x_n> \\
