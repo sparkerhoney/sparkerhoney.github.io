@@ -18,7 +18,8 @@ tags:
 
 # Transformer (Attention Is All You Need)
 ## INTRODUCTION
-![Transformer (Attention Is All You Need) 구현하기 (1/3)](https://paul-hyun.github.io/assets/2019-12-19/transformer-model-architecture.png)
+![Transformer (Attention Is All You Need) 구현하기 (1/3)](https://paul-hyun.github.io/assets/2019-12-19/transformer-model-architecture.png)<br>
+
 **Transformer** 모델로부터 현재 많은 **모델**들이 생겨나고 있습니다.<br>
 GPT4, LLaMa와 같은 모델 모두 Transformer의 architecture를 조금 더 발전시켜서 만들어진 모델 이므로 Transformer가 얼마나 대단한 모델인지 알 수 있습니다.<br>
 해당 [paper](https://arxiv.org/abs/1706.03762)는 2017년에 발표된 논문입니다.<br>
@@ -66,7 +67,7 @@ Encoder는 context를 제대로 생성(문장의 정보를 빠뜨리지 않고 �
 Decoder는 Encoder와 반대 방향입니다.(context를 input으로 받아서 sentence 생성 <- Decoding)<br>
 이 때, Decoder는 Decoder에서 output으로 생성하는 문장을 **Right Shift**한 문장으로 input 됩니다.<br>
 
-- **Right Shift**
+- **Right Shift**<br>
   >  "*Right shift*"는 자연어 처리와 관련된 용어로서, 특히 Transformer 모델에서 사용되는 용어입니다.<br> Transformer 모델의 Decoder에서 "right shift"는 주로 학습 및 예측 과정에서 사용됩니다. <br>
     1. **Right Shift의 의미**:<br>
        - "Right shift"는 시퀀스의 모든 요소를 오른쪽으로 한 칸씩 이동시키는 것을 의미합니다.<br>
@@ -85,9 +86,9 @@ Decoder는 Encoder와 반대 방향입니다.(context를 input으로 받아서 s
        - 이는 실제 번역, 텍스트 생성 등의 작업에서 중요한 역할을 합니다.
 
 ### Encoder & Decoder in Transformer
-![image](https://github.com/sparkerhoney/NLP-Paper-Implementation/assets/108461006/2eaa30bb-eeab-4cc7-9a30-da089fb183a8)
+![image](https://github.com/sparkerhoney/NLP-Paper-Implementation/assets/108461006/2eaa30bb-eeab-4cc7-9a30-da089fb183a8)<br>
 
-- 전반적인(대략적인) 코드 세팅
+- 대략적인 코드 세팅
 ```python
 class Tramsformer(nn.Module):
     def __init__(self, encoder, decoder):
@@ -109,9 +110,45 @@ class Tramsformer(nn.Module):
         return y
 ```
 # Encoder
+
 전반적인 model의 architecture에 대해서 파악해보았습니다.<br>
-이제, **Encoder**가 어떤 알고리즘을 진행이 되는지 조금 더 자세히 살펴볼겁니다.
+이제, **Encoder**가 어떤 알고리즘을 진행이 되는지 조금 더 자세히 살펴볼겁니다.<br>
 
-![image](https://github.com/sparkerhoney/NLP-Paper-Implementation/assets/108461006/6f1e8768-134c-40b0-b3fd-50098041c9ad)
+![image](https://github.com/sparkerhoney/NLP-Paper-Implementation/assets/108461006/6f1e8768-134c-40b0-b3fd-50098041c9ad)<br>
 
-Encoder는 Encoder Block이
+## Encoder Block
+
+Encoder는 **Encoder Block**이 $N$개 쌓여진 형태로 구성이 되어 있는데, 논문에서는 $N = 6$을 사용하였습니다.<br>
+Encoder Block에서 어떤 matrix를 input으로 받는다면 **동일한 shape**의 output을 생성해냅니다.<br>
+첫번째 Encoder Block의 input은 전체 Encoder의 input으로 들어오는 문장을 embedding 시켜줍니다.<br>
+
+첫번째 Block에서부터 두번째, 세번째 Block으로 계속해서 input이 들어가고 output이 생성되고 또 다시 input이 들어가는 형태로써 **sequential**하게 연결이 되어있습니다.<br>
+마지막 Block에서 output으로 나오는 전제 Encoder의 output은 이전에 설명했듯 **context**가 됩니다.<br>
+이 때, Encoder의 output 또한 input으로 들어간 matrix와 동일한 shape로 구성되어야한다는 점을 주의해야합니다.<br>
+
+### Why are there "N" Encoder Blocks?
+
+각 Encoder Block은 input으로 들어오는 vector에 대해서 더 높은 차원(넓은 관점)에서의 context(즉, 더욱 추상적인 정보)를 담기 때문입니다.<br>
+Encoder Block은 내부적으로 어떤 Mechanism을 활용해서 context를 담게 되는데, 이때 겹겹이 쌓아 input의 context, context의 context, ... 로서 더 높은 차원의 context가 됩니다.(처음 Encoder Block에서 나오는 context vector는 문장에 대한 이해도가 많이 떨어지겠지만!)<br>
+
+### Encoder의 대략적 code
+
+```python
+class Encoder(nn.Module):
+    def __init__(self, encoder_bock, n_layer): #n_layer : Encoder Block의 개수
+        super(Encoder, self).__init__()
+        self.layers = []
+        for i in range(n_layer):
+            self.layers.append(copy.deepcopy(encoder_block))
+
+    def forward(self, x):
+        out = x
+        for layer in self.layers:
+            out = layer(out)
+        return out
+```
+
+`forward()`를 주목해보면, Encoder Block들을 순차적으로 실행하면서, 이전 block의 output을 이후 block의 input으로 넣는다.<br>
+첫 `block`의 input은 `x`가 된다. 이후, 가장 마지막 block의 output은 context로서 `return`된다.<br> 
+
+### Encoder Block의 대략적 code
