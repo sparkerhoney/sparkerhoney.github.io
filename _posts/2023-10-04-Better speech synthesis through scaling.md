@@ -105,59 +105,59 @@ TTS 시스템은 주로 **지연 시간(latency)** 에 중점을 두지만, 다�
 	    - 이미지는 **양자화 오토인코더**를 사용하여 discrete token 시퀀스로 인코딩됩니다. <br>
 		    - **Discrete domain**: 이산 도메인은 값들이 연속적이지 않고 분리된 상태로 존재하는 도메인을 의미합니다.<br> 예를 들어, 정수 집합 {1, 2, 3, ...}는 이산 도메인에 속합니다.<br>
 		    - **Continuous domain**: 연속 도메인은 값들이 연속적으로 존재하는 도메인을 의미합니다.<br> 예를 들어, 실수 집합은 연속 도메인에 속합니다.<br>
-	    - DALL-E는 이 token 시퀀스를 모델링합니다. 
-	    - 이 방식은 이미지의 표현력 측면에서는 강점이지만, 이 토큰을 **실제 이미지 픽셀 값으로 다시 변환하는 디코더가 필요**하게 됩니다. 
-	    - DALL-E에서 사용된 VQVAE 디코더는 대부분의 샘플에서 **흐릿하고 일관성 없는 결과**를 보이는 주요 원인으로 여겨집니다.
+	    - DALL-E는 이 token 시퀀스를 모델링합니다. <br>
+	    - 이 방식은 이미지의 표현력 측면에서는 강점이지만, 이 토큰을 **실제 이미지 픽셀 값으로 다시 변환하는 디코더가 필요**하게 됩니다. <br>
+	    - DALL-E에서 사용된 VQVAE 디코더는 대부분의 샘플에서 **흐릿하고 일관성 없는 결과**를 보이는 주요 원인으로 여겨집니다.<br>
 
-> **양자화 오토인코더(Quantizing Autoencoder)**
-> ![Understanding VQ-VAE (DALL-E Explained Pt. 1)](https://images.velog.io/images/p2yeong/post/c7d4bab1-875c-49d2-9fa1-e59e2410e888/Screen_Shot_2020-06-28_at_4.26.40_PM.png)
+> **양자화 오토인코더(Quantizing Autoencoder)**<br>
+> ![Understanding VQ-VAE (DALL-E Explained Pt. 1)](https://images.velog.io/images/p2yeong/post/c7d4bab1-875c-49d2-9fa1-e59e2410e888/Screen_Shot_2020-06-28_at_4.26.40_PM.png)<br>
 
 ##### **DDPMs (Denoising Diffusion Probabilistic Models)**
 
-기존의 generative model의 문제점인 **Mean-Seeking Behavior** 문제, **Model-Collapse** 문제를 극복하고 *일관되고 다양한 이미지*를 생성하려고 노력한 모델입니다.
+기존의 generative model의 문제점인 **Mean-Seeking Behavior** 문제, **Model-Collapse** 문제를 극복하고 *일관되고 다양한 이미지*를 생성하려고 노력한 모델입니다.<br>
 
-- **Mean-Seeking Behavior** : 모델은 **데이터의 평균** 또는 **중앙값에 가까운 출력만을 생성**하려는 경향을 말합니다.
-	- **In other words**, 모델은 데이터의 *다양성을 충분히 포착하지 못하고, 대신 데이터의 평균적인 특성만을 반영하는 출력을 생성*
-	- **For example**, 얼굴 이미지를 생성하는 모델이 있다고 가정해보겠습니다. 
-		- 만약 이 모델이 Mean-Seeking Behavior를 보인다면, **생성된 얼굴 이미지는 모두 비슷하게 보일 것**입니다. 
-		- 이는 모델이 훈련 데이터의 다양한 얼굴 특성을 충분히 학습하지 못하고, 대신 평균적인 얼굴 특성만을 반영하여 이미지를 생성하기 때문입니다.
+- **Mean-Seeking Behavior** : 모델은 **데이터의 평균** 또는 **중앙값에 가까운 출력만을 생성**하려는 경향을 말합니다.<br>
+	- **In other words**, 모델은 데이터의 *다양성을 충분히 포착하지 못하고, 대신 데이터의 평균적인 특성만을 반영하는 출력을 생성*<br>
+	- **For example**, 얼굴 이미지를 생성하는 모델이 있다고 가정해보겠습니다. <br>
+		- 만약 이 모델이 Mean-Seeking Behavior를 보인다면, **생성된 얼굴 이미지는 모두 비슷하게 보일 것**입니다. <br>
+		- 이는 모델이 훈련 데이터의 다양한 얼굴 특성을 충분히 학습하지 못하고, 대신 평균적인 얼굴 특성만을 반영하여 이미지를 생성하기 때문입니다.<br>
 
-- **Model-Collapse** : *GAN*의 학습 과정에서 발생할 수 있는 문제로, 생성기가 항상 **매우 유사한 출력**만을 생성하는 현상을 의미합니다.
-	- **In other words** : 생성기는 데이터의 **다양한 모드(특성)를 포착하지 못하고**, 대신 한정된 몇 가지 패턴만을 반복적으로 생성하게 됩니다.
-	- **For example**, 다양한 종류의 동물 이미지를 생성하는 GANs 모델이 있다고 가정해보겠습니다. 
-		- 만약 이 모델이 Mode-Collapse 문제에 직면한다면, 생성기는 **오직 개나 고양이와 같은 특정 동물의 이미지만을 생성**하게 될 것입니다.
+- **Model-Collapse** : *GAN*의 학습 과정에서 발생할 수 있는 문제로, 생성기가 항상 **매우 유사한 출력**만을 생성하는 현상을 의미합니다.<br>
+	- **In other words** : 생성기는 데이터의 **다양한 모드(특성)를 포착하지 못하고**, 대신 한정된 몇 가지 패턴만을 반복적으로 생성하게 됩니다.<br>
+	- **For example**, 다양한 종류의 동물 이미지를 생성하는 GANs 모델이 있다고 가정해보겠습니다. <br>
+		- 만약 이 모델이 Mode-Collapse 문제에 직면한다면, 생성기는 **오직 개나 고양이와 같은 특정 동물의 이미지만을 생성**하게 될 것입니다.<br>
 
-DDPMs는 low-quality guidance signals를 사용하여 그 signals가 파생된 **고차원 공간(highdimensional space)을 재구성**하는 데 매우 효과적인 특징이 있습니다.
-여기서 "**low-quality guidance signals**"란, 원본 데이터의 일부만을 포함하거나 *손상된 데이터*를 의미합니다. 
+DDPMs는 low-quality guidance signals를 사용하여 그 signals가 파생된 **고차원 공간(highdimensional space)을 재구성**하는 데 매우 효과적인 특징이 있습니다.<br>
+여기서 "**low-quality guidance signals**"란, 원본 데이터의 일부만을 포함하거나 *손상된 데이터*를 의미합니다. <br>
 
-DDPMs는 이러한 부정확하거나 불완전한 정보를 바탕으로 원본 데이터의 정확한 분포를 재구성할 수 있습니다.
-다르게 표현하면, DDPMs는 **초고해상도(super-resolution) 작업**에 매우 뛰어나다고 할 수 있습니다.
+DDPMs는 이러한 부정확하거나 불완전한 정보를 바탕으로 원본 데이터의 정확한 분포를 재구성할 수 있습니다.<br>
+다르게 표현하면, DDPMs는 **초고해상도(super-resolution) 작업**에 매우 뛰어나다고 할 수 있습니다.<br>
 
-이 모델의 핵심 아이디어는 **원본 데이터의 분포**를 시뮬레이션하는 데에 **노이즈를 점진적으로 추가하고 제거**하는 과정을 사용하는 것입니다.
+이 모델의 핵심 아이디어는 **원본 데이터의 분포**를 시뮬레이션하는 데에 **노이즈를 점진적으로 추가하고 제거**하는 과정을 사용하는 것입니다.<br>
 
-![논문 리뷰 Denoising Diffusion Probabilistic Model(2020)](https://velog.velcdn.com/images/dongdori/post/a7c18bf8-7d30-4853-a1ea-da7dde57b1c6/image.png)
+![논문 리뷰 Denoising Diffusion Probabilistic Model(2020)](https://velog.velcdn.com/images/dongdori/post/a7c18bf8-7d30-4853-a1ea-da7dde57b1c6/image.png)<br>
 
-**DDPMs의 주요 제한사항**:
+**DDPMs의 주요 제한사항**:<br>
 
-1. **고정된 출력 형태**: 전통적인 DDPMs 접근법은 sampling이 시작되기 전에 알려진 **고정된 출력 형태**에 의존합니다. 
-	- 이 논문과 관련된 구체적인 예로, DDPMs는 텍스트와 오디오 사이의 암시적인 정렬 문제를 해결할 수 없기 때문에 **텍스트를 오디오 신호로 변환하는 방법**을 학습할 수 없습니다.
-	- **For Example**, "*안녕하세요*"라는 짧은 문장과 "*오늘은 좋은 날씨입니다*"라는 긴 문장이 있을 때, 이 두 문장에 해당하는 *오디오의 길이는 서로 다를 것*입니다. 
-	- DDPMs는 이러한 텍스트와 오디오의 길이나 순서를 자동으로 맞추는 능력이 없습니다.
+1. **고정된 출력 형태**: 전통적인 DDPMs 접근법은 sampling이 시작되기 전에 알려진 **고정된 출력 형태**에 의존합니다. <br>
+	- 이 논문과 관련된 구체적인 예로, DDPMs는 텍스트와 오디오 사이의 암시적인 정렬 문제를 해결할 수 없기 때문에 **텍스트를 오디오 신호로 변환하는 방법**을 학습할 수 없습니다.<br>
+	- **For Example**, "*안녕하세요*"라는 짧은 문장과 "*오늘은 좋은 날씨입니다*"라는 긴 문장이 있을 때, 이 두 문장에 해당하는 *오디오의 길이는 서로 다를 것*입니다. <br>
+	- DDPMs는 이러한 텍스트와 오디오의 길이나 순서를 자동으로 맞추는 능력이 없습니다.<br>
 
-2. **다중 반복 샘플링**: DDPMs는 **여러 번의 반복(multiple iterations)** 을 통해 sampling되어야 합니다. 
-	- **Because**, 이는 DDPMs의 특성상 원본 데이터의 분포를 **점진적으로 모방**하기 위해 **노이즈를 추가**하고 **제거하는 과정**을 여러 차례 반복(*iterations*)하기 때문입니다.
-	- 이 샘플링 과정은 많은 계산을 필요로 하며, DDPM에서 샘플링을 할 때 항상 상당한 지연 시간 비용이 발생한다는 것을 의미합니다.
-	- **Finally**, DDPMs를 사용하여 데이터를 생성할 때는 "**지연 시간(latency)**"이라는 *비용이 발생*합니다. 
+2. **다중 반복 샘플링**: DDPMs는 **여러 번의 반복(multiple iterations)** 을 통해 sampling되어야 합니다. <br>
+	- **Because**, 이는 DDPMs의 특성상 원본 데이터의 분포를 **점진적으로 모방**하기 위해 **노이즈를 추가**하고 **제거하는 과정**을 여러 차례 반복(*iterations*)하기 때문입니다.<br>
+	- 이 샘플링 과정은 많은 계산을 필요로 하며, DDPM에서 샘플링을 할 때 항상 상당한 지연 시간 비용이 발생한다는 것을 의미합니다.<br>
+	- **Finally**, DDPMs를 사용하여 데이터를 생성할 때는 "**지연 시간(latency)**"이라는 *비용이 발생*합니다. <br>
 
 ##### **Re-ranking**
 
-**DALL-E**는 자동 회귀 모델(autoregressive models)의 출력을 "**재순위 지정(re-ranking)**"하는 과정을 도입했습니다. 
-이 과정은 자동 회귀 모델에서 무작위로 샘플을 추출하고, 그 중에서 **가장 품질이 높은 출력을 선택**하여 **후속 작업에 사용**합니다.
-	이러한 절차는 **강력한 판별기(discriminator)를 필요**로 합니다. 
-	판별기란, 좋은 텍스트/이미지 조합과 나쁜 조합을 구별할 수 있는 모델을 의미합니다.
+**DALL-E**는 자동 회귀 모델(autoregressive models)의 출력을 "**재순위 지정(re-ranking)**"하는 과정을 도입했습니다. <br>
+이 과정은 자동 회귀 모델에서 무작위로 샘플을 추출하고, 그 중에서 **가장 품질이 높은 출력을 선택**하여 **후속 작업에 사용**합니다.<br>
+	이러한 절차는 **강력한 판별기(discriminator)를 필요**로 합니다. <br>
+	판별기란, 좋은 텍스트/이미지 조합과 나쁜 조합을 구별할 수 있는 모델을 의미합니다.<br>
 
-DALL-E는 **[CLIP](https://github.com/openai/CLIP)** 모델을 이용했습니다. 
-CLIP은 텍스트와 이미지 조합을 **대조적(contrastive)으로 학습하는 목표를 가진 모델**입니다. 
-이 모델은 텍스트와 이미지 사이의 관계를 학습하여, 텍스트 설명이 주어졌을 때 해당 설명에 가장 잘 맞는 이미지를 선택하거나, 반대로 이미지가 주어졌을 때 그 이미지를 가장 잘 설명하는 텍스트를 선택하는 데 사용됩니다.
+DALL-E는 **[CLIP](https://github.com/openai/CLIP)** 모델을 이용했습니다. <br>
+CLIP은 텍스트와 이미지 조합을 **대조적(contrastive)으로 학습하는 목표를 가진 모델**입니다. <br>
+이 모델은 텍스트와 이미지 사이의 관계를 학습하여, 텍스트 설명이 주어졌을 때 해당 설명에 가장 잘 맞는 이미지를 선택하거나, 반대로 이미지가 주어졌을 때 그 이미지를 가장 잘 설명하는 텍스트를 선택하는 데 사용됩니다.<br>
 
-![](https://blog.kakaocdn.net/dn/cv1qbn/btrJEK6rY69/FfGWU0mMExD9VYjkHvLiuk/img.png)
+![](https://blog.kakaocdn.net/dn/cv1qbn/btrJEK6rY69/FfGWU0mMExD9VYjkHvLiuk/img.png)<br>
