@@ -148,10 +148,32 @@ class Encoder(nn.Module):
         return out
 ```
 
-`forward()`를 주목해보면, Encoder Block들을 순차적으로 실행하면서, 이전 block의 output을 이후 block의 input으로 넣는다.<br>
-첫 `block`의 input은 `x`가 된다. 이후, 가장 마지막 block의 output은 context로서 `return`된다.<br> 
+`forward()`를 주목해보면, Encoder Block들을 순차적으로 실행하면서, 이전 block의 output을 이후 block의 input으로 넣습니다.<br>
+첫 `block`의 input은 `x`가 된다. 이후, 가장 마지막 block의 output은 context로서 `return`됩니다.<br> 
 
 ### Encoder Block의 대략적 code
 
-![image](https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/440fd24d-64cc-44b7-b242-eca788f7ceb8)
+![image](https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/440fd24d-64cc-44b7-b242-eca788f7ceb8)<br> 
+
+Encoder Block의 구성은 크게 **Attention Layer**,** Position-wise Feed-Forward Layer**로 구성됩니다.<br> 
+
+```python
+class EncoderBlock(nn.Module):
+
+    def __init__(self, self_attention, position_ff):
+        super(EncoderBlock, self).__init__()
+        self.self_attention = self_attention
+        self.position_ff = position_ff
+
+    def forward(self, x):
+        out = x
+        out = self.self_attention(out)
+        out = self.position_ff(out)
+        return(out)
+```
+#### What is Attention?
+**Multi-Head Attention**은 **Scaled Dot Product Attention**을 *병렬적*으로 여러개 수행하는 layer입니다.<br>
+**Attention**이란 주의, 집중이라는 뜻이고 우리가 recurrent한 모델링을 진행했을 때 문제점으로 꼽을 수 있는 **parallelization** 이 안되는 부분을 해결해주는 중요한 개념이다.<br>
+
+
 
