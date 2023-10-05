@@ -173,7 +173,7 @@ class EncoderBlock(nn.Module):
 ```
 #### What is Attention?
 **Multi-Head Attention**은 **Scaled Dot Product Attention**을 *병렬적*으로 여러개 수행하는 layer입니다.<br>
-**Attention**이란 주의, 집중이라는 뜻이고 우리가 recurrent한 모델링을 진행했을 때 문제점으로 꼽을 수 있는 **parallelization** 이 안되는 부분을 해결해주는 중요한 개념이다.<br>
+**Attention**이란 주의, 집중이라는 뜻이고 우리가 recurrent한 모델링을 진행했을 때 문제점으로 꼽을 수 있는 **parallelization** 이 안되는 부분을 해결해주는 중요한 개념입니다.<br>
 
 
 
