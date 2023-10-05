@@ -176,3 +176,4 @@ CLIP은 텍스트와 이미지 조합을 **대조적(contrastive)으로 학습�
 이 모델은 텍스트와 이미지 사이의 관계를 학습하여, 텍스트 설명이 주어졌을 때 해당 설명에 가장 잘 맞는 이미지를 선택하거나, 반대로 이미지가 주어졌을 때 그 이미지를 가장 잘 설명하는 텍스트를 선택하는 데 사용됩니다.<br>
 
 ![](https://blog.kakaocdn.net/dn/cv1qbn/btrJEK6rY69/FfGWU0mMExD9VYjkHvLiuk/img.png)<br>
+

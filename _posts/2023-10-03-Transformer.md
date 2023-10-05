@@ -129,7 +129,7 @@ Encoder Block에서 어떤 matrix를 input으로 받는다면 **동일한 shape*
 ### Why are there "N" Encoder Blocks?
 
 각 Encoder Block은 input으로 들어오는 vector에 대해서 더 높은 차원(넓은 관점)에서의 context(즉, 더욱 추상적인 정보)를 담기 때문입니다.<br>
-Encoder Block은 내부적으로 어떤 Mechanism을 활용해서 context를 담게 되는데, 이때 겹겹이 쌓아 input의 context, context의 context, ... 로서 더 높은 차원의 context가 됩니다.(처음 Encoder Block에서 나오는 context vector는 문장에 대한 이해도가 많이 떨어지겠지만!)<br>
+Encoder **Block은** 내부적으로 어떤 Mechanism을 활용해서 context를 담게 되는데, 이때 겹겹이 쌓아 input의 context, context의 context, ... 로서 더 높은 차원의 context가 됩니다.(처음 Encoder Block에서 나오는 context vector는 문장에 대한 이해도가 많이 떨어지겠지만!)<br>
 
 ### Encoder의 대략적 code
 
@@ -154,3 +154,4 @@ class Encoder(nn.Module):
 ### Encoder Block의 대략적 code
 
 ![image](https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/440fd24d-64cc-44b7-b242-eca788f7ceb8)
+
