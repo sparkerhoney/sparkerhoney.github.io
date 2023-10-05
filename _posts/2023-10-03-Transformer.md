@@ -152,3 +152,5 @@ class Encoder(nn.Module):
 첫 `block`의 input은 `x`가 된다. 이후, 가장 마지막 block의 output은 context로서 `return`된다.<br> 
 
 ### Encoder Block의 대략적 code
+
+![image](https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/440fd24d-64cc-44b7-b242-eca788f7ceb8)
