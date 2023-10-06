@@ -23,7 +23,7 @@ Data Scientist & Ai Developer
    
 |Military Service, Seoul/South Korea|04/2020 ~ 10/2021|
 |:---|---:|
-||Served as a conscripted policeman at the Songpa 3rd Mobile Unit|
+||Served as a Auxiliary Police at the 徐菀特別市警察廳 第三機動團|
 
 |Myung Ji University, Seoul/South Korea|02/2022 ~ Present|
 |:---|---:|
