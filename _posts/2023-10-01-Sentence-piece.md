@@ -135,7 +135,7 @@ $\ln q_j^*(H_j|E,λ_j) = E_{q_i \neq j} [\ln P(H,E|θ)] + Const.$<br>
 $p(π|α) = Dir(π,α_K) = \prod_{k=1}^K π_k^{α_K - 1}$<br>
 $p(x|π) = \prod_{n=1}^N \prod_{k=1}^K π_k^{x_{nk}}$<br> -->
 
-주어진 관측 데이터(Evidence)와 모델 파라미터($θ$)를 바탕으로 가설(Hypothesis)에 대한 분포 ($P$)를 variational parameter를 도입하여 ($Q$)로 근사합니다.<br>
+<!-- 주어진 관측 데이터(Evidence)와 모델 파라미터($θ$)를 바탕으로 가설(Hypothesis)에 대한 분포 ($P$)를 variational parameter를 도입하여 ($Q$)로 근사합니다.<br>
 
 $$ P(H \mid E, \theta) \approx Q(H \mid E, \lambda) = \prod_{i=1}^{|H|} q_i(H_i \mid \lambda_i) $$<br>
 
@@ -188,7 +188,36 @@ $$ p(x \mid \pi) = \prod_{n=1}^N \prod_{k=1}^K \pi_k^{x_{nk}} $$ <br>
 
 <br>
 <br>
-여기서 ($x_{nk}$)는 sequence에서 ($n$)번째 토큰이 ($k$)번째 unigram인 경우 1, 아니면 0입니다.<br>
+여기서 ($x_{nk}$)는 sequence에서 ($n$)번째 토큰이 ($k$)번째 unigram인 경우 1, 아니면 0입니다.<br> -->
+
+
+주어진 관측 데이터(Evidence)와 모델 파라미터 \( \theta \)를 바탕으로 가설(Hypothesis)에 대한 분포 \( P \)를 variational parameter를 도입하여 \( Q \)로 근사합니다.
+
+\[ P(H \mid E, \theta) \approx Q(H \mid E, \lambda) = \prod_{i=1}^{|H|} q_i(H_i \mid \lambda_i) \]
+
+여기서 근사의 목적은 Evidence Lower Bound \( L(\lambda, \theta) \)를 극대화하는 것입니다.
+
+\[ L(\lambda, \theta) = \sum_H [Q(H \mid E, \lambda) \ln P(H, E \mid \theta) - Q(H \mid E, \lambda) \ln Q(H \mid E, \lambda)] \]
+
+각 \( \lambda_i \)에 대해 차례로 최적화하면, \( j \)번째 variational parameter \( \lambda_j \)에 대한 극대화 식은 다음과 같습니다:
+
+\[ L(\lambda_j) = \sum_H \prod_{i=1}^{|H|} q_i(H_i \mid E, \lambda_i) \left\{ \ln P(H \mid E, \theta) - \sum_{k=1}^{|H|} \ln q_k(H_k \mid E, \lambda_k) \right\} \]
+
+이를 정리하면:
+
+\[ \sum_{H_j} -KL(q_j(H_j \mid E, \lambda_j) \mid\mid \tilde{P}(H, E \mid \theta)) + C' \]
+
+여기서 \( \tilde{P}(H, E \mid \theta) \)는 \( E_{q_{i \neq j}} [\ln P(H, E \mid \theta)] + C \)입니다.
+
+\[ q_j^*(H_j \mid E, \lambda_j) = \tilde{P}(H, E \mid \theta) \]
+\[ \ln q_j^*(H_j \mid E, \lambda_j) = E_{q_{i \neq j}} [\ln P(H, E \mid \theta)] + \text{Const.} \]
+
+## SentencePiece의 evidence log-likelihood
+
+숨겨진 변수 \( \pi \)를 도입하고, *Dirichlet Distribution*을 이용합니다.
+
+\[ p(\pi \mid \alpha) = \text{Dir}(\pi, \alpha_K) = \prod_{k=1}^K \pi_k^{\alpha_K - 1} \]
+\[ p(x \mid \pi) = \prod_{n=1}^N \prod_{k=1}^K \pi_k^{x_{nk}} \]
 
 ---
 
