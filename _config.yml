@@ -60,6 +60,7 @@ author-about: AI Researcher👨🏻‍💻 in Market Designers, MJU, Industrial 
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
 author-url: https://github.com/sparkerhoney
 
+
 # SASS
 sass:
   sass_dir: _sass
