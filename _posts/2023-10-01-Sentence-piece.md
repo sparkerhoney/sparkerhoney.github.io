@@ -14,8 +14,16 @@ tags:
 # SentencePiece
 
 안녕하세요!<br>
-오늘은 토크나이저에 대한 내용을 다뤄보려고 합니다.<br>
-특히, SentencePiece와 다른 토크나이저와의 차이점, 그리고 한국어 토크나이징에 대해 깊게 알아보겠습니다.<br>
+**SentencePiece**에 대한 내용을 다뤄보려고 합니다.<br>
+특히, **SentencePiece**와 다른 토크나이저와의 차이점, 그리고 한국어 토크나이징에 대해 깊게 알아보겠습니다.<br>
+<br>
+<br>
+
+또한 *코드로 구현한 과정*은 다음과 같습니다.<br>
+<br>
+<br>
+
+- [Sentence Piece 구현 깃허브](https://github.com/sparkerhoney/Paper-Implementation/tree/main/Sentence%20Piece)
 
 ---
 
