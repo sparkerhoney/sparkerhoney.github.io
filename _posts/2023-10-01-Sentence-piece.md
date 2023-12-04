@@ -97,37 +97,37 @@ BPE는 말뭉치에서 자주 등장하는 연이은 토큰이 있다면, 그것
 
 SentencePiece의 훈련 과정은 Variational inference의 일종입니다.<br>
 
-주어진 관측 데이터(Evidence)와 모델 파라미터(θ)를 바탕으로 가설(Hypothesis)에 대한 분포 \( P \)를 variational parameter를 도입하여 \( Q \)로 근사합니다.<br>
+주어진 관측 데이터(Evidence)와 모델 파라미터($θ$)를 바탕으로 가설(Hypothesis)에 대한 분포 ($P$)를 variational parameter를 도입하여 ($Q$)로 근사합니다.<br>
 
-$$P(H|E,θ) \approx Q(H|E,λ) = \prod_{i=1}^{|H|} q_i(H_i|λ_i)$$<br>
+$P(H|E,θ) \approx Q(H|E,λ) = \prod_{i=1}^{|H|} q_i(H_i|λ_i)$<br>
 
 여기서 근사의 목적은 Evidence Lower Bound \( L(λ,θ) \)를 극대화하는 것입니다.<br>
 
-$$L(λ,θ) = \sum_H [Q(H|E,λ) \ln P(H,E|θ) - Q(H|E,λ) \ln Q(H|E,λ)]$$<br>
+$L(λ,θ) = \sum_H [Q(H|E,λ) \ln P(H,E|θ) - Q(H|E,λ) \ln Q(H|E,λ)]$<br>
 
-각 \( λ_i \)에 대해 차례로 최적화하면, \( j \)번째 variational parameter \( λ_j \)에 대한 극대화 식은 다음과 같습니다:<br>
+각 ($λ_i$)에 대해 차례로 최적화하면, ($j$)번째 variational parameter ($λ_j$)에 대한 극대화 식은 다음과 같습니다:<br>
 
-$$L(λ_j) = \sum_H \prod_{i=1}^{|H|} q_i(H_i|E,λ_i) \{ \ln P(H|E,θ) - \sum_{k=1}^{|H|} \ln q_k(H_k|E,λ_k) \}$$<br>
+$L(λ_j) = \sum_H \prod_{i=1}^{|H|} q_i(H_i|E,λ_i) \{ \ln P(H|E,θ) - \sum_{k=1}^{|H|} \ln q_k(H_k|E,λ_k) \}$<br>
 
 이를 정리하면:<br>
 
-$$\sum_{H_j} -KL(q_j(H_j|E,λ_j) || \tilde{P}(H,E|θ)) + C'$$<br>
+$\sum_{H_j} -KL(q_j(H_j|E,λ_j) || \tilde{P}(H,E|θ)) + C'$<br>
 
-여기서 \( \tilde{P}(H,E|θ) \)는 \( E_{q_i \neq j} [\ln P(H,E|θ)] + C \)입니다.<br>
+여기서 ($\tilde{P}(H,E|θ)$)는 ($E_{q_i \neq j} [\ln P(H,E|θ)] + C$)입니다.<br>
 
-$$q_j^*(H_j|E,λ_j) = \tilde{P}(H,E|θ)$$<br>
-$$\ln q_j^*(H_j|E,λ_j) = E_{q_i \neq j} [\ln P(H,E|θ)] + Const.$$<br>
+$q_j^*(H_j|E,λ_j) = \tilde{P}(H,E|θ)$<br>
+$\ln q_j^*(H_j|E,λ_j) = E_{q_i \neq j} [\ln P(H,E|θ)] + Const.$<br>
 
 ---
 
 ## SentencePiece의 evidence log-likelihood
 
-숨겨진 변수 \( π \)를 도입하고, Dirichlet Distribution을 이용합니다.<br>
+숨겨진 변수 ($π$)를 도입하고, *Dirichlet Distribution*을 이용합니다.<br>
 
-$$p(π|α) = Dir(π,α_K) = \prod_{k=1}^K π_k^{α_K - 1}$$<br>
-$$p(x|π) = \prod_{n=1}^N \prod_{k=1}^K π_k^{x_{nk}}$$<br>
+$p(π|α) = Dir(π,α_K) = \prod_{k=1}^K π_k^{α_K - 1}$<br>
+$p(x|π) = \prod_{n=1}^N \prod_{k=1}^K π_k^{x_{nk}}$<br>
 
-여기서 \( x_{nk} \)는 sequence에서 \( n \)번째 토큰이 \( k \)번째 unigram인 경우 1, 아니면 0입니다.<br>
+여기서 ($x_{nk}$)는 sequence에서 ($n$)번째 토큰이 ($k$)번째 unigram인 경우 1, 아니면 0입니다.<br>
 
 ---
 
