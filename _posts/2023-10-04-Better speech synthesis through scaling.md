@@ -3,7 +3,7 @@ title: Better speech synthesis through scaling
 layout: post
 description: Paper review
 use_math: true
-post-image: https://th.bing.com/th/id/OIG.rZM9TiRbekMeMmrI0F9f?pid=ImgGn
+post-image: https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2305.07243.png
 category: statistics
 tags:
   - Data
