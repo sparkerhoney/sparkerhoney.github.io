@@ -7,7 +7,9 @@ layout: cv
 **Email:** lhe339@gmail.com
    
 ---
-   
+
+<img align="right" src="/Users/marketdesigners/Documents/GitHub/sparkerhoney.github.io/profile.jpg" height="300px" alt="llama image">
+
 ## OBJECTIVE
 
 Data Scientist & Ai Developer
