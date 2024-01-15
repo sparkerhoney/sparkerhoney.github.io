@@ -1,12 +1,16 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
 <html>
 
 <head>
     {% include head.html %}
+    <style>
+        /* 추가된 CSS */
+        .wide-container {
+            width: 90%; /* 컨테이너의 너비를 90%로 설정 */
+            max-width: 1400px; /* 최대 너비를 1400px로 설정 */
+            margin: 0 auto; /* 중앙 정렬 */
+        }
+    </style>
     {% include navbar.html %}
     {% include loading.html %}
 </head>
@@ -14,7 +18,7 @@ layout: compress
 <body>
     <section class="hero is-fullheight has-text-centered", id="cv">
         <div class="hero-body">
-            <div class="container">
+            <div class="wide-container"> <!-- 클래스 이름 변경 -->
                 <h1 class="title is-1 is-uppercase has-text-weight-bold", id="cvtitle">
                     Jae Heon Jeong
                 </h1>
