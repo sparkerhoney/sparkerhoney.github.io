@@ -26,20 +26,28 @@ tags:
 ## Related Work
 ### 1. Domain Adaptation
 - Source Domain에서 학습된 Model을 Target Domain에 적용할 때 발생하는 성능 저하 문제를 해결하기 위한 연구 분야입니다. <br>
-- 기존의 Domain Adaptation 연구들은 주로 Unsupervised Method에 초점을 맞추어 왔으며, Source와 Target Domain 간의 Feature Distribution 차이를 최소화하는 다양한 기술을 개발해왔습니다. <br>
+- 기존의 Domain Adaptation 연구들은 주로 Unsupervised Method에 초점을 맞추어 왔으며, Source와 Target Domain 간의 **Feature Distribution 차이를 최소화**하는 다양한 기술을 개발해왔습니다. <br>
 - 이러한 연구들은 Domain Classifier를 사용하여 Source와 Target Domain을 구별하려고 시도하며, Model이 Domain 간 차이를 최소화하도록 학습합니다.<br>
 <br>
 
 ### 2. Semi-Supervised Learning
-- Semi-Supervised Learning은 Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Model을 학습시키는 Method입니다. <br>
+- Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Model을 학습시키는 Method입니다. <br>
 - 이 분야의 연구는 주로 Unlabled Data에서 유용한 정보를 Extraction하여 Model의 Performance를 향상시키는 기법에 초점을 맞춥니다. <br>
-- 조건부 엔트로피 최소화(Conditional Entropy Minimization)와 같은 기존 SSL Methods는 Unlabled Data를 활용하여 Model의 Generalization 능력을 향상시키려고 하지만, Domain 간의 차이가 클 경우 성능이 제한될 수 있습니다.<br>
+- 조건부 엔트로피 최소화(Conditional Entropy Minimization)와 같은 기존 SSL Methods는 Unlabled Data를 활용하여 Model의 **Generalization 능력을 향상**시키려고 하지만, Domain 간의 차이가 클 경우 성능이 제한될 수 있습니다.<br>
 <br>
 
 ### 3. Few-Shot Learning
-- Few-Shot Learning은 매우 소수의 Labled 예시로부터 Class를 학습하는 문제에 초점을 맞춘 연구 분야입니다. <br>
+- 매우 소수의 Labled 예시로부터 Class를 학습하는 문제에 초점을 맞춘 연구 분야입니다. <br>
 - 이 Method는 Target Domain에 대한 소수의 Labled 예시에서도 Model이 잘 작동할 수 있도록 설계되었습니다. <br>
 - 저자들은 기존의 Few-Shot Learning Methods가 Target Domain의 Unlabled Data를 충분히 활용하지 못한다는 한계를 지적하며, MME 방법을 통해 이러한 Data를 효과적으로 활용하여 Domain Adaption 문제를 해결하고자 합니다.<br>
 <br>
 
 ## Minimax Entropy(MME)
+
+<img width="510" alt="Figure 1" src="https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/f6da7e21-1780-4845-934a-89bbf5a85def">
+<br>
+
+기존 **Domain Classifier Based Methods**가 Source와 Target Domain의 Distribution을 **Align**하려는 시도를 보여줍니다.<br>
+이 Methods는 Source와 Target Domain 간의 Distribution를 일치시키려고 하지만, Target Domain에서 구별 가능한 Class 경계를 학습하는 데 실패할 수 있습니다.<br>
+이는 Task Decision Boundary 근처에서 **모호한 특성을 생성**할 수 있음을 시사합니다.<br>
+
