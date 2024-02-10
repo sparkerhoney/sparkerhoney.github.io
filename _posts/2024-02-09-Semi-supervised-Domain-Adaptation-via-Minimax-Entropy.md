@@ -60,5 +60,11 @@ Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Mode
 해당 Approach는 Target Domain의 Unlabled Data에 대해 Entropy를 최대화하고, Feature Extractor를 Update하여 이러한 Data를 Prototype 주변에 더 잘 **Clustering**하도록 합니다.<br>
 <br>
 
-> **Entropy**
-> 
+> **Entropy** <br>
+> - Information Theory에서 **불확실성의 척도**로 사용되는 개념입니다. <br>
+> - 높은 Entropy는 더 많은 불확실성을 의미하며, 낮은 Entropy는 더 많은 정보를 의미합니다. <br>
+> - Model의 예측이 불확실할 때 Entropy는 높아지며, 예측이 확실할 때 Entropy는 낮아집니다. <br>
+> - 따라서, Model의 예측이 불확실한 Data에 대한 Entropy를 최대화하면 Model이 더 많은 정보를 얻을 수 있습니다. <br>
+> - 이러한 이유로, MME Method는 Target Domain의 Unlabled Data에 대한 Entropy를 최대화하여 Model의 Generalization 능력을 향상시키려고 합니다. <br>
+> - 이러한 방법을 통해 Model은 Target Domain의 Unlabled Data를 더 잘 학습할 수 있으며, 이는 Domain Adaptation 문제를 해결하는데 도움이 될 수 있습니다. <br>
+> - 또한, MME Method는 Target Domain의 Unlabled Data를 활용하여 **Feature Extractor를 Update**하여 Target Domain의 **Prototype 주변에 더 잘 Clustering**하도록 합니다. <br>
