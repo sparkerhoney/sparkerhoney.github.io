@@ -42,7 +42,8 @@ Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Mode
 저자들은 기존의 Few-Shot Learning Methods가 Target Domain의 Unlabled Data를 충분히 활용하지 못한다는 한계를 지적하며, MME 방법을 통해 이러한 Data를 효과적으로 활용하여 Domain Adaption 문제를 해결하고자 합니다.<br>
 <br>
 
-## Minimax Entropy(MME)
+## Method
+### Minimax Entropy(MME)
 
 <img width="510" alt="Figure 1 Top" src="https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/f6da7e21-1780-4845-934a-89bbf5a85def">
 <br>
@@ -56,7 +57,7 @@ Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Mode
 <br>
 
 저자들이 제안하는 **Minimax Entropy (MME)** Method를 보여줍니다.<br>
-이 Method는 각 Class에 대한 **Representative Point(Prototype)**을 추정하고, 새로운 **Minimax Entropy** Mrthod를 사용하여 구별 가능한 Feature를 Extraction합니다.<br> 
+이 Method는 각 Class에 대한 **Representative Point(Prototype)**을 추정하고, 새로운 **Minimax Entropy** Method를 사용하여 구별 가능한 Feature를 Extraction합니다.<br> 
 해당 Approach는 Target Domain의 Unlabled Data에 대해 Entropy를 최대화하고, Feature Extractor를 Update하여 이러한 Data를 Prototype 주변에 더 잘 **Clustering**하도록 합니다.<br>
 <br>
 
@@ -68,3 +69,30 @@ Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Mode
 > - 이러한 이유로, MME Method는 Target Domain의 Unlabled Data에 대한 Entropy를 최대화하여 Model의 Generalization 능력을 향상시키려고 합니다. <br>
 > - 이러한 방법을 통해 Model은 Target Domain의 Unlabled Data를 더 잘 학습할 수 있으며, 이는 Domain Adaptation 문제를 해결하는데 도움이 될 수 있습니다. <br>
 > - 또한, MME Method는 Target Domain의 Unlabled Data를 활용하여 **Feature Extractor를 Update**하여 Target Domain의 **Prototype 주변에 더 잘 Clustering**하도록 합니다. <br>
+<br>
+
+<img width="660" alt="Figure 2 Top" src="https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/6addcae4-3dbf-4f05-9dcc-d858a4ba948b">
+<br>
+
+기존의 **few-shot** 학습 Method를 보여줍니다.<br>
+기존의 **few-shot** 학습 Methods는 소수의 Labeld Data를 사용하여 각 Class에 대한 Prototype(대표적인 특성을 가진 Weight Vector)을 학습합니다.<br> 
+이 Prototype은 새로운 Data가 어느 Class에 속하는지를 판단하는 데 사용됩니다.<br>
+이 Method는 Class Prototype을 Weight Vector로 추정하지만, Target Domain의 Unlabeled Data를 직접적으로는 고려하지 않습니다.<br>
+즉, 이러한 Methods는 Unlabeled Data로부터 추가적인 정보를 Extraction하거나, 이를 활용하여 Model의 Generalization 능력을 향상시키는 데 한계가 있습니다.<br>
+<br>
+
+<img width="673" alt="Figure 2 Bottom" src="https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/6a337d00-bb27-4efe-b61a-bcb3eb503561">
+<br>
+
+MME Method의 구체적인 작동 과정을 나타냅니다.<br>
+<br>
+
+1. `Step 1`에서는 Classifier 내의 추정된 Prototype을 Target Domain의 Unlabeled Data의 **Entropy를 최대화**하도록 업데이트합니다.<br>
+   - Entropy를 최대화한다는 것은 Model이 Unlabeled Data에 대해 더 불확실한 예측을 하도록 만들어, Data가 여러 **Class에 고르게 속할 가능성을 탐색**하게 만듭니다.<br>
+   - 이 과정을 통해, Model은 Target Domain의 다양한 Data Feature를 더 잘 파악하게 됩니다.
+
+2. `Step 2`에서는 **Feature Classifier를 업데이트**하여 이러한 Data가 Prototype 주변에 **Clustering** 되도록 합니다.<br>
+   - 즉, 각 Data Point가 가장 가까운 Prototype(Class)에 할당되도록 Model을 조정합니다.<br> 
+   - 이 과정은 Model이 Target Domain의 **Data 구조를 더 잘 이해하고**, 구별 가능한 Feature를 학습하게 만듭니다.<br>
+
+
