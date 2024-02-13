@@ -97,11 +97,11 @@ MME Method의 구체적인 작동 과정을 나타냅니다.<br>
 <img width="647" alt="Figure 3" src="https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/00a1fb96-503f-4b5e-a9b9-5422870335be">
 <br>
 
-논문에서 제안하는 **MME Method**의 전체적인 구조를 나타냅니다.<br>
+논문에서 제안하는 **MME Method Architecture**의 전체적인 구조를 나타냅니다.<br>
 
 ### 모델 구성 요소:
-- **특성 추출기(Feature Extractor, F)**: 입력 데이터로부터 유용한 특성을 추출하는 역할을 합니다.<br> 이 구성 요소는 모델이 데이터의 중요한 정보를 식별하고 이를 효율적으로 처리할 수 있도록 돕습니다.<br>
-- **분류기(Classifier, C)**: 추출된 특성을 바탕으로 각 데이터 포인트가 어떤 클래스에 속하는지를 판단합니다. 이 구성 요소에는 가중치 벡터(W)와 온도 파라미터(T)가 포함되어 있으며, 각 클래스에 대한 예측 확률을 계산합니다.
+- **특성 추출기(Feature Extractor, F)**: Input Data로부터 유용한 Feature를 Extraction하는 역할을 합니다.<br> 이 구성 요소는 Model이 Data의 중요한 정보를 식별하고 이를 효율적으로 처리할 수 있도록 돕습니다.<br>
+- **분류기(Classifier, C)**: Extracted Feature를 바탕으로 각 Data Point가 어떤 Class에 속하는지를 판단합니다.<br> 이 구성 요소에는 Weight Vector($W$)와 Temperatue Parameter($T$)가 포함되어 있으며, 각 Class에 대한 예측 확률을 계산합니다.<br>
 
 ### 입력 데이터:
 - **레이블이 있는 소스 데이터**: 학습 초기 단계에서 모델의 기본 지식을 형성하는 데 사용됩니다.
