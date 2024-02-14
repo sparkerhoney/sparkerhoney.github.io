@@ -46,27 +46,27 @@ Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Mode
 
 **SSDA**에서는 세 가지 Data Set가 주어집니다. <br>
 
-  $D_s$ (Source Domain Labeled Data)<br>
-  $D_s = \{(x_s^i, y_s^i)\}_{i=1}^{m_s}$<br>
-  $D_s$는 소스 도메인의 레이블이 있는 데이터 세트입니다.<br>
+$$D_s$$ (Source Domain Labeled Data)<br>
+$$D_s = \{(x_s^i, y_s^i)\}_{i=1}^{m_s}$$<br>
+$D_s$는 소스 도메인의 레이블이 있는 데이터 세트입니다.<br>
 - 여기서 $x_s^i$는 소스 도메인에서 $i$번째 이미지를 나타내고, $y_s^i$는 해당 이미지의 레이블(정답)입니다.<br>
 - $m_s$는 소스 도메인에서 레이블이 있는 이미지의 총 개수를 나타냅니다.<br>
 <br>
 모델 학습 초기 단계에서 주로 사용되며, 모델이 소스 도메인의 지식을 학습하는 데 기초 자료로 활용됩니다.<br>
 <br>
 
-  $D_t$ (Target Domain Labeled Data)<br>
-  $D_t = \{(x_t^i, y_t^i)\}_{i=1}^{m_t}$<br>
-  $D_t$는 타겟 도메인의 레이블이 있는 데이터 세트입니다.<br>
+$$D_t$$ (Target Domain Labeled Data)<br>
+$$D_t = \{(x_t^i, y_t^i)\}_{i=1}^{m_t}$$<br>
+$D_t$는 타겟 도메인의 레이블이 있는 데이터 세트입니다.<br>
 - 여기서 $x_t^i$는 타겟 도메인에서 $i$번째 이미지를 나타내고, $y_t^i$는 해당 이미지의 레이블입니다.<br>
 - $m_t$는 타겟 도메인에서 레이블이 있는 이미지의 총 개수를 나타냅니다.<br>
 <br>
 타겟 도메인에 대한 지식을 모델에 전달하는 데 사용되며, 레이블이 있는 데이터의 양이 제한적입니다.<br>
 <br>
 
-  $D_u$ (Target Domain Unlabeled Data)<br>
-  $D_u = \{x_u^i\}_{i=1}^{m_u}$<br>
-  $D_u$는 타겟 도메인의 레이블이 없는 데이터 세트입니다.<br>
+$$D_u$$ (Target Domain Unlabeled Data)<br>
+$$D_u = \{x_u^i\}_{i=1}^{m_u}$$<br>
+$D_u$는 타겟 도메인의 레이블이 없는 데이터 세트입니다.<br>
 - 여기서 $x_u^i$는 타겟 도메인에서 $i$번째 이미지를 나타내지만, 레이블 정보는 제공되지 않습니다.<br>
 - $m_u$는 타겟 도메인에서 레이블이 없는 이미지의 총 개수를 나타냅니다.<br>
 <br>
@@ -105,8 +105,8 @@ Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Mode
 위는 기존의 **few-shot** 학습 Method를 보여줍니다.<br>
 기존의 **few-shot** 학습 Methods는 소수의 Labeld Data를 사용하여 각 Class에 대한 Prototype(대표적인 특성을 가진 Weight Vector)을 학습합니다.<br> 
 이 Prototype은 새로운 Data가 어느 Class에 속하는지를 판단하는 데 사용됩니다.<br>
-이 Method는 Class Prototype을 Weight Vector로 추정하지만, Target Domain의 Unlabeled Data를 직접적으로는 고려하지 않습니다.<br>
-즉, 이러한 Methods는 Unlabeled Data로부터 추가적인 정보를 Extraction하거나, 이를 활용하여 Model의 Generalization 능력을 향상시키는 데 한계가 있습니다.<br>
+> 이 Method는 Class Prototype을 Weight Vector로 추정하지만, Target Domain의 Unlabeled Data를 직접적으로는 고려하지 않습니다.<br>
+> 즉, 이러한 Methods는 Unlabeled Data로부터 추가적인 정보를 Extraction하거나, 이를 활용하여 Model의 Generalization 능력을 향상시키는 데 한계가 있습니다.<br>
 <br>
 
 <img width="673" alt="Figure 2 Bottom" src="https://github.com/sparkerhoney/sparkerhoney.github.io/assets/108461006/6a337d00-bb27-4efe-b61a-bcb3eb503561">
@@ -130,26 +130,27 @@ MME Method의 구체적인 작동 과정을 나타냅니다.<br>
 
 `Model 구성 요소(Model Configuration)`:<br>
 **특성 추출기(Feature Extractor, $F$)**: Input Data로부터 유용한 Feature를 Extraction하는 역할을 합니다.<br> 
-이 구성 요소는 Model이 Data의 **중요한 정보를 식별**하고 이를 효율적으로 처리할 수 있도록 돕습니다.<br>
-**분류기(Classifier, $C$)**: Extracted Feature를 바탕으로 각 Data Point가 **어떤 Class에 속하는지를 판단**합니다.<br> 이 구성 요소에는 **Weight Vector($W$)**와 **Temperatue Parameter($T$)**가 포함되어 있으며, 각 **Class에 대한 예측 확률을 계산**합니다.<br>
+- 이 구성 요소는 Model이 Data의 **중요한 정보를 식별**하고 이를 효율적으로 처리할 수 있도록 돕습니다.<br>
+**분류기(Classifier, $C$)**: Extracted Feature를 바탕으로 각 Data Point가 **어떤 Class에 속하는지를 판단**합니다.<br> 
+- 이 구성 요소에는 **Weight Vector($W$)**와 **Temperatue Parameter($T$)**가 포함되어 있으며, 각 **Class에 대한 예측 확률을 계산**합니다.<br>
 <br>
 
 `입력 Data(Input Data)`:<br>
-**레이블이 있는 Source Data**: 학습 초기 단계에서 Model의 기본 지식을 형성하는 데 사용됩니다.
-**레이블이 있는 Target Data**: Target Domain에 대한 지식을 제공하며, 이 Data는 소수만 제공됩니다.
-**레이블이 없는 Target Data**: Model이 Target Domain에 더 잘 적응할 수 있도록 추가 정보를 제공합니다.
+**레이블이 있는 Source Data**: 학습 초기 단계에서 Model의 기본 지식을 형성하는 데 사용됩니다.<br>
+**레이블이 있는 Target Data**: Target Domain에 대한 지식을 제공하며, 이 Data는 소수만 제공됩니다.<br>
+**레이블이 없는 Target Data**: Model이 Target Domain에 더 잘 적응할 수 있도록 추가 정보를 제공합니다.<br>
 <br>
 
 `학습 과정(Training Process)`:<br>
 **Entropy 최대화(Step 1)**: Classifier $C$는 Unlabled Target Data에 대한 Entropy를 최대화하도록 학습됩니다.<br> 
-이 단계는 Model이 Data Point에 대해 더 불확실한 예측을 하게 만들어, 다양한 Class 간의 경계를 더 잘 탐색하도록 돕습니다.<br>
+- 이 단계는 Model이 Data Point에 대해 더 불확실한 예측을 하게 만들어, 다양한 Class 간의 경계를 더 잘 탐색하도록 돕습니다.<br>
 **Entropy 최소화(Step 2)**: Feature Extractor $F$는 Entropy를 최소화하도록 학습됩니다.<br> 
-이는 Unlabled Target Data가 가장 가까운 프로토타입 주변에 잘 클러스터링되도록 만들어, Target Domain에서의 예측 정확도를 높입니다.<br>
+- 이는 Unlabled Target Data가 가장 가까운 프로토타입 주변에 잘 클러스터링되도록 만들어, Target Domain에서의 예측 정확도를 높입니다.<br>
 <br>
 
 `적대적 학습(Adversarial Learning)`:<br>
 Model은 Entropy 손실에 대해 Adversarial Learning Method를 적용합니다.<br> 
-이 과정에서 Unlabled Target Data에 대한 Entropy 손실의 Gradient 부호를 반전시키는 **그래디언트 반전 계층(Gradient Reversal Layer)을 사용**합니다.<br> 
+- 이 과정에서 Unlabled Target Data에 대한 Entropy 손실의 Gradient 부호를 반전시키는 **그래디언트 반전 계층(Gradient Reversal Layer)을 사용**합니다.<br> 
 이를 통해, **Classifier $C$**와 **Feature Extractor $F$**가 **상반된 목표**를 가지고 학습하면서도 전체적으로는 Target Domain에 대한 Model의 성능을 개선하게 됩니다.<br>
 <br>
 
@@ -160,15 +161,16 @@ Model은 Entropy 손실에 대해 Adversarial Learning Method를 적용합니다
 $$p(x) = \sigma\left(\frac{W^T F(x)}{T \|\|F(x)\|\|}\right)$$
 <br>
 
-- $F(x)$: 데이터 포인트 $x$에 대한 특성 추출기 $F$의 출력입니다.
-- $W^T F(x)$: 가중치 벡터 $W$와 특성 벡터 $F(x)$의 내적을 나타냅니다.
-- $T$: 온도 매개변수입니다.
-- $\|\|F(x)\|\|$: 특성 벡터 $F(x)$의 $L_2$ 노름(norm)입니다. 이는 특성 벡터의 크기를 나타냅니다.
-- $\sigma$: 소프트맥스 함수로, 계산된 값을 확률 벡터로 변환합니다.
-- $p(x)$: 입력 데이터 $x$에 대한 각 클래스에 대한 소속 확률을 나타냅니다.
+- $F(x)$: 데이터 포인트 $x$에 대한 특성 추출기 $F$의 출력(CNN)
+- $W^T F(x)$: 가중치 벡터 $W$와 특성 벡터 $F(x)$의 내적
+- $T$: 온도 매개변수
+- $\|\|F(x)\|\|$: 특성 벡터 $F(x)$의 $L_2$ 노름(norm) 특성 벡터의 크기
+- $\sigma$: 소프트맥스 함수로, 계산된 값을 확률 벡터로 변환
+- $p(x)$: 입력 데이터 $x$에 대한 각 클래스에 대한 소속 확률을 나타냄
 <br>
 
 분류기 $C$는 입력 $x$로부터 추출된 특성 $F(x)$를 사용하여 각 클래스에 대한 소속 확률 $p(x)$을 계산합니다.<br>
 여기서 가중치 벡터 $W$는 각 클래스에 대한 프로토타입(대표 특성)으로 간주될 수 있으며, $T$와 $\|\|F(x)\|\|$는 모델의 예측 확률 분포를 조절하는 데 사용됩니다.<br>
 특히, $\|\|F(x)\|\|$를 사용하여 계산된 값은 특성 벡터의 크기를 고려하여 정규화되어, 모델의 예측이 특성 벡터의 크기에 덜 의존하게 만듭니다<br>
 <br>
+
