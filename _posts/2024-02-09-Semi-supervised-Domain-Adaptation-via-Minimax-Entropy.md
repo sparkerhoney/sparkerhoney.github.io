@@ -42,7 +42,7 @@ Labled 소수의 Data와 Unlabled 많은 양의 Data를 모두 활용하여 Mode
 저자들은 기존의 Few-Shot Learning Methods가 Target Domain의 Unlabled Data를 충분히 활용하지 못한다는 한계를 지적하며, MME 방법을 통해 이러한 Data를 효과적으로 활용하여 Domain Adaption 문제를 해결하고자 합니다.<br>
 <br>
 
-## Minimax Entropy(MME)
+## Network Architecture
 
 **SSDA**에서는 세 가지 Data Set가 주어집니다. <br>
 
@@ -138,3 +138,21 @@ MME Method의 구체적인 작동 과정을 나타냅니다.<br>
 
 ### 적대적 학습(Adversarial Learning):
 Model은 Entropy 손실에 대해 Adversarial Learning Method를 적용합니다.<br> 이 과정에서 Unlabled Target Data에 대한 Entropy 손실의 Gradient 부호를 반전시키는 **그래디언트 반전 계층(Gradient Reversal Layer)을 사용**합니다.<br> 이를 통해, **Classifier $C$**와 **Feature Extractor $F$**가 **상반된 목표**를 가지고 학습하면서도 전체적으로는 Target Domain에 대한 Model의 성능을 개선하게 됩니다.<br>
+
+## Minimax Entropy(MME)
+### Similarity based Network Architecture
+이전 설명에서 사용된 수식 표현에 혼동이 있었습니다. 제공된 내용에 따라 수정하겠습니다. 분류기 \(C\)의 입력 및 출력에 대한 정정된 수식은 다음과 같습니다:
+
+#### 입력과 출력
+\[ p(x) = \sigma\left(\frac{W^T F(x)}{T \|F(x)\|}\right) \]
+
+- \(F(x)\): 데이터 포인트 \(x\)에 대한 특성 추출기 \(F\)의 출력입니다.
+- \(W^T F(x)\): 가중치 벡터 \(W\)와 특성 벡터 \(F(x)\)의 내적을 나타냅니다.
+- \(T\): 온도 매개변수입니다. (이전 설명에서는 이 매개변수가 출력 분포의 부드러움을 조절한다고 언급했습니다.)
+- \(\|F(x)\|\): 특성 벡터 \(F(x)\)의 \(L_2\) 노름(norm)입니다. 이는 특성 벡터의 크기를 나타냅니다.
+- \(\sigma\): 소프트맥스 함수로, 계산된 값을 확률 벡터로 변환합니다.
+
+#### 정정된 설명
+- 분류기 \(C\)는 입력 \(x\)로부터 추출된 특성 \(F(x)\)를 사용하여 각 클래스에 대한 소속 확률 \(p(x)\)을 계산합니다. 여기서 가중치 벡터 \(W\)는 각 클래스에 대한 프로토타입(대표 특성)으로 간주될 수 있으며, \(T\)와 \(\|F(x)\|\)는 모델의 예측 확률 분포를 조절하는 데 사용됩니다. 특히, \(\|F(x)\|\)를 사용하여 계산된 값은 특성 벡터의 크기를 고려하여 정규화되어, 모델의 예측이 특성 벡터의 크기에 덜 의존하게 만듭니다.
+
+이 정정된 수식은 모델이 클래스별로 데이터를 얼마나 잘 분류할 수 있는지를 예측하는 확률을 계산하는 과정을 더 정확하게 반영합니다. 분모에 있는 \(\|F(x)\|\)는 특성 벡터 \(F(x)\)의 크기를 고려하여 각 특성이 클래스 프로토타입과 얼마나 가까운지를 판단하는 데 중요한 역할을 합니다. 이는 특성 벡터의 방향성에 초점을 맞추어, 모델이 데이터의 본질적인 특성을 더 잘 학습하도록 돕습니다.
