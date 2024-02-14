@@ -128,31 +128,36 @@ MME Method의 구체적인 작동 과정을 나타냅니다.<br>
 
 논문에서 제안하는 **MME Method Architecture**의 전체적인 구조를 나타냅니다.<br>
 
-Model 구성 요소(Model Configuration):
-**특성 추출기(Feature Extractor, $F$)**: Input Data로부터 유용한 Feature를 Extraction하는 역할을 합니다.<br> 이 구성 요소는 Model이 Data의 **중요한 정보를 식별**하고 이를 효율적으로 처리할 수 있도록 돕습니다.<br>
+`Model 구성 요소(Model Configuration)`:<br>
+**특성 추출기(Feature Extractor, $F$)**: Input Data로부터 유용한 Feature를 Extraction하는 역할을 합니다.<br> 
+이 구성 요소는 Model이 Data의 **중요한 정보를 식별**하고 이를 효율적으로 처리할 수 있도록 돕습니다.<br>
 **분류기(Classifier, $C$)**: Extracted Feature를 바탕으로 각 Data Point가 **어떤 Class에 속하는지를 판단**합니다.<br> 이 구성 요소에는 **Weight Vector($W$)**와 **Temperatue Parameter($T$)**가 포함되어 있으며, 각 **Class에 대한 예측 확률을 계산**합니다.<br>
 <br>
 
-입력 Data(Input Data):
+`입력 Data(Input Data)`:<br>
 **레이블이 있는 Source Data**: 학습 초기 단계에서 Model의 기본 지식을 형성하는 데 사용됩니다.
 **레이블이 있는 Target Data**: Target Domain에 대한 지식을 제공하며, 이 Data는 소수만 제공됩니다.
 **레이블이 없는 Target Data**: Model이 Target Domain에 더 잘 적응할 수 있도록 추가 정보를 제공합니다.
 <br>
 
-학습 과정(Training Process):
-**Entropy 최대화(Step 1)**: Classifier $C$는 Unlabled Target Data에 대한 Entropy를 최대화하도록 학습됩니다.<br> 이 단계는 Model이 Data Point에 대해 더 불확실한 예측을 하게 만들어, 다양한 Class 간의 경계를 더 잘 탐색하도록 돕습니다.<br>
-**Entropy 최소화(Step 2)**: Feature Extractor $F$는 Entropy를 최소화하도록 학습됩니다.<br> 이는 Unlabled Target Data가 가장 가까운 프로토타입 주변에 잘 클러스터링되도록 만들어, Target Domain에서의 예측 정확도를 높입니다.<br>
+`학습 과정(Training Process)`:<br>
+**Entropy 최대화(Step 1)**: Classifier $C$는 Unlabled Target Data에 대한 Entropy를 최대화하도록 학습됩니다.<br> 
+이 단계는 Model이 Data Point에 대해 더 불확실한 예측을 하게 만들어, 다양한 Class 간의 경계를 더 잘 탐색하도록 돕습니다.<br>
+**Entropy 최소화(Step 2)**: Feature Extractor $F$는 Entropy를 최소화하도록 학습됩니다.<br> 
+이는 Unlabled Target Data가 가장 가까운 프로토타입 주변에 잘 클러스터링되도록 만들어, Target Domain에서의 예측 정확도를 높입니다.<br>
 <br>
 
-적대적 학습(Adversarial Learning):
-Model은 Entropy 손실에 대해 Adversarial Learning Method를 적용합니다.<br> 이 과정에서 Unlabled Target Data에 대한 Entropy 손실의 Gradient 부호를 반전시키는 **그래디언트 반전 계층(Gradient Reversal Layer)을 사용**합니다.<br> 이를 통해, **Classifier $C$**와 **Feature Extractor $F$**가 **상반된 목표**를 가지고 학습하면서도 전체적으로는 Target Domain에 대한 Model의 성능을 개선하게 됩니다.<br>
+`적대적 학습(Adversarial Learning)`:<br>
+Model은 Entropy 손실에 대해 Adversarial Learning Method를 적용합니다.<br> 
+이 과정에서 Unlabled Target Data에 대한 Entropy 손실의 Gradient 부호를 반전시키는 **그래디언트 반전 계층(Gradient Reversal Layer)을 사용**합니다.<br> 
+이를 통해, **Classifier $C$**와 **Feature Extractor $F$**가 **상반된 목표**를 가지고 학습하면서도 전체적으로는 Target Domain에 대한 Model의 성능을 개선하게 됩니다.<br>
 <br>
 
 ## Minimax Entropy(MME)
 ### Similarity based Network Architecture
 #### 입력과 출력
 
-$p(x) = \sigma\left(\frac{W^T F(x)}{T \|F(x)\|}\right)$
+$$p(x) = \sigma\left(\frac{W^T F(x)}{T \|\|F(x)\|\|}\right)$$
 <br>
 
 - $F(x)$: 데이터 포인트 $x$에 대한 특성 추출기 $F$의 출력입니다.
