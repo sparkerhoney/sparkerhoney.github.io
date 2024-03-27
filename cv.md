@@ -8,11 +8,11 @@ layout: cv
    
 ---
 
-<img align="right" src="/Users/marketdesigners/Documents/GitHub/sparkerhoney.github.io/profile.jpg" height="300px" alt="llama image">
+<img align="right" src="profile.jpg" height="300px" alt="profile">
 
 ## OBJECTIVE
 
-Data Scientist & Ai Developer
+Data Scientist & MLOps Engineer
    
 ---
    
@@ -37,7 +37,7 @@ Data Scientist & Ai Developer
 
 |Market Desiners, Seoul/South Korea|09/2023 ~ Present|
 |:---|---:|
-||AI Researcher & Prompt Engineer|
+||AI Researcher & MLOps Engineer|
 
 ---
 
