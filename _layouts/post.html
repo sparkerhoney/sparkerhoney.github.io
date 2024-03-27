@@ -13,12 +13,19 @@ layout: compress
   {% include loading.html %}
   <style>
     .container {
-        display: flex;
-        justify-content: center;
-        max-width: 80%; /* 원하는 비율로 조정 */
-        margin: 0 auto;
+      display: block; /* flex를 block으로 변경하여 정렬 문제 해결 */
+      max-width: 768px; /* 콘텐츠의 최대 너비를 픽셀로 설정하여 중앙 정렬에 도움 */
+      margin-left: auto; /* 왼쪽 마진을 auto로 설정 */
+      margin-right: auto; /* 오른쪽 마진을 auto로 설정 */
+    }
+    
+    .image.is-16by9 {
+      margin-left: auto; /* 이미지를 중앙에 정렬 */
+      margin-right: auto; /* 이미지를 중앙에 정렬 */
+      display: block; /* 이미지를 블록 요소로 변경 */
     }
   </style>
+  
 </head>
 
 <body>
