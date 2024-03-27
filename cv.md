@@ -8,7 +8,7 @@ layout: cv
    
 ---
 
-<img align="center" src="profile.jpg" style="width: 10%;" alt="profile">
+<img align="center" src="profile.jpg" style="width: 20%;" alt="profile">
 
 ## OBJECTIVE
 
