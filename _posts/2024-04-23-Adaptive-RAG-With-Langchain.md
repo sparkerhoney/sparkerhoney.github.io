@@ -10,16 +10,11 @@ tags:
 - LLM
 - RAG
 ---
+# What is Command R?
+Command R 모델은 Cohere가 개발한 대규모 언어 모델로서, 특히 대화형 상호작용과 긴 문맥 작업에 최적화되어 있습니다.<br> 
+이 모델은 검색 보강 생성(Retrieval-Augmented Generation, RAG)에서 높은 정밀도를 자랑합니다​​.<br> 
+<br> 
+Command R은 특히 RAG 작업을 최적화하여 개발되었으며, 다양한 기업용 워크로드에 대응할 수 있는 높은 확장성과 강력한 정확성을 제공합니다.<br> 
+이 모델은 복잡한 RAG 워크플로우에 적합하며, 다양한 언어를 지원하여 글로벌 시장에서의 응용 가능성을 넓힙니다.<br> 
+<br>
 
-asdjhkajshdjad
-asdasdasd
-asdasdasda
-sdasdasda
-sdasdasda
-asdasdasda
-asdasdasda
-# sdasda
-asdasda
-asdasd
-- asdasd
-asdasd
